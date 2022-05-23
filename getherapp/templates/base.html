@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/build.css' %}">
+    <title>{% block title %} base {% endblock %}</title>
+</head>
+<body>
+    <!-- 전체 사이트 레이아웃을 위한 container -->
+    <div class="container">
+        <div class="main-nav">
+            <h1>Map in SKHU</h1>
+        </div>
+        <!-- 안에 컨텐츠 상속 -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

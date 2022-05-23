@@ -1,0 +1,140 @@
+/* 순천체 볼드 */
+@font-face {
+    font-family: 'SuncheonB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 순천체 레귤러 */
+@font-face {
+    font-family: 'SuncheonR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* css 기본 세팅 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/* font-size: 100%; */
+	/* font: inherit; */
+	vertical-align: baseline;
+    font-family: 'SuncheonB'; 
+}
+
+html {font-size: 62.5%;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 기본 색상 두기 */
+:root {
+    --nav-color: #006600; /* 네브바 컬러 */
+    --road-color: #408C40; /* 길 */
+    --build-color: #B9DC9D; /* 건물 */
+    --subnav-color: #EBECDC; /* 방위표 주변 네브 */
+    /* 정의된 색상 사용하고 싶으면 var(변수명)으로 작성하기 */
+    /* ex ) background-color: var(--nav-color) */
+}
+
+/* ---------- 기본 상태 끝 ---------- */
+/* base */
+
+a {
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-nav {
+    background-color : var(--nav-color);
+    height: 10rem;
+    position: sticky;
+    top: 0;
+}
+
+/* build base */
+.build-title {
+    font-size: 4rem;
+}
+
+.build-container {
+    margin: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.build-informwrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7rem;
+}
+
+.floorinfo {
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+.lectureinfo-container {
+    justify-content: center;
+    margin: 3rem;
+    display: grid;
+    /* grid-template-columns: 40rem 40rem 40rem 40rem; */
+    grid-template-columns: repeat(4,40rem);
+    grid-gap: 3rem;
+}
+
+.img-src {
+    font-size: 5rem;
+    width: 40rem;
+    height: 25rem;
+    background-color: gray;
+}
+
+.lectureinfo {
+    margin-top: 1rem;
+    display: grid;
+    width: 40rem;
+    grid-template-columns: 10rem 30rem;
+    font-size: 2rem; 
+}
