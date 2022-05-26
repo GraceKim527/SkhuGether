@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.utils import timezone
+from .forms import FeedbackForm
 
 # Create your views here.
 def base(request):
@@ -8,7 +10,16 @@ def index(request):
     return render(request, 'index.html')
 
 def feedback(request):
-    return render(request, 'feedback.html')
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.feedback_date = timezone.now()
+            form.save()
+            return redirect('index')
+    else:
+        form = FeedbackForm()
+        return render(request, 'feedback.html', {'form': form})
 
 def introduce(request):
     return render(request, 'introduce.html')

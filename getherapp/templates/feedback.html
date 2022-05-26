@@ -1,1 +1,14 @@
 <!-- 피드백 페이지 -->
+<p>Feedback</p>
+
+<form method = "POST">
+    {% csrf_token %}
+    {{ form.user_id }}
+    <br>
+    {{ form.user_phonenum }}
+    <br>
+    {{ form.feedback_content }}
+    <div class="button">
+        <input class="up" type="submit" value="작성완료">
+    </div>
+</form>

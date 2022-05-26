@@ -17,4 +17,7 @@ class ClassroomAdmin(admin.ModelAdmin):
     list_display = ['classroom_unit', 'professor_name', 'class_name', 'class_date1', 'class_date2', 'class_time1', 'class_time2']
     ordering = ['classroom_unit', 'class_time1']
 
-admin.site.register(Feedback)
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ['user_id', 'feedback_date', 'user_phonenum', 'feedback_content']
+    ordering = ['feedback_date']

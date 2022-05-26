@@ -33,7 +33,10 @@ class Classroom(models.Model):
         return self.classroom_unit
 
 class Feedback(models.Model):
-    user_id = models.IntegerField()
+    user_id = models.CharField(max_length=50)
     feedback_date = models.DateTimeField(auto_now_add=True)
     user_phonenum = models.CharField(max_length=100, null=True) #추가해봤어염
     feedback_content = models.TextField()
+
+    def __str__(self):
+        return self.user_id
