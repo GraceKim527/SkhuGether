@@ -1,1 +1,24 @@
-<!-- 첫 페이지 -->
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+<div class="leo_school">
+    <!--맨 위에 있는 요소가 가장 아래에 위치하게 됨-->
+    <img id="leo_road" src="static/img/road.png" alt="길">
+    <img id="leo_grounds" src="static/img/sports_grounds.png" alt="운동장">
+    <div class="leo_class">
+        <img id="leo_1" src="static/img/1_sy.png" alt="승연관">
+        <img id="leo_2" src="static/img/2_im.png" alt="일만관">
+        <img id="leo_3" src="static/img/3_wd.png" alt="월당관">
+        <img id="leo_5" src="static/img/5_nn.png" alt="나눔관">
+        <img id="leo_6" src="static/img/6_jg.png" alt="정보과학관">
+        <img id="leo_7" src="static/img/7_scn.png" alt="새천년관">
+        <img id="leo_10" src="static/img/10_gdin.png" alt="구두인관">
+        <img id="leo_11" src="static/img/11_sbdr.png" alt="성베드로학교">
+        <img id="leo_12" src="static/img/12_mgell.png" alt="미가엘관">
+        <img id="leo_13" src="static/img/13_dormitory.png" alt="행복기숙사">
+    </div>
+</div>
+
+{% endblock %}
