@@ -12,6 +12,10 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
+<<<<<<< HEAD
+=======
+secrets.json
+>>>>>>> 728b2fdb83652e2000d90f1e543263df9c7c25e2
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.

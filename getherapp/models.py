@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+<<<<<<< HEAD
 
 class Class(models.Model):
     class_id = models.IntegerField()
@@ -25,3 +26,5 @@ class Feedback(models.Model):
     feedback_date = models.DateTimeField(auto_now_add=True)
     user_phonenum = models.CharField(max_length=100, null=True) #추가해봤어염
     feedback_content = models.TextField()
+=======
+>>>>>>> 728b2fdb83652e2000d90f1e543263df9c7c25e2
