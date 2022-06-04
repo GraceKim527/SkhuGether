@@ -1,4 +1,26 @@
+/* 
+은혜씨 이거 아래 점선 까지 해서 
+nav관련 css니까 토글이랑 nav 내용 넣으면 되고, 
+가능하면 스크롤 바 안생기게 하고 싶은데 잘 안되네ㅠㅠ 
+*/
+
+.main-nav {
+    background-color : white;
+    height: 1rem;
+    position: fixed;
+    top: 1;
+}
+/* 이건 로고 대충 넣어본거!! */
+#leo_logo {
+    width: 12%;
+}
+
+/*------------------------------------*/
+
+
+
 .leo_school {
+    top: -10%;
     position: relative;
     height: 940px;
     width: 1650px;
