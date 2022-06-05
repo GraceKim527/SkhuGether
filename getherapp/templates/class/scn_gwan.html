@@ -1,1 +1,111 @@
-<!-- 새천년관 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 새천년관 {% endblock %}
+
+{% block content %}
+<div class="build-container">
+    <!-- 건물이름이랑 층 정보 나오는 곳 -->
+    <div class="build-informwrap">
+        <div class="build-title">
+            <h1> 새천년관 </h1>
+        </div>
+        <nav>
+            <a href="#floor-first">1층</a>
+            <a href="#floor-second">2층</a>
+            <a href="#floor-third">3층</a>
+            <a href="#floor-fourth">4층</a>
+            <a href="#floor-fifth">5층</a>
+        </nav>
+    </div>
+    <!-- 층별로 정보나오도록 -->
+    <div class="build-lectureinfo-wrap">
+        <div class="floorinfo first" id="floor-first">
+            <h2>1층</h2>
+            <hr style="color: gray">
+        </div>
+        <div class="lectureinfo-container">
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7104.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7104</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="floorinfo second" id="floor-second">
+            <h2>2층</h2>
+            <hr style="color: gray">
+        </div>
+        <div class="lectureinfo-container">
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7208.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7208</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="floorinfo third" id="floor-third">
+            <h2>3층</h2>
+            <hr style="color: gray">
+        </div>
+        <div class="lectureinfo-container">
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7303.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7303</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7304.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7304</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7305.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7305</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7306.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7306</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7309.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7309</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="floorinfo fourth" id="floor-fourth">
+            <h2>4층</h2>
+            <hr style="color: gray">
+        </div>
+        <div class="floorinfo fifth" id="floor-fifth">
+            <h2>5층</h2>
+            <hr style="color: gray">
+        </div>
+        <div class="lectureinfo-container">
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/7506.jpg' %}">
+                <div class="lectureinfo">
+                    <h2>7506</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
