@@ -95,7 +95,6 @@ a {
     align-items: center;
 }
 
-
 /* main페이지에 있는 nav */
 .main-nav2 {
     display: flex;
@@ -108,9 +107,9 @@ a {
 
 .nav-img {
     position: absolute;
-    width: 300px;
+    width: 15vw;
     top: 5%;
-    margin-left: 5px;
+    left: 2%;  
 }
 
 .nav-links {
@@ -121,7 +120,7 @@ a {
     position: absolute;
     left: 0px;
     top: 10vh;
-    border: gray 1px solid;
+    
     height: 100vh;
     width: 20%;
     transform: translateX(-100%);
@@ -134,7 +133,6 @@ a {
 
 .nav-links .toggle {
     display: block;
-    cursor: pointer;
 }
 
 .toggle div {
@@ -143,7 +141,6 @@ a {
     width: 30px;
     height: 3px;
     background: white;
-    cursor: pointer;
 }
 
 .toggleAnimation .line-1 {
@@ -219,42 +216,4 @@ a {
     width: 100%;
     grid-template-columns: 1fr 3fr;
     font-size: 2rem; 
-}
-
-/* feedback.html */
-.feedback-container {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-}
-
-.feedback-container h1, h2 {
-    display: inline-block;
-    margin: auto;
-    margin-bottom: 2%;
-}
-
-.fb-txt {
-    border-radius: 20px;
-    width: 80%;
-    height: 30vh;
-    border: gray 1px solid;
-    resize: none;
-    padding: 10px;
-    margin: auto;
-    font-family: 'SuncheonB'; 
-    font-size: 2em;
-}
-
-.feedback-container input {
-    all: unset;
-    background-color: var(--build-color);
-    width: 20vw;
-    height: 8vh;
-    border-radius: 50px;
-    font-family: 'SuncheonB';
-    font-size: 3rem;
-    margin: auto;
-    text-align: center;
-    margin-top: 5%;
 }

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} 정보과학관 {% endblock %}
 
 {% block content %}
@@ -11,8 +12,8 @@
         <nav>
             <a href="#floor-first">1층</a>
             <a href="#floor-second">2층</a>
-            <a href="#">3층</a>
-            <a href="#">4층</a>
+            <a href="#floor-third">3층</a>
+            <a href="#floor-fifth">4층</a>
         </nav>
     </div>
     <!-- 층별로 정보나오도록 -->
@@ -23,42 +24,16 @@
         </div>
         <div class="lectureinfo-container">
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div>
+                <img class="img-src" src = "{% static 'img/6106.png' %}">
                 <div class="lectureinfo">
-                    <h2>F6402</h2>
+                    <h2>F6106</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
+                <img class="img-src" src = "{% static 'img/6110.png' %}">
                 <div class="lectureinfo">
-                    <h2>F6402</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
-                <div class="lectureinfo">
-                    <h2>F6402</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
-                <div class="lectureinfo">
-                    <h2>F6402</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div>
-                <div class="lectureinfo">
-                    <h2>F6402</h2>
+                    <h2>F6110</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
@@ -69,42 +44,69 @@
         </div>
         <div class="lectureinfo-container">
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
+                <img class="img-src" src = "{% static 'img/6201.png' %}">
+                <div class="lectureinfo">
+                    <h2>F6201</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/6202.png' %}">
+                <div class="lectureinfo">
+                    <h2>F6202</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/6206.png' %}">
+                <div class="lectureinfo">
+                    <h2>F6206</h2>
+                    <h2>사용 불가</h2>
+                </div>
+            </div>
+        </div>
+        <div class="floorinfo third" id="floor-third">
+            <h2>3층</h2>
+            <hr style="color: gray">
+        </div>
+            <h1>이 층은 공학계열 교수님 연구실이 있는 층입니다. </h1>
+        <div class="floorinfo fifth" id="floor-fifth">
+            <h2>4층</h2>
+            <hr style="color: gray">
+        </div>
+        <div class="lectureinfo-container">
+            <div class="lectureinfo-box">
+                <img class="img-src" src = "{% static 'img/6402.png' %}">
                 <div class="lectureinfo">
                     <h2>F6402</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
+                <img class="img-src" src = "{% static 'img/6403.png' %}">
                 <div class="lectureinfo">
-                    <h2>F6402</h2>
+                    <h2>F6403</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
+                <img class="img-src" src = "{% static 'img/6404.png' %}">
                 <div class="lectureinfo">
-                    <h2>F6402</h2>
+                    <h2>F6404</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
+                <img class="img-src" src = "{% static 'img/6405.png' %}">
                 <div class="lectureinfo">
-                    <h2>F6402</h2>
+                    <h2>F6405</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
             <div class="lectureinfo-box">
-                <!-- 이미지 사진 대신 사용 -->
-                <div class="img-src">강의실사진</div> 
+                <img class="img-src" src = "{% static 'img/6406.png' %}">
                 <div class="lectureinfo">
-                    <h2>F6402</h2>
+                    <h2>F6406</h2>
                     <h2>사용 불가</h2>
                 </div>
             </div>
