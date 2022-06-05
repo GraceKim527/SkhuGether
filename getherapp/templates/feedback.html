@@ -1,1 +1,13 @@
 <!-- 피드백 페이지 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} FeedBack {% endblock %}
+
+{% block content %}
+<form class="feedback-container" action="">
+    <h1 style="font-size: 5em"> 🌍 피드백하기 🌍 </h1>
+    <h2 style="font-size: 2em"> 작은 피드백은 개발에 큰 도움이 됩니다. 감사합니다!</h2>
+    <textarea class="fb-txt" name="feedback" wrap="physical" required></textarea>
+    <input type="submit" value="제출하기">
+</form>
+{% endblock %}
