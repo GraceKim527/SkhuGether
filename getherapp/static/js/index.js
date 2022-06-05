@@ -81,15 +81,44 @@ function leo_scn_show() {
 
 function leo_jg_show() {
     const element = document.getElementById("leo_molla");
-    element.innerHTML = '<a href="scn_gwan"><img id="leo_jg" src="static/img/jg.png" alt="정보과학관 세부사항" style="display:block;"></a>';
+    element.innerHTML = '<a href="jg_gwan"><img id="leo_jg" src="static/img/jg.png" alt="정보과학관 세부사항" style="display:block;"></a>';
 }
 
 function leo_scn_hide() {
     const element = document.getElementById("leo_ala");
-    element.innerHTML = '<a href="jg_gwan"><img id="leo_scn" src="static/img/scn.png" alt="새천년관 세부사항" style="display:none;"></a>';
+    element.innerHTML = '<a href="scn_gwan"><img id="leo_scn" src="static/img/scn.png" alt="새천년관 세부사항" style="display:none;"></a>';
 }
 
 function leo_jg_hide() {
     const element = document.getElementById("leo_molla");
     element.innerHTML = '<a href="jg_gwan"><img id="leo_jg" src="static/img/jg.png" alt="정보과학관 세부사항" style="display:none;"></a>';
 }
+
+
+// 토글
+
+const toggleBtn = document.querySelector(".toggle1")
+const ul = document.querySelector(".nav-links")
+const li = document.querySelectorAll(".nav-links li")
+
+
+function toggleHandler() {
+    toggleBtn.classList.toggle("toggleAnimation")
+    ul.classList.toggle("nav-active")
+    
+    li.forEach((link, index) => {
+        console.log(link, index)
+        if (link.style.animation) {
+            link.style.animation = "";
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 10 + 1}s`;
+        }
+    })
+}
+
+function init() {
+    toggleBtn.addEventListener("click", toggleHandler)
+
+}
+
+init()

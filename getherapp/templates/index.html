@@ -5,16 +5,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/build.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-    <script src="{% static 'js/index.js' %}"></script>
     <title>index</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="main-nav">
-            <img id="leo_logo" src="static/img/logo_ver1.png" alt="로고ver1">
-        </div>
+        <div class="main-nav1">
+            <ul class="nav-links">
+                <li><a href="{% url 'jg_gwan' %}">정보과학관</a></li>
+                <li><a href="{% url 'scn_gwan' %}">새천년관</a></li>
+                <li><a href="{% url 'feedback' %}">피드백</a></li>
+            </ul>
+            
+            <div class="toggle1">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
+            <div>
+                <a href="{% url 'index' %}">
+                    <img class="nav-img" src="{% static 'img/logo_ver1.png' %}" alt="로고ver1">
+                </a>
+            </div>
+        </div> 
 
         <div class="leo_school">
             <!--맨 위에 있는 요소가 가장 아래에 위치하게 됨-->
@@ -47,6 +62,8 @@
                 <p id="leo_ala"></p>
             </div>
         </div>
+    </div>
+    <script src="{% static 'js/index.js' %}" type="text/javascript"></script>
 </body>
 
 </html>

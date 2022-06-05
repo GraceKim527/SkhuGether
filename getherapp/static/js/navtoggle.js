@@ -1,4 +1,4 @@
-const toggleBtn = document.querySelector(".toggle")
+const toggleBtn = document.querySelector(".toggle2")
 const ul = document.querySelector(".nav-links")
 const li = document.querySelectorAll(".nav-links li")
 

@@ -85,7 +85,7 @@ a {
     flex-direction: column;
 }
 
-.main-nav {
+.main-nav2 {
     display: flex;
     background-color : var(--nav-color);
     height: 10vh;
@@ -97,13 +97,15 @@ a {
 
 
 /* main페이지에 있는 nav */
-.main-nav2 {
+.main-nav1 {
     display: flex;
-    background-color : var(--nav-color);
+    background-color : white;
     height: 10vh;
     position: sticky;
     top: 0;
     align-content: center;
+    align-items: center;
+    z-index: 50;
 }
 
 .nav-img {
@@ -132,17 +134,32 @@ a {
     opacity: 0;
 }
 
-.nav-links .toggle {
+.nav-links .toggle1 {
     display: block;
     cursor: pointer;
 }
 
-.toggle div {
+.nav-links .toggle2 {
+    display: block;
+    cursor: pointer;
+}
+
+
+.toggle2 div {
     margin: 10px;
     transition: all 0.3s ease;
     width: 30px;
     height: 3px;
     background: white;
+    cursor: pointer;
+}
+
+.toggle1 div {
+    margin: 10px;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 3px;
+    background: var(--nav-color);
     cursor: pointer;
 }
 
