@@ -4,10 +4,25 @@
 {% block title %} FeedBack {% endblock %}
 
 {% block content %}
-<form class="feedback-container" action="">
+
+<form method = "POST">
+    {% csrf_token %}
     <h1 style="font-size: 5em"> 🌍 피드백하기 🌍 </h1>
+    <br>
     <h2 style="font-size: 2em"> 작은 피드백은 개발에 큰 도움이 됩니다. 감사합니다!</h2>
-    <textarea class="fb-txt" name="feedback" wrap="physical" required></textarea>
-    <input type="submit" value="제출하기">
+    <br>
+    {{ form.user_id }}
+    <br>
+    <br>
+    {{ form.user_phonenum }}
+    <br>
+    <br>
+    {{ form.feedback_content }}
+    <br>
+    <br>
+    <div class="button">
+        <input class="up" type="submit" value="작성완료">
+    </div>
 </form>
+
 {% endblock %}
