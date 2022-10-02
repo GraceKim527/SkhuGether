@@ -332,13 +332,13 @@ a {
     width: 100%;
     margin-top: 5rem;
     font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .lectureinfo-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1%;
-
 }
 
 .lectureinfo-box {
@@ -349,6 +349,12 @@ a {
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, .4) 0px 4px 10px 0px;
     overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+}
+.lectureinfo-box:hover{
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 14px 0px;
 }
 .lecture-img {
     width: 100%;
@@ -392,42 +398,156 @@ a {
     background-color: #93bc39;
 }
 
+/* 모달 */
+.lec-modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.mod-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: 80%;
+    overflow-y: scroll;
+    border-radius: 20px;
+}
+.closebtn {
+    color: #aaaaaa;
+    font-size: 30pt;
+    font-weight: bold;
+}
+.closebtn:hover,
+.closebtn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    float: right;
+}
+.modal-body {
+    padding: 40px;
+}
+
 /* feedback.html */
 .feedback-container {
-    margin-top: 5%;
+    width: 1728px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+.fd-head {
     display: flex;
     flex-direction: column;
-}
-
-.feedback-container h1, h2 {
-    display: inline-block;
-    margin: auto;
-    margin-bottom: 2%;
-}
-
-.fb-txt {
-    border-radius: 20px;
-    width: 80%;
-    height: 30vh;
-    border: gray 1px solid;
-    resize: none;
-    padding: 10px;
-    margin: auto;
-    font-family: 'SuncheonB'; 
-    font-size: 2em;
-}
-
-.feedback-container input {
-    all: unset;
-    background-color: var(--build-color);
-    width: 20vw;
-    height: 8vh;
-    border-radius: 50px;
-    font-family: 'SuncheonB';
-    font-size: 3rem;
-    margin: auto;
     text-align: center;
-    margin-top: 5%;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+.fdform-wrap {
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 10px 0px;
+    padding: 30px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+}
+.inputform{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+.inputform input, textarea{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+    resize: none;
+}
+.inputform label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #000;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputform input:focus ~ label,
+.inputform input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--build-color);
+    font-size: 1rem;
+}
+.inputform textarea:focus ~ label,
+.inputform textarea:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--build-color);
+    font-size: 1rem;
+    z-index: 1;
+}
+.inputform input:focus,
+.inputform input:valid {
+    transition: border-bottom .25s ease-in;
+    border-bottom: 1px solid #93bc39;
+}
+.inputform textarea:focus,
+.inputform textarea:valid {
+    transition: border-bottom .25s ease-in;
+    border-bottom: 1px solid #93bc39;
+}
+.smbutton {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    gap: 30px;
+    justify-content: center;
+}
+.smbutton button[type="submit"] {
+    background-color: #93bc39;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    height: 30px;
+    width: 60px;
+    font-size: 1.2rem;
+}
+.smbutton a {
+    background-color: #fff;
+    border: 1px solid #93bc39;
+    color: #93bc39;
+    border-radius: 4px;
+    height: 30px;
+    width: 60px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 모바일 버전 */
@@ -435,11 +555,17 @@ a {
     .build-container {
         width: 1376px;
     }
+    .feedback-container {
+        width: 1376px;
+    }
 }
 
 @media (max-width: 1440px){
     .build-container {
-        width: 1024px;
+        width: 850px;
+    }
+    .feedback-container {
+        width: 1376px;
     }
 }
 
@@ -447,8 +573,28 @@ a {
     .build-container {
         width: calc(100% - 2rem);
     }
+    .feedback-container {
+        width: 850px;
+    }
     .lectureinfo-box {
         width: 49%;
         margin-bottom: 1%;
+    }
+    .mod-content {
+        width: 80%;
+        height: 80%;
+    }
+    #menu__box {
+        width: 400px;
+    }
+    
+}
+
+@media (max-width: 425px){
+    .lectureinfo {
+        font-size: 1rem;
+    }
+    .feedback-container {
+        width: 90%;
     }
 }

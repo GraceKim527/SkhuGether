@@ -19,6 +19,7 @@ def feedback(request):
             return redirect('index')
     else:
         form = FeedbackForm()
+        print(form)
         return render(request, 'feedback.html', {'form': form})
 
 def introduce(request):
