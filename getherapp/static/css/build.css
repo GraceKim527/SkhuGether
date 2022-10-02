@@ -31,7 +31,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	/* font-size: 100%; */
+	/* font-size: 62.5%; */
 	/* font: inherit; */
 	vertical-align: baseline;
     font-family: 'SuncheonB'; 
@@ -108,12 +108,7 @@ a {
     z-index: 50;
 }
 
-.nav-img {
-    position: absolute;
-    width: 300px;
-    top: 5%;
-    margin-left: 5px;
-}
+
 
 .nav-links {
     background-color: white;
@@ -188,54 +183,213 @@ a {
     }
 }
 
-
+/* nav 수정하고 새로만든 것 */
+.nav {
+    top: 0;
+    display: flex;
+    padding-right: 1vw;
+    /* padding: 0 1vw 0 1vw; */
+    background-color: var(--nav-color);
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid #eee;
+}
+.nav1 {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+#checkbox {
+    display: none;
+    z-index: 5;
+  }
+.hbmenu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    float: left;
+  }
+.line {
+    position: absolute;
+    width: 20px;
+    z-index: 2;
+    left: 10px;
+    right: 0;
+    top: 20px;
+    bottom: 0;
+    z-index: 10;
+}
+.line-main::before,
+.line-main::after,
+.line-split::before,
+.line-split::after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.5s;
+}
+.line-main::before {
+  transform: translateY(-7px);
+}
+  .line-main::after {
+    transform: translateY(7px);
+  }
+  .line-split::before,
+  .line-split::after {
+    width: 10px;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  .line-split::after {
+    transform: translateX(10px);
+  }
+  #checkbox:checked ~ .line-main::before {
+    transform: rotate(45deg);
+    background-color: black;
+  }
+  #checkbox:checked ~ .line-main::after {
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+  #checkbox:checked~.line-split::before{
+    opacity: 0;
+    background-color: black;
+  }
+  #checkbox:checked~.line-split::after{
+    opacity: 0;
+    background-color: black;
+  }
+#menu__box {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+.menu{
+    left: 0 !important;
+    transition-duration: .25s;
+}
+.nmenu{
+    display: none; 
+    margin-left: 300px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+}
+.nav2 {
+    width: 100%;
+}
+.nav2 a{
+    display: block;
+    width: 220px;
+    height: 60px;
+}
+.nav-img {
+    position: absolute;
+    width: 220px;
+    top: 5%;
+}
 
 /* ----------------여기서부터는 build base ---------------- */
 /* build base */
 .build-title {
-    font-size: 4rem;
+    font-size: 2.5em;
 }
-
 .build-container {
-    margin: 5%;
-    display: flex;
-    flex-direction: column;
+    width: 1728px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 .build-informwrap {
     display: flex;
     flex-direction: column;
-    margin-bottom: 5%;
+    margin-top: 10rem;
 }
 
 .floorinfo {
     width: 100%;
     margin-top: 5rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .lectureinfo-container {
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+
 }
 
-
-.img-src {
-    font-size: 5rem;
+.lectureinfo-box {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    margin-bottom: 1%;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 10px 0px;
+    overflow: hidden;
+}
+.lecture-img {
     width: 100%;
-    height: 25vh;
-    background-color: gray;
+    position: relative;
+    padding-top: 52.1921%;
 }
-
+.img-src {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .lectureinfo {
     margin-top: 5%;
-    display: grid;
+    margin-bottom: 5%;
+    display: flex;
     width: 100%;
-    grid-template-columns: 1fr 3fr;
-    font-size: 2rem; 
+    flex-direction: column;
+    font-size: 1.4rem;
+    margin: 1.5rem;
+    gap: 1rem;
+}
+.lecturecon {
+    width: 60px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: #fff;
+}
+.imposs {
+    background-color: #ee3e54;
+}
+.poss {
+    background-color: #93bc39;
 }
 
 /* feedback.html */
@@ -274,4 +428,27 @@ a {
     margin: auto;
     text-align: center;
     margin-top: 5%;
+}
+
+/* 모바일 버전 */
+@media (max-width: 1919px){ 
+    .build-container {
+        width: 1376px;
+    }
+}
+
+@media (max-width: 1440px){
+    .build-container {
+        width: 1024px;
+    }
+}
+
+@media (max-width: 1065px){
+    .build-container {
+        width: calc(100% - 2rem);
+    }
+    .lectureinfo-box {
+        width: 49%;
+        margin-bottom: 1%;
+    }
 }

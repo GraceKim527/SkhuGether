@@ -10,24 +10,27 @@
 <body>
     <!-- 전체 사이트 레이아웃을 위한 container -->
     <div class="container">
-        <div class="main-nav2">
-            <ul class="nav-links">
-                <li><a href="{% url 'jg_gwan' %}">정보과학관</a></li>
-                <li><a href="{% url 'scn_gwan' %}">새천년관</a></li>
-                <li><a href="{% url 'feedback' %}">피드백</a></li>
-            </ul>
-            
-            <div class="toggle2">
-                <div class="line-1"></div>
-                <div class="line-2"></div>
-                <div class="line-3"></div>
+
+        <div class="nav">
+            <!-- 메뉴바, index 로고  -->
+            <div class="nav1">
+              <label for="checkbox" class="hbmenu">
+                <input type="checkbox" id="checkbox" onclick="menutoggle()">
+                <span class="line line-main"></span>
+                <span class="line line-split"></span>
+              </label>
+              <div id="menu__container" class="nmenu">
+                <div id="menu__box" class="">
+                  여기에다 메뉴추가
+                </div>
+              </div>
             </div>
-            <div>
+            <div class="nav2">
                 <a href="{% url 'index' %}">
                     <img class="nav-img" src="{% static 'img/logo_ver2.png' %}">
                 </a>
             </div>
-        </div> 
+        </div>
 
 
         <!-- 안에 컨텐츠 상속 -->
@@ -35,6 +38,6 @@
         
         {% endblock %}
     </div>
-    <script src="{% static 'js/navtoggle.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/menutoggle.js' %}" type="text/javascript"></script>
 </body>
 </html>
