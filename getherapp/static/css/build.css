@@ -440,6 +440,100 @@ a {
     padding: 40px;
 }
 
+/* 메뉴사이드바 */
+.menu_img {
+    top: 1%;
+    left: 13%;
+    width: 180px; 
+}
+.menu_header {
+    height: 8%;
+    display: block;
+    border-bottom: 1px solid lightgray;
+}
+.menu_body {
+    margin: 10%;
+    overflow: scroll;
+}
+.menu_body::-webkit-scrollbar-thumb {
+    background:#93bc39;
+}
+.menu_body::-webkit-scrollbar{
+    width: 5px;
+}
+.menu_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 10px;
+}
+.menu_body li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    height: 40px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 4px 0px;
+    /* overflow: hidden; */
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+    color: #000;
+}
+.menu_body li:before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #93bc39;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.menu_body li:hover span, .menu_body li:focus span,
+.menu_body li:active span{
+    color: #fff;
+}
+.menu_body li:hover:before, .menu_body li:focus:before,
+.menu_body li:active:before {
+    transform: scaleX(1);
+}
+.menu_body a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+}
+.menu_body span{
+    color: #93bc39;
+    display: block;
+}
+.menu_body span:nth-child(1){
+    width: 30%;
+}
+.menu_footer{
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10%;
+}
+.menu_footer a{
+    color: black;
+    font-size: 1.3rem;
+}
 /* feedback.html */
 .feedback-container {
     width: 1728px;
@@ -489,7 +583,7 @@ a {
     top: 0;
     left: 0;
     padding: 10px 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #000;
     pointer-events: none;
     transition: .5s;
@@ -534,6 +628,7 @@ a {
     height: 30px;
     width: 60px;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 .smbutton a {
     background-color: #fff;
