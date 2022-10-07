@@ -1,36 +1,49 @@
-from django.db import models
+from django.db import models 
+from django.core.validators import MaxValueValidator, MinValueValidator
 
-# Create your models here.
-class Class(models.Model):
-    # class_id = models.IntegerField()
-    class_name = models.CharField(max_length=50)
-    class_date1 = models.CharField(max_length=20, null=True, blank=True)
-    class_date2 = models.CharField(max_length=20, null=True, blank=True)
-    class_time1 = models.TimeField(max_length=50, null=True, blank=True)
-    class_time2 = models.TimeField(max_length=50, null=True, blank=True)
+class Subject(models.Model):
+    kind = models.CharField(max_length=50)
+    code = models.CharField(max_length=50)
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.class_name
+        return self.name
 
 class Professor(models.Model):
-    # professor_id = models.IntegerField()
-    professor_name = models.CharField(max_length=20)
-    
+    name = models.CharField(max_length=100)
+
     def __str__(self):
-        return self.professor_name
+        return self.name
 
 class Classroom(models.Model):
-    class_name = models.ForeignKey(Class, on_delete=models.CASCADE, null=True)
-    professor_name = models.ForeignKey(Professor, on_delete = models.SET_NULL, null=True)
-    class_date1 = models.ForeignKey(Class, on_delete = models.SET_NULL, null=True, related_name = 'date1')
-    class_date2 = models.ForeignKey(Class, on_delete = models.SET_NULL, null=True, related_name = 'date2')
-    class_time1 = models.ForeignKey(Class, on_delete = models.SET_NULL, null=True, related_name = 'time1')
-    class_time2 = models.ForeignKey(Class, on_delete = models.SET_NULL, null=True, related_name = 'time2')
-    # classroom_id = models.IntegerField()
-    classroom_unit = models.CharField(max_length=20)
+    kwan_num = models.SmallIntegerField(
+        validators=[
+            MinValueValidator(1), MaxValueValidator(13)
+            ]
+    ) 
+    kwan_name = models.CharField(max_length=50)
+    unit = models.CharField(max_length=50, null=True)
+    image = models.ImageField(upload_to='images/classroom', null=True, blank=True)
 
     def __str__(self):
-        return self.classroom_unit
+        return self.unit
+
+class Class(models.Model):
+    div = models.SmallIntegerField(null=True,
+        validators=[
+            MinValueValidator(1), MaxValueValidator(3)
+            ]
+    )    
+    date1 = models.CharField(max_length=10)
+    date2 = models.CharField(max_length=10, null=True)
+    time1 = models.TimeField()
+    time2 = models.TimeField()
+    prof_id = models.ForeignKey(Professor, null=True, on_delete=models.SET_NULL, related_name='class_profid')
+    room_id = models.ForeignKey(Classroom, null=True, on_delete=models.SET_NULL, related_name='class_roomid')
+    sub_id = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='class_subid')
+
+    def __str__(self):
+        return self.room_id
 
 class Feedback(models.Model):
     user_id = models.CharField(max_length=50)
