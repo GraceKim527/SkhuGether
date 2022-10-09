@@ -1,0 +1,111 @@
+.leo_school {
+    top: -10%;
+    position: relative;
+    height: 940px;
+    width: 1650px;
+}
+
+.leo_class img {
+    height: auto;
+}
+
+#leo_road {
+    position: absolute;
+    top: 23.5%;
+    right: 1%;
+    width: 99%;
+    height: auto;
+}
+
+#leo_10 {
+    top: 49%;
+    left: 4%;
+    position: absolute;
+}
+
+#leo_7 {
+    top: 18%;
+    left: 16.5%;
+    cursor: pointer;
+    width: 28%;
+    position: absolute;
+}
+
+#leo_scn {
+    top: 17%;
+    left: 13%;
+    cursor: pointer;
+    width: 28%;
+    position: absolute;
+    width: 20%;
+    height: 25%;
+}
+
+#leo_2 {
+    top: 30%;
+    right: 35%;
+    position: absolute;
+}
+
+#leo_1 {
+    top: 40.5%;
+    right: 38%;
+    position: absolute;
+}
+
+#leo_3 {
+    top: 28%;
+    right: 25%;
+    position: absolute;
+}
+
+#leo_12 {
+    top: 8%;
+    right: 23%;
+    height: 20%;
+    position: absolute;
+}
+
+#leo_6 {
+    top: 10%;
+    right: 13%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#leo_jg {
+    top: 10%;
+    right: 8%;
+    cursor: pointer;
+    position: absolute;
+    width: 20%;
+    height: 25%;
+}
+
+#leo_13 {
+    top: 8%;
+    right: 3%;
+    height: 35%;
+    position: absolute;
+}
+
+#leo_5 {
+    bottom: 8%;
+    left: 28%;
+    position: absolute;
+}
+
+#leo_grounds {
+    position: absolute;
+    bottom: 6%;
+    right: 18%;
+    height: auto;
+    width: 30%;
+}
+
+#leo_11 {
+    bottom: 2%;
+    right: 2%;
+    width: 13%;
+    position: absolute;
+}

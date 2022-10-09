@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/build.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>index</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-nav1">
+            <ul class="nav-links">
+                <li><a href="{% url 'jg_gwan' %}">정보과학관</a></li>
+                <li><a href="{% url 'scn_gwan' %}">새천년관</a></li>
+                <li><a href="{% url 'feedback' %}">피드백</a></li>
+            </ul>
+            
+            <div class="toggle1">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
+            <div>
+                <a href="{% url 'index' %}">
+                    <img class="nav-img" src="{% static 'img/logo_ver1.png' %}" alt="로고ver1">
+                </a>
+            </div>
+        </div> 
+
+        <div class="leo_school">
+            <!--맨 위에 있는 요소가 가장 아래에 위치하게 됨-->
+            <img id="leo_road" src="static/img/road.png" alt="길"
+                onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+            <img id="leo_grounds" src="static/img/sports_grounds.png" alt="운동장"
+                onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+            <div class="leo_class">
+                <img id="leo_1" src="static/img/1_sy.png" alt="승연관"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_2" src="static/img/2_im.png" alt="일만관"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_3" src="static/img/3_wd.png" alt="월당관"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_5" src="static/img/5_nn.png" alt="나눔관"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_6" src="static/img/6_jg.png" alt="정보과학관"
+                    onclick="leo_jg_show(), leo_scn_hide(), out(leo_6), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_7), over(leo_10), over(leo_11), over(leo_12), over(leo_13)">
+                <img id="leo_7" src="static/img/7_scn.png" alt="새천년관"
+                    onclick="leo_scn_show(), leo_jg_hide(), out(leo_7), out(leo_scn), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_10), over(leo_11), over(leo_12), over(leo_13)">
+                <img id="leo_10" src="static/img/10_gdin.png" alt="구두인관"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_11" src="static/img/11_sbdr.png" alt="성베드로학교"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_12" src="static/img/12_mgell.png" alt="미가엘관"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <img id="leo_13" src="static/img/13_dormitory.png" alt="행복기숙사"
+                    onclick="leo_scn_hide(), leo_jg_hide(), out(leo_1), out(leo_2), out(leo_3), out(leo_11), out(leo_5), out(leo_6), out(leo_7), out(leo_12), out(leo_13), out(leo_10)">
+                <p id="leo_molla"></p>
+                <p id="leo_ala"></p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}" type="text/javascript"></script>
+</body>
+
+</html>

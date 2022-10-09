@@ -1,0 +1,219 @@
+/* 순천체 볼드 */
+@font-face {
+    font-family: 'SuncheonB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 순천체 레귤러 */
+@font-face {
+    font-family: 'SuncheonR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* css 기본 세팅 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/* font-size: 100%; */
+	/* font: inherit; */
+	vertical-align: baseline;
+    font-family: 'SuncheonB'; 
+}
+
+html {font-size: 62.5%;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 기본 색상 두기 */
+:root {
+    --nav-color: #006600; /* 네브바 컬러 */
+    --road-color: #408C40; /* 길 */
+    --build-color: #B9DC9D; /* 건물 */
+    --subnav-color: #EBECDC; /* 방위표 주변 네브 */
+    /* 정의된 색상 사용하고 싶으면 var(변수명)으로 작성하기 */
+    /* ex ) background-color: var(--nav-color) */
+}
+
+/* ---------- 기본 상태 끝 ---------- */
+/* base */
+a {
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-nav {
+    display: flex;
+    background-color : var(--nav-color);
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    align-content: center;
+    align-items: center;
+}
+
+/* main페이지에 있는 nav */
+.main-nav2 {
+    display: flex;
+    background-color : var(--nav-color);
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    align-content: center;
+}
+
+.nav-img {
+    position: absolute;
+    width: 15vw;
+    top: 5%;
+    left: 2%;  
+}
+
+.nav-links {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 10vh;
+    
+    height: 100vh;
+    width: 20%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+}
+
+.nav-links li {
+    opacity: 0;
+}
+
+.nav-links .toggle {
+    display: block;
+}
+
+.toggle div {
+    margin: 10px;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 3px;
+    background: white;
+}
+
+.toggleAnimation .line-1 {
+    transform: rotate(-45deg) translate(-3px, 15px);
+}
+.toggleAnimation .line-2 {
+    opacity: 0;
+}
+.toggleAnimation .line-3 {
+    transform: rotate(45deg) translate(-3px, -15px);
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+/* ----------------여기서부터는 build base ---------------- */
+/* build base */
+.build-title {
+    font-size: 4rem;
+}
+
+.build-container {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.build-informwrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+.floorinfo {
+    width: 100%;
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+.lectureinfo-container {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1vw;
+}
+
+
+.img-src {
+    font-size: 5rem;
+    width: 100%;
+    height: 25vh;
+    background-color: gray;
+}
+
+.lectureinfo {
+    margin-top: 5%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 3fr;
+    font-size: 2rem; 
+}

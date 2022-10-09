@@ -1,0 +1,7 @@
+{% for classes in classes %}
+    {% if classroom.unit == classes.room_id.unit %}
+        {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+            {{ classes.sub_id.name }} {{ classes.date1 }} {{ classes.date2 }}<br>
+        {% endif %}
+    {% endif %}
+{% endfor %}
