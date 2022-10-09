@@ -149,7 +149,6 @@ def mgell_gwan(request):
 def dormitory(request):
     return render(request, 'class/dormitory.html')
 
-
 def classroom(request, unit_id, id):
     classroom = get_object_or_404(Classroom, unit = unit_id, id = id)
     classes = Class.objects.all()

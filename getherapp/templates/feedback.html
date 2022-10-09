@@ -7,22 +7,54 @@
 
 <form method = "POST">
     {% csrf_token %}
-    <h1 style="font-size: 5em"> 🌍 피드백하기 🌍 </h1>
-    <br>
-    <h2 style="font-size: 2em"> 작은 피드백은 개발에 큰 도움이 됩니다. 감사합니다!</h2>
-    <br>
-    {{ form.user_id }}
-    <br>
-    <br>
-    {{ form.user_phonenum }}
-    <br>
-    <br>
-    {{ form.feedback_content }}
-    <br>
-    <br>
-    <div class="button">
-        <input class="up" type="submit" value="작성완료">
+    <div class="feedback-container">
+      <div claass="fb-wrap">
+        <div class="fd-head">
+          <h1 style="font-size: 3rem"> 🌍 피드백 🌍 </h1>
+          <h2 style="font-size: 1.2rem"> 작은 피드백은 개발에 큰 도움이 됩니다. 감사합니다!</h2>
+          <span style="color: gray;">피드백을 남겨주신 분들께 추첨을 통해 커피 기프티콘이 제공됩니다:)</span>
+        </div>
+        <div class="fdform-wrap">
+          <div class="inputform">
+            <input type="text" name="user_id" maxlength="50" required id="id_user_id">
+            <label for="id_user_id ">이름</label>
+          </div>
+          <div class="inputform">
+            <input type="text" name="user_phonenum" maxlength="100" required id="id_user_phonenum" style="margin-bottom: 0;">
+            <label for="id_user_id ">전화번호</label>
+            <span style="margin-bottom: 30px; color: gray;">(ex. 01012341234)</span>
+          </div>
+          <div class="inputform">
+            <textarea name="feedback_content" cols="40" rows="10" required id="id_feedback_content"></textarea>
+            <label for="id_user_id ">피드백 할 내용</label>
+          </div>
+            <div class="smbutton">
+              <a href="{% url 'index' %}">취소</a>
+              <button type="submit">제출</button>
+            </div>
+        </div>
+
+      </div>
+
     </div>
+
 </form>
+
+<h1 style="font-size: 5em"> 🌍 피드백하기 🌍 </h1>
+<br>
+<h2 style="font-size: 2em"> 작은 피드백은 개발에 큰 도움이 됩니다. 감사합니다!</h2>
+<br>
+{{ form.user_id }}
+<br>
+<br>
+{{ form.user_phonenum }}
+<br>
+<br>
+{{ form.feedback_content }}
+<br>
+<br>
+<div class="button">
+    <input class="up" type="submit" value="작성완료">
+</div>
 
 {% endblock %}
