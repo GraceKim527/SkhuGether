@@ -1,3 +1,5 @@
+{{ classroom.kwan_name }} - {{ classroom.unit }} <br> <br>
+
 {% for classes in classes %}
     {% if classroom.unit == classes.room_id.unit %}
         {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
@@ -5,3 +7,54 @@
         {% endif %}
     {% endif %}
 {% endfor %}
+
+<br>
+월 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "월" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+화 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "화" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+수 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "수" or classes.date2 == "수" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+목 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "목" or classes.date2 == "목" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+금 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "금" or classes.date2 == "금" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
