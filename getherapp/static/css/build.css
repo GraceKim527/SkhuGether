@@ -1,17 +1,33 @@
 /* 순천체 볼드 */
-@font-face {
+/* @font-face {
     font-family: 'SuncheonB';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 /* 순천체 레귤러 */
-@font-face {
+/* @font-face {
     font-family: 'SuncheonR';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+} */
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+body, h1, h2, h3, h4, h5, h6, input, textarea, select {
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* css 기본 세팅 */
@@ -70,6 +86,10 @@ table {
     --road-color: #408C40; /* 길 */
     --build-color: #B9DC9D; /* 건물 */
     --subnav-color: #EBECDC; /* 방위표 주변 네브 */
+    
+    /* 새로운 컬러 */
+    --new-sub-color: #bae688;
+    --new-main-color: #218b21;
     /* 정의된 색상 사용하고 싶으면 var(변수명)으로 작성하기 */
     /* ex ) background-color: var(--nav-color) */
 }
@@ -87,7 +107,7 @@ a {
 
 .main-nav2 {
     display: flex;
-    background-color : var(--nav-color);
+    background-color : var(--new-main-color);
     height: 10vh;
     position: sticky;
     top: 0;
@@ -154,7 +174,7 @@ a {
     transition: all 0.3s ease;
     width: 30px;
     height: 3px;
-    background: var(--nav-color);
+    background: var(--new-main-color);
     cursor: pointer;
 }
 
@@ -189,7 +209,7 @@ a {
     display: flex;
     padding-right: 1vw;
     /* padding: 0 1vw 0 1vw; */
-    background-color: var(--nav-color);
+    background-color: var(--new-main-color);
     position: fixed;
     height: 60px;
     width: 100%;
@@ -330,7 +350,7 @@ a {
 
 .floorinfo {
     width: 100%;
-    margin-top: 5rem;
+    padding-top: 10rem;
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -395,49 +415,7 @@ a {
     background-color: #ee3e54;
 }
 .poss {
-    background-color: #93bc39;
-}
-
-/* 모달 */
-.lec-modal {
-    display: none; 
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 50px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-.mod-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    height: 80%;
-    overflow-y: scroll;
-    border-radius: 20px;
-}
-.closebtn {
-    color: #aaaaaa;
-    font-size: 30pt;
-    font-weight: bold;
-}
-.closebtn:hover,
-.closebtn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-.modal-header {
-    float: right;
-}
-.modal-body {
-    padding: 40px;
+    background-color: var(--new-sub-color);
 }
 
 /* 메뉴사이드바 */
@@ -456,7 +434,7 @@ a {
     overflow: scroll;
 }
 .menu_body::-webkit-scrollbar-thumb {
-    background:#93bc39;
+    background:var(--new-sub-color);
 }
 .menu_body::-webkit-scrollbar{
     width: 5px;
@@ -497,7 +475,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #93bc39;
+    background: var(--new-sub-color);
     transform: scaleX(0);
     transform-origin: 0 50%;
     transition-property: transform;
@@ -519,7 +497,7 @@ a {
     display: flex;
 }
 .menu_body span{
-    color: #93bc39;
+    color: var(--new-sub-color);
     display: block;
 }
 .menu_body span:nth-child(1){
@@ -533,6 +511,54 @@ a {
 .menu_footer a{
     color: black;
     font-size: 1.3rem;
+}
+
+/* 층 앵커 */
+.floor-anchor {
+    position: sticky;
+    bottom: 10%;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    float: right;
+    right: 0;
+    width: 50px;
+}
+.floor-anchor ul {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.floor-anchor li {
+
+    height: 50px;
+}
+.floor-anchor button, .floor-anchor a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: var(--new-sub-color);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, .4) 0px 2px 10px 0px;
+}
+.floor-anchor button {
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+.floor {
+    display: none;
+    opacity: 0;
+}
+.active {
+    display: block;
+    opacity: 1;
+}
+.active.fade-in-top {
+    animation: fade-in-top 0.2s cubic-bezier(0.39, 0.58, 0.57, 1) both;
 }
 /* feedback.html */
 .feedback-container {
@@ -606,12 +632,12 @@ a {
 .inputform input:focus,
 .inputform input:valid {
     transition: border-bottom .25s ease-in;
-    border-bottom: 1px solid #93bc39;
+    border-bottom: 1px solid var(--new-sub-color);
 }
 .inputform textarea:focus,
 .inputform textarea:valid {
     transition: border-bottom .25s ease-in;
-    border-bottom: 1px solid #93bc39;
+    border-bottom: 1px solid var(--new-sub-color);
 }
 .smbutton {
     display: flex;
@@ -621,7 +647,7 @@ a {
     justify-content: center;
 }
 .smbutton button[type="submit"] {
-    background-color: #93bc39;
+    background-color: var(--new-sub-color);
     color: #fff;
     border-radius: 4px;
     border: none;
@@ -632,8 +658,8 @@ a {
 }
 .smbutton a {
     background-color: #fff;
-    border: 1px solid #93bc39;
-    color: #93bc39;
+    border: 1px solid var(--new-sub-color);
+    color: var(--new-sub-color);
     border-radius: 4px;
     height: 30px;
     width: 60px;
@@ -645,12 +671,218 @@ a {
     justify-content: center;
 }
 
+/* introduce.html */
+.intro-container {
+    width: 1728px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+.mainwrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 90vh;
+}
+.main__img {
+    width: 50%;
+    height: 50%;
+    margin-top: 10%;
+}
+.main__img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.main__head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    right: 10%;
+}
+.main__head h1 {
+    font-size: 10rem;
+}
+.main__head h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: var(--new-main-color);
+}
+.letter-overlay{
+    display: block;
+    background-color: var(--new-main-color);
+    height: 10px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.sub-con {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    gap: 10%;
+}
+.subwrap {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+}
+.sub__img {
+    width: 50%;
+}
+.sub__img img{
+    width: 100%;
+    height: 100%;
+}
+.sub__content {
+    width: 50%;
+    line-height: 300%;
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+}
+.sub__content h1{
+    font-size: 8rem;
+}
+.sub__content p {
+    font-size: 1.8rem;
+    line-height: 200%;
+}
+
+.footer-con {
+    height: 90vh;
+    display: flex;
+    gap: 5%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-con h1 {
+    font-size: 5rem;
+}
+.footerwrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.develop__wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--new-sub-color);
+    border-radius: 20px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
+}
+.develop__itemcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.profile__img {
+    width: 70%;
+    height: auto;
+    border-radius: 50%;
+    border: 10px outset var(--new-sub-color);
+    overflow: hidden;
+}
+.profile__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.developer__profile {
+    text-align: center;
+    line-height: 300%;
+}
+.developer__profile h1{
+    font-size: 2.5rem;
+}
+.dev__social a{
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+}
+.footer-con {
+    width: 90%;
+    margin: 0 auto;
+}
+.js-scroll {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+.js-scroll.scrolled {
+    opacity: 1;
+}
+.scrolled.fade-in-bottom {
+    animation: fade-in-bottom 1s ease-in-out both;
+}
+.scrolled.slide-left {
+    animation: slide-in-left 1s ease-in-out both;
+}
+.scrolled.slide-right {
+    animation: slide-in-right 1s ease-in-out both;
+}
+
+@keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+@keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+
+@keyframes fade-in-top {
+    0% {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+      }
+}
+
 /* 모바일 버전 */
 @media (max-width: 1919px){ 
     .build-container {
         width: 1376px;
     }
     .feedback-container {
+        width: 1376px;
+    }
+    .intro-container {
         width: 1376px;
     }
 }
@@ -662,6 +894,19 @@ a {
     .feedback-container {
         width: 1376px;
     }
+    .intro-container {
+        width: 1376px;
+        height: 1080px;
+    }
+    .subwrap { 
+        height: 70vh;
+    }
+    .footer-con {
+        height: 70vh;
+    }
+    .mainwrap {
+        height: 70vh;
+    }
 }
 
 @media (max-width: 1065px){
@@ -670,6 +915,9 @@ a {
     }
     .feedback-container {
         width: 850px;
+    }
+    .intro-container {
+        width: 1376px;
     }
     .lectureinfo-box {
         width: 49%;
@@ -682,7 +930,15 @@ a {
     #menu__box {
         width: 400px;
     }
-    
+    .subwrap {
+        height: 50vh;
+    }
+    .footer-con {
+        height: 50vh;
+    }
+    .mainwrap {
+        height: 50vh;
+    }
 }
 
 @media (max-width: 425px){
@@ -692,4 +948,5 @@ a {
     .feedback-container {
         width: 90%;
     }
+
 }

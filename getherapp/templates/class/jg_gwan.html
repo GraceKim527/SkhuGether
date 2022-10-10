@@ -151,16 +151,32 @@
           </div>
       </div>
     </div>
-</div>
-<div class="lec-modal">
-  <div class="mod-content">
-    <div class="modal-header">
-      <span class="closebtn">&times;</span>
+    <div class="floor-anchor">
+      <ul>
+        <li class="floanchor"><button type="button" onclick="icontoggle()"><i id="icon" class="fa-solid fa-xmark"></i></button></li>
+        <li class="floor active fade-in-top"><a href="#floor-first">1</a></li>
+        <li class="floor active fade-in-top"><a href="#floor-second">2</a></li>
+        <li class="floor active fade-in-top"><a href="#floor-third">3</a></li>
+        <li class="floor active fade-in-top" ><a href="#floor-fourth">4</a></li>
+      </ul>
+
     </div>
-    <div class="modal-body">
-      아아아ㅏ아
-    </div>
-  </div>
 </div>
+
+<script>
+// 층 클릭하는 곳
+var stairs = document.getElementById("icon");
+var floor = document.getElementsByClassName("floor");
+var floanchor = document.getElementsByClassName("floanchor")[0];
+function icontoggle(){
+  stairs.classList.toggle("fa-xmark");
+  stairs.classList.toggle("fa-stairs");
+  for(i=floor.length-1;i >= 0; i--){
+    floor[i].classList.toggle("active");
+  }
+
+}
+</script>
+
 <script src="{% static 'js/modal.js' %}"></script>
 {% endblock %} 
