@@ -362,6 +362,8 @@ a {
 }
 
 .lectureinfo-box {
+    text-decoration: none;
+    color: #000;
     display: flex;
     flex-direction: column;
     width: 24%;
@@ -434,7 +436,7 @@ a {
     overflow: scroll;
 }
 .menu_body::-webkit-scrollbar-thumb {
-    background:var(--new-sub-color);
+    background:var(--new-main-color);
 }
 .menu_body::-webkit-scrollbar{
     width: 5px;
@@ -475,7 +477,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--new-sub-color);
+    background: var(--new-main-color);
     transform: scaleX(0);
     transform-origin: 0 50%;
     transition-property: transform;
@@ -497,7 +499,7 @@ a {
     display: flex;
 }
 .menu_body span{
-    color: var(--new-sub-color);
+    color: var(--new-main-color);
     display: block;
 }
 .menu_body span:nth-child(1){
@@ -557,8 +559,8 @@ a {
     display: block;
     opacity: 1;
 }
-.active.fade-in-top {
-    animation: fade-in-top 0.2s cubic-bezier(0.39, 0.58, 0.57, 1) both;
+.active.fade-in-bottom {
+    animation: fade-in-bottom 0.2s cubic-bezier(0.39, 0.58, 0.57, 1) both;
 }
 /* feedback.html */
 .feedback-container {
@@ -859,9 +861,7 @@ a {
       opacity: 1;
     }
 }
-  
-
-@keyframes fade-in-top {
+@keyframes fade-in-bottom {
     0% {
         -webkit-transform: translateY(50px);
         transform: translateY(50px);
@@ -874,6 +874,74 @@ a {
       }
 }
 
+/* detail 페이지 */
+.detail-container{
+    width: 1728px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+.detail-header {
+    width: 100%;
+    position: relative;
+}
+.dtlecture-img {
+    width: 100%;
+    height: 50vh;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.dtlecture-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-filter: brightness(0.4);
+    filter: brightness(0.4);
+}
+.dtlecture-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(228, 228, 228);
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.dtlecture-title h2 {
+    font-size: 3rem;
+}
+.dtlecture-title h1 {
+    font-size: 9rem;
+}
+.detail-status p{
+    font-size: 3rem;
+}
+.detail-status strong {
+    background-color: var(--new-sub-color);
+}
+.detail-status {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    width: 40%;
+    text-align: center;
+    border-radius: 50px;
+    padding: 3rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 5rem;
+}
+/* 강의 중과 강의아님 표현 */
+.detail-status .fa-ban{
+    font-size: 5rem;
+    color: #ee3e54;
+}
+.detail-status .fa-circle-check {
+    font-size: 5rem;
+    color: var(--new-sub-color);
+}
 /* 모바일 버전 */
 @media (max-width: 1919px){ 
     .build-container {
@@ -883,6 +951,9 @@ a {
         width: 1376px;
     }
     .intro-container {
+        width: 1376px;
+    }
+    .detail-container {
         width: 1376px;
     }
 }
@@ -896,7 +967,9 @@ a {
     }
     .intro-container {
         width: 1376px;
-        height: 1080px;
+    }
+    .detail-container {
+        width: 1376px;
     }
     .subwrap { 
         height: 70vh;
@@ -919,6 +992,9 @@ a {
     .intro-container {
         width: 1376px;
     }
+    .detail-container {
+        width: calc(100% - 2rem);
+    }
     .lectureinfo-box {
         width: 49%;
         margin-bottom: 1%;
@@ -939,6 +1015,22 @@ a {
     .mainwrap {
         height: 50vh;
     }
+    .dtlecture-img {
+        height: 40vh;
+    }
+    .detail-status {
+        width: 60%;
+        
+    }
+    .detail-status p {
+        font-size: 2rem;
+    }
+    .dtlecture-title h2 {
+        font-size: 3rem;
+    }
+    .dtlecture-title h1 {
+        font-size: 7rem;
+    }
 }
 
 @media (max-width: 425px){
@@ -948,5 +1040,25 @@ a {
     .feedback-container {
         width: 90%;
     }
-
+    .dtlecture-img {
+        height: 30vh;
+    }
+    .detail-status {
+        width: 80%;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .detail-status p {
+        font-size: 1.2rem;
+    }
+    .detail-status .fa-ban, .detail-status .fa-circle-check{
+        font-size: 2rem;
+        color: #ee3e54;
+    }
+    .dtlecture-title h2 {
+        font-size: 2rem;
+    }
+    .dtlecture-title h1 {
+        font-size: 5rem;
+    }
 }

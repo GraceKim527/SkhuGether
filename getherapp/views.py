@@ -71,3 +71,6 @@ def mgell_gwan(request):
 # 13관 행복기숙사
 def dormitory(request):
     return render(request, 'class/dormitory.html')
+
+def detail(request):
+    return render(request, 'detail.html')

@@ -38,4 +38,5 @@ urlpatterns = [
     path('scn_gwan/', getherapp.views.scn_gwan, name='scn_gwan'),
     path('sy_gwan/', getherapp.views.sy_gwan, name='sy_gwan'),
     path('wd_gwan/', getherapp.views.wd_gwan, name='wd_gwan'),
+    path('detail/', getherapp.views.detail, name='detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
