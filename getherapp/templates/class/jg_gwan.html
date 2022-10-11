@@ -8,6 +8,24 @@
   <div class="build-informwrap">
       <div class="build-title">
           <h1> 정보과학관 </h1>
+
+          정보과학관 <br>
+            {% for classrooms in classrooms %}
+            <a href="{% url 'classroom' classrooms.unit classrooms.id %}">{{ classrooms.unit }}</a> <br> 
+                {% for classes in classes %}
+                    {% if classes.room_id.unit == classrooms.unit %}
+                    {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+                        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                            <div style = "background-color: #EF9297;">
+                                {{ classes.sub_id.name }} <br>
+                                사용중입니다 <br>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
       </div>
   </div>
     
@@ -17,71 +35,36 @@
       <div class="floorinfo" id="floor-first">
           <h2>1층</h2>
       </div>
+
       <div class="lectureinfo-container">
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6106.png' %}">
-              </div>
+        {% for classrooms in classrooms %}
+          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
+            <div class="lecture-img">
+              <img class="img-src" src = "{% static 'img/6106.png' %}">
+            </div>
+            {% for classes in classes %}
+            {% if classes.room_id.unit == classrooms.unit %}
+            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+
+
               <div class="lectureinfo">
-                  <div class="lecturecon poss">
-                      <span>사용 가능</span>
-                  </div>
-                    <h1>F6106</h1>
-                </div>
-          </a>
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6110.png' %}">
-              </div>
-              <div class="lectureinfo">
+                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
                   <div class="lecturecon imposs">
                       <span>사용 불가</span>
                   </div>
-                    <h1>F6110</h1>
-                </div>
+                  <h1>{{ classrooms.unit }}</h1>
+                {% endif %}
+                    
+              </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
           </a>
+        {% endfor %}
       </div>
 
       <div class="floorinfo" id="floor-second">
           <h2>2층</h2>
-      </div>
-
-      <div class="lectureinfo-container">
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6201.png' %}">
-              </div>
-              <div class="lectureinfo">
-                <div class="lecturecon imposs">
-                  <span>사용 불가</span>
-                </div>
-                <h1>F6201</h1>
-              </div>
-          </a>
-
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                  <img class="img-src" src = "{% static 'img/6202.png' %}">
-              </div>
-              <div class="lectureinfo">
-                <div class="lecturecon imposs">
-                  <span>사용 불가</span>
-                </div>
-                <h1>F6202</h1>
-              </div>
-          </a>
-
-          <a href="#" class="lectureinfo-box test" onclick="Modal()">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6206.png' %}">
-              </div>
-              <div class="lectureinfo">
-                <div class="lecturecon imposs">
-                    <span>사용 불가</span>
-                </div>
-                  <h1>F6206</h1>
-              </div>
-          </a>
       </div>
       <div class="floorinfo" id="floor-third">
         <h2>3층</h2>
@@ -91,64 +74,6 @@
 
       <div class="floorinfo fourth" id="floor-fourth">
         <h2>4층</h2>
-      </div>
-
-      <div class="lectureinfo-container">
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6402.png' %}">
-              </div>
-              <div class="lectureinfo">
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
-                    <h1>F6402</h1>
-                </div>
-          </a>
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6403.png' %}">
-              </div>
-              <div class="lectureinfo">
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
-                    <h1>F6403</h1>
-                </div>
-          </a>
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6404.png' %}">
-              </div>
-              <div class="lectureinfo">
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
-                    <h1>F6404</h1>
-                </div>
-          </a>
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6405.png' %}">
-              </div>
-              <div class="lectureinfo">
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
-                    <h1>F6405</h1>
-                </div>
-          </a>
-          <a href="#" class="lectureinfo-box">
-              <div class="lecture-img">
-                <img class="img-src" src = "{% static 'img/6406.png' %}">
-              </div>
-              <div class="lectureinfo">
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
-                    <h1>F6406</h1>
-                </div>
-          </a>
       </div>
     </div>
     <div class="floor-anchor">
@@ -179,4 +104,5 @@ function icontoggle(){
 </script>
 
 <script src="{% static 'js/modal.js' %}"></script>
+
 {% endblock %} 

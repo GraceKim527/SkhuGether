@@ -1,0 +1,16 @@
+피츠버그홀 <br>
+{% for classrooms in classrooms %}
+<a href="{% url 'classroom' classrooms.unit classrooms.id %}">{{ classrooms.unit }}</a> <br> 
+    {% for classes in classes %}
+        {% if classes.room_id.unit == classrooms.unit %}
+        {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+            {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                <div style = "background-color: #EF9297;">
+                    {{ classes.sub_id.name }} <br>
+                    사용중입니다 <br>
+                </div>
+            {% endif %}
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
