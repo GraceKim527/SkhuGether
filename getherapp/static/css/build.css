@@ -364,7 +364,7 @@ a {
 .lectureinfo-box {
     text-decoration: none;
     color: #000;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     width: 24%;
     margin-bottom: 1%;
@@ -373,6 +373,10 @@ a {
     overflow: hidden;
     cursor: pointer;
     transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+}
+.lectureinfo-box h1 {
+    margin: 5%;
+    font-size: 3rem;
 }
 .lectureinfo-box:hover{
     transform: translateY(-10px);
@@ -395,12 +399,9 @@ a {
 .lectureinfo {
     margin-top: 5%;
     margin-bottom: 5%;
-    display: flex;
     width: 100%;
-    flex-direction: column;
     font-size: 1.4rem;
     margin: 1.5rem;
-    gap: 1rem;
 }
 .lecturecon {
     width: 60px;
@@ -415,9 +416,6 @@ a {
 }
 .imposs {
     background-color: #ee3e54;
-}
-.poss {
-    background-color: var(--new-sub-color);
 }
 
 /* 메뉴사이드바 */
@@ -696,7 +694,7 @@ a {
 .main__img {
     width: 50%;
     height: 50%;
-    margin-top: 10%;
+    margin-top: 11%;
 }
 .main__img img{
     display: block;
@@ -932,23 +930,30 @@ a {
     width: 40%;
     text-align: center;
     border-radius: 50px;
-    padding: 3rem;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    padding: 1rem;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, .4);
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     font-size: 5rem;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    color: #000;
+    text-align: center;
+    transform: translate(-50%, -50%);
 }
 /* 강의 중과 강의아님 표현 */
 .detail-status .fa-ban{
     font-size: 5rem;
     color: #ee3e54;
 }
-.detail-status .fa-circle-check {
+/* .detail-status .fa-circle-check {
     font-size: 5rem;
     color: var(--new-sub-color);
-}
+} */
 /* 모바일 버전 */
 @media (max-width: 1919px){ 
     .build-container {

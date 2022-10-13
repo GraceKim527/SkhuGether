@@ -122,9 +122,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'Etc/GMT-0'
+TIME_ZONE = 'Etc/GMT+2'
 
 # 'Canada/Eastern'
+
 
 USE_I18N = True
 
