@@ -43,6 +43,7 @@
             <div class="lecture-img">
               <img class="img-src" src = "{% static 'img/6106.png' %}">
             </div>
+            <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
             
             <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
@@ -51,28 +52,19 @@
             <!-- 오늘 강의가 없으면 못통과 -->
             {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
               <div class="lectureinfo">
+                
                 <!-- 오늘 강의의 시간 -->
                 {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
-                {% else %}
-                  <div class="lecturecon poss">
-                    <span>사용 가능</span>
-                  </div>
+                <div class="lecturecon imposs">
+                  <span>사용 불가</span>
+                </div>
                 {% endif %}
                 
               </div>
-            {% else %}
-            <div class="lectureinfo">
-              <div class="lecturecon poss">
-                <span>사용 가능</span>
-              </div>
-            </div>
             {% endif %}
             {% endif %}
             {% endfor %}
-            <h1>{{ classrooms.unit }}</h1>
+
           </a>
         {% endfor %}
       </div>
