@@ -72,38 +72,8 @@
           <h2>2층</h2>
       </div>
 
-      <div class="lectureinfo-container">
-        
-        {% for classrooms in classrooms %}
-        {% if classrooms.unit == "9201" %}
-          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
-            <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
-            </div>
-            <h1>{{ classrooms.unit }}</h1>
-            {% for classes in classes %}
-            
-            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
-            {% if classes.room_id.unit == classrooms.unit %} 
-            <!-- 오늘 강의가 없으면 못통과 -->
-            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-              <div class="lectureinfo">
-                
-                <!-- 오늘 강의의 시간 -->
-                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                <div class="lecturecon imposs">
-                  <span>사용 불가</span>
-                </div>
-                {% endif %}
-              </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-
-          </a>
-        {% endif %}
-        {% endfor %}
-      </div>
+      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+    </h1>
 
       <div class="floorinfo" id="floor-third">
         <h2>3층</h2>
@@ -146,38 +116,8 @@
         <h2>4층</h2>
       </div>
 
-      <div class="lectureinfo-container">
-        
-        {% for classrooms in classrooms %}
-        {% if classrooms.unit == "9401" %}
-          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
-            <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
-            </div>
-            <h1>{{ classrooms.unit }}</h1>
-            {% for classes in classes %}
-            
-            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
-            {% if classes.room_id.unit == classrooms.unit %} 
-            <!-- 오늘 강의가 없으면 못통과 -->
-            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-              <div class="lectureinfo">
-                
-                <!-- 오늘 강의의 시간 -->
-                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                <div class="lecturecon imposs">
-                  <span>사용 불가</span>
-                </div>
-                {% endif %}
-              </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-
-          </a>
-        {% endif %}
-        {% endfor %}
-      </div>
+      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+      </h1>
 
     </div>
     <div class="floor-anchor">
