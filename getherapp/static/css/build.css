@@ -576,6 +576,9 @@ a {
     margin-bottom: 2rem;
     gap: 1rem;
 }
+.fd-head h1 {
+    font-size: 3rem;
+}
 .fdform-wrap {
     margin: 0 auto;
     width: 70%;
@@ -671,6 +674,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.smbutton a:hover {
+    background-color: var(--new-sub-color);
+    color: #fff;
 }
 
 /* introduce.html */
@@ -1061,5 +1068,8 @@ a {
     }
     .dtlecture-title h1 {
         font-size: 5rem;
+    }
+    .fd-head h1 {
+        font-size: 2rem;
     }
 }

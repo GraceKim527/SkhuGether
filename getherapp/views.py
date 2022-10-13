@@ -51,10 +51,13 @@ def feedback(request):
             form = form.save(commit=False)
             form.feedback_date = timezone.now()
             form.save()
-            return redirect('index')
+            return redirect('feedback_cp')
     else:
         form = FeedbackForm()
         return render(request, 'feedback.html', {'form': form})
+
+def feedback_cp(request):
+    return render(request, 'feedback_cp.html')
 
 def introduce(request):
     return render(request, 'introduce.html')
