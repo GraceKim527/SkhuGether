@@ -31,7 +31,6 @@
     
     <!-- 층별로 정보나오도록 -->
     <div class="build-lectureinfo-wrap">
-      {{ now_time }}
       <div class="floorinfo" id="floor-first">
           <h2>1층</h2>
       </div>
@@ -39,10 +38,12 @@
       <div class="lectureinfo-container">
         
         {% for classrooms in classrooms %}
+        {% if classrooms.unit == "6109" or classrooms.unit == "6110" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
               <img class="img-src" src = "{% static 'img/6106.png' %}">
             </div>
+            <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
             
             <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
@@ -50,24 +51,60 @@
             <!-- 오늘 강의가 없으면 못통과 -->
             {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
               <div class="lectureinfo">
+                
                 <!-- 오늘 강의의 시간 -->
                 {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                  <div class="lecturecon imposs">
-                      <span>사용 불가</span>
-                  </div>
+                <div class="lecturecon imposs">
+                  <span>사용 불가</span>
+                </div>
                 {% endif %}
               </div>
             {% endif %}
             {% endif %}
             {% endfor %}
-            <h1>{{ classrooms.unit }}</h1>
+
           </a>
+        {% endif %}
         {% endfor %}
       </div>
 
       <div class="floorinfo" id="floor-second">
           <h2>2층</h2>
       </div>
+
+      <div class="lectureinfo-container">
+        
+        {% for classrooms in classrooms %}
+        {% if classrooms.unit == "6201" or classrooms.unit == "6202" or classrooms.unit == "6206" %}
+          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
+            <div class="lecture-img">
+              <img class="img-src" src = "{% static 'img/6106.png' %}">
+            </div>
+            <h1>{{ classrooms.unit }}</h1>
+            {% for classes in classes %}
+            
+            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
+            {% if classes.room_id.unit == classrooms.unit %} 
+            <!-- 오늘 강의가 없으면 못통과 -->
+            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+              <div class="lectureinfo">
+                
+                <!-- 오늘 강의의 시간 -->
+                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                <div class="lecturecon imposs">
+                  <span>사용 불가</span>
+                </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+          </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+
       <div class="floorinfo" id="floor-third">
         <h2>3층</h2>
       </div>
@@ -77,6 +114,40 @@
       <div class="floorinfo fourth" id="floor-fourth">
         <h2>4층</h2>
       </div>
+
+      <div class="lectureinfo-container">
+        
+        {% for classrooms in classrooms %}
+        {% if classrooms.unit == "6402" or classrooms.unit == "6403" or classrooms.unit == "6403" or classrooms.unit == "6404" or classrooms.unit == "6405" or classrooms.unit == "6406" %}
+          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
+            <div class="lecture-img">
+              <img class="img-src" src = "{% static 'img/6106.png' %}">
+            </div>
+            <h1>{{ classrooms.unit }}</h1>
+            {% for classes in classes %}
+            
+            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
+            {% if classes.room_id.unit == classrooms.unit %} 
+            <!-- 오늘 강의가 없으면 못통과 -->
+            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+              <div class="lectureinfo">
+                
+                <!-- 오늘 강의의 시간 -->
+                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                <div class="lecturecon imposs">
+                  <span>사용 불가</span>
+                </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+          </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+
     </div>
     <div class="floor-anchor">
       <ul>

@@ -145,7 +145,7 @@ def dormitory(request):
 def classroom(request, unit_id, id):
     classroom = get_object_or_404(Classroom, unit = unit_id, id = id)
     classes = Class.objects.all().order_by('time2')
-
+    
     return render(request, 'classroom.html', 
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 
     'time_list': time_list, 
