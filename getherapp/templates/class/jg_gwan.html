@@ -46,7 +46,6 @@
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
             
-            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
             {% if classes.room_id.unit == classrooms.unit %} 
             <!-- 오늘 강의가 없으면 못통과 -->
             {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
