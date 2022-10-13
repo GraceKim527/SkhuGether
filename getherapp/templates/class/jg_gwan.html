@@ -47,7 +47,6 @@
             
             <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
             {% if classes.room_id.unit == classrooms.unit %} 
-            
             <!-- 오늘 강의가 없으면 못통과 -->
             {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
               <div class="lectureinfo">
@@ -56,19 +55,8 @@
                   <div class="lecturecon imposs">
                       <span>사용 불가</span>
                   </div>
-                {% else %}
-                  <div class="lecturecon poss">
-                    <span>사용 가능</span>
-                  </div>
                 {% endif %}
-                
               </div>
-            {% else %}
-            <div class="lectureinfo">
-              <div class="lecturecon poss">
-                <span>사용 가능</span>
-              </div>
-            </div>
             {% endif %}
             {% endif %}
             {% endfor %}
