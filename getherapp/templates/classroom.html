@@ -17,114 +17,121 @@
     </div>
     <div class="detail-status">
         <p><i class="fa-solid fa-ban"></i></p>
-        <!-- <p><i class="fa-regular fa-circle-check"></i></p> -->
-        <p></i>현재 <strong>웹 개발 입문</strong> 강의 중입니다.</p>
-      </div>
-  </div>
-    <!-- <p><i class="fa-regular fa-circle-check"></i></p> -->
-    {% for classes in classes %}
+        {% for classes in classes %}
         {% if classroom.unit == classes.room_id.unit %}
         {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
         {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-        <div class="detail-status">
-            <p><i class="fa-solid fa-ban"></i></p>
-            <p></i>현재 <strong>{{ classes.sub_id.name }}</strong> 강의 중입니다.</p>
-        </div>
+        <p></i>현재 <strong>{{ classes.sub_id.name }}</strong> 강의 중입니다.</p>
         {% endif %}
         {% endif %}
         {% endif %}
     {% endfor %}
-
-
-{% for classes in classes %}
-    {% if classroom.unit == classes.room_id.unit %}
-        {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-            {{ classes.sub_id.name }} {{ classes.date1 }} {{ classes.date2 }}<br>
+    </div>
+  </div>
+  <div class="detail-radio-header">
+    <div class="radio-container">
+      <input type="radio" name="button" value="월" onchange="timetabletoggle()"><label for="월">월</label>
+      <input type="radio" name="button" value="회" onchange="timetabletoggle()">
+      <label for="화">화</label>
+      <input type="radio" name="button" value="수" onchange="timetabletoggle()">
+      <label for="수">수</label>
+      <input type="radio" name="button" value="목" onchange="timetabletoggle()">
+      <label for="목">목</label>
+      <input type="radio" name="button" value="금" onchange="timetabletoggle()">
+      <label for="금">금</label>
+    </div>
+  </div>
+  <div class="detail-radio-container">
+    <div class="test">
+        월 <br>
+        {% if mon_classes == '공강' %}
+            <p style="color:blue;">월요일은 수업이 없습니다.</p>
+        {% else %}
+            {% for classes in classes %}
+                {% if classroom.unit == classes.room_id.unit %}
+    
+                {% if classes.date1 == "월" %}
+                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+                    <div style="background-color:aliceblue;">공강</div>
+                {% endif %}
+                {% endif %}
+            {% endfor %}    
         {% endif %}
-    {% endif %}
-{% endfor %}
-
-<br>
-월 <br>
-    {% if mon_classes == '공강' %}
-        <p style="color:blue;">월요일은 수업이 없습니다.</p>
-    {% else %}
-        {% for classes in classes %}
-            {% if classroom.unit == classes.room_id.unit %}
-
-            {% if classes.date1 == "월" %}
-                {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                <div style="background-color:aliceblue;">공강</div>
-            {% endif %}
-            {% endif %}
-        {% endfor %}    
-    {% endif %}
-            
-
-
-<br>
-화 <br>
-    {% if tue_classes == '공강' %}
-        <p style="color:blue;">화요일은 수업이 없습니다.</p>
-    {% else %}
-        {% for classes in classes %}
-            {% if classroom.unit == classes.room_id.unit %}
-
-            {% if classes.date1 == "화" %}
-                {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                <div style="background-color:aliceblue;">공강</div>
-            {% endif %}
-            {% endif %}
-        {% endfor %}    
-    {% endif %}
-<br>
-
-<br>
-수 <br>
-    {% if wed_classes == '공강' %}
-        <p style="color:blue;">수요일은 수업이 없습니다.</p>
-    {% else %}
-        {% for classes in classes %}
-            {% if classroom.unit == classes.room_id.unit %}
-
-            {% if classes.date1 == "수" or classes.date2 == "수" %}
-                {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                <div style="background-color:aliceblue;">공강</div>
-            {% endif %}
-            {% endif %}
-        {% endfor %}    
-    {% endif %}
-
-<br>
-목 <br>
-    {% if thu_classes == '공강' %}
-        <p style="color:blue;">목요일은 수업이 없습니다.</p>
-    {% else %}
-        {% for classes in classes %}
-            {% if classroom.unit == classes.room_id.unit %}
-
-            {% if classes.date1 == "목" or classes.date2 == "목" %}
-                {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                <div style="background-color:aliceblue;">공강</div>
-            {% endif %}
-            {% endif %}
-        {% endfor %}    
-    {% endif %}
-
-<br>
-금 <br>
-    {% if fri_classes == '공강' %}
-        <p style="color:blue;">금요일은 수업이 없습니다.</p>
-    {% else %}
-        {% for classes in classes %}
-            {% if classroom.unit == classes.room_id.unit %}
-
-            {% if classes.date1 == "금" or classes.date2 == "금" %}
-                {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                <div style="background-color:aliceblue;">공강</div>
-            {% endif %}
-            {% endif %}
-        {% endfor %}    
-    {% endif %}
-
+            <br>
+    </div>
+    
+    <div class="test ">
+        화 <br>
+        {% if tue_classes == '공강' %}
+            <p style="color:blue;">화요일은 수업이 없습니다.</p>
+        {% else %}
+            {% for classes in classes %}
+                {% if classroom.unit == classes.room_id.unit %}
+    
+                {% if classes.date1 == "화" %}
+                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+                    <div style="background-color:aliceblue;">공강</div>
+                {% endif %}
+                {% endif %}
+            {% endfor %}    
+        {% endif %}
+            <br>
+    </div>
+    
+    <div class="test ">
+        수 <br>
+        {% if wed_classes == '공강' %}
+            <p style="color:blue;">수요일은 수업이 없습니다.</p>
+        {% else %}
+            {% for classes in classes %}
+                {% if classroom.unit == classes.room_id.unit %}
+    
+                {% if classes.date1 == "수" or classes.date2 == "수" %}
+                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+                    <div style="background-color:aliceblue;">공강</div>
+                {% endif %}
+                {% endif %}
+            {% endfor %}    
+        {% endif %}
+            <br>
+    </div>
+    
+    <div class="test ">
+        목 <br>
+        {% if thu_classes == '공강' %}
+            <p style="color:blue;">목요일은 수업이 없습니다.</p>
+        {% else %}
+            {% for classes in classes %}
+                {% if classroom.unit == classes.room_id.unit %}
+    
+                {% if classes.date1 == "목" or classes.date2 == "목" %}
+                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+                    <div style="background-color:aliceblue;">공강</div>
+                {% endif %}
+                {% endif %}
+            {% endfor %}    
+        {% endif %}
+        <br>
+    </div>
+    
+    <div class="test ">
+        금 <br>
+        {% if fri_classes == '공강' %}
+            <p style="color:blue;">금요일은 수업이 없습니다.</p>
+        {% else %}
+            {% for classes in classes %}
+                {% if classroom.unit == classes.room_id.unit %}
+    
+                {% if classes.date1 == "금" or classes.date2 == "금" %}
+                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+                    <div style="background-color:aliceblue;">공강</div>
+                {% endif %}
+                {% endif %}
+            {% endfor %}    
+        {% endif %}
+            <br>
+        
+    </div>
+  </div>
+<script src="{% static 'js/timetabletoggle.js' %}"></script>
 {% endblock %}
