@@ -3,6 +3,7 @@ from django.utils import timezone
 from datetime import datetime, time
 from getherapp.models import Classroom, Class
 from .forms import FeedbackForm
+from django.db.models import Q
 
 # Create your views here.
 # 이게 현재 시간과 요일 가져오는 것
@@ -142,11 +143,77 @@ def mgell_gwan(request):
 def dormitory(request):
     return render(request, 'class/dormitory.html')
 
-def classroom(request, unit_id, id):
+def classroom(request, unit_id, id): #unit==unit_id==Class.room_id, id==classroom.id
     classroom = get_object_or_404(Classroom, unit = unit_id, id = id)
     classes = Class.objects.all().order_by('time2')
-    
+
+    '''월요일'''
+    mon_classes = classes.filter(room_id=id)
+    mon_classes = list(mon_classes.filter(Q(date1='월') | Q(date2='월'))) #유닛이 같고 월요일인 강의인 객체들을 쿼리셋에서 리스트로 변환
+    mon_test =[] # 월요일 수업이 있으면 요소 추가할 리스트
+    for i in mon_classes: 
+        mon_test.append(i) 
+    if len(mon_test)<1: #월 수업을 추가했는데 리스트 길이가 1도 안된다면 공강임
+        mon_classes = '공강'
+    else: # 리스트 길이가 1이상이면 공강 아니니까
+        mon_classes = classes.filter(room_id=id)
+        mon_classes = mon_classes.filter(Q(date1='월') | Q(date2='월')) # 찐 mon_classes에 유닛같은 월수업 객체 모두 담기
+
+    '''화요일'''
+    tue_classes = classes.filter(room_id=id)
+    tue_classes = list(tue_classes.filter(Q(date1='화') | Q(date2='화')))
+    tue_test =[] 
+    for i in tue_classes: 
+        tue_test.append(i) 
+    if len(tue_test)<1: 
+        tue_classes = '공강'
+    else: 
+        tue_classes = classes.filter(room_id=id)
+        tue_classes = tue_classes.filter(Q(date1='화') | Q(date2='화'))
+
+    '''수요일'''
+    wed_classes = classes.filter(room_id=id)
+    wed_classes = list(wed_classes.filter(Q(date1='수') | Q(date2='수')))
+    wed_test =[] 
+    for i in wed_classes: 
+        wed_test.append(i) 
+    if len(wed_test)<1: 
+        wed_classes = '공강'
+    else: 
+        wed_classes = classes.filter(room_id=id)
+        wed_classes = wed_classes.filter(Q(date1='수') | Q(date2='수'))
+        
+
+    '''목요일''' 
+    thu_classes = classes.filter(room_id=id)
+    thu_classes = list(thu_classes.filter(Q(date1='목') | Q(date2='목')))
+    thu_test =[] 
+    for i in thu_classes: 
+        thu_test.append(i) 
+    if len(thu_test)<1: 
+        thu_classes = '공강'
+    else: 
+        thu_classes = classes.filter(room_id=id)
+        thu_classes = thu_classes.filter(Q(date1='목') | Q(date2='목'))
+        
+
+    '''금요일'''
+    fri_classes = classes.filter(room_id=id)
+    fri_classes = list(fri_classes.filter(Q(date1='금') | Q(date2='금')))
+    fri_test =[]
+    for i in fri_classes: 
+        fri_test.append(i) 
+    if len(fri_test)<1: 
+        fri_classes = '공강'
+    else: 
+        fri_classes = classes.filter(room_id=id)
+        fri_classes = fri_classes.filter(Q(date1='금') | Q(date2='금'))
+
+
     return render(request, 'classroom.html', 
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 
     'time_list': time_list, 
-    'classroom': classroom, 'classes': classes})
+    'classroom': classroom, 'classes': classes,
+    'mon_classes':mon_classes,'tue_classes':tue_classes,'wed_classes':wed_classes,'thu_classes':thu_classes,'fri_classes':fri_classes,
+    'mon_test':mon_test,'tue_test':tue_test,'wed_test':wed_test,
+    })
