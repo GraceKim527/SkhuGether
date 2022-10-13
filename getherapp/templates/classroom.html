@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ classroom.unit }} {% endblock %}
+
+<!-- 강의실 detail -->
+
+
+{% block content %}
+<div class="detail-container">
+  <div class="detail-header">
+    <div class="dtlecture-img">
+      <img src="{% static 'img/6201.png' %}">
+    </div>
+    <div class="dtlecture-title">
+      <h2>#{{ classroom.kwan_name }}</h2>
+      <h1>{{ classroom.unit }}</h1>
+    </div>
+  </div>
+  <div class="detail-status">
+    <p><i class="fa-solid fa-ban"></i></p>
+    <!-- <p><i class="fa-regular fa-circle-check"></i></p> -->
+    <p></i>현재 <strong>웹 개발 입문</strong> 강의 중입니다.</p>
+  </div>
+  
+</div>
+
+{% for classes in classes %}
+    {% if classroom.unit == classes.room_id.unit %}
+        {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+            {{ classes.sub_id.name }} {{ classes.date1 }} {{ classes.date2 }}<br>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<br>
+월 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "월" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+화 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "화" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+수 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "수" or classes.date2 == "수" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+목 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "목" or classes.date2 == "목" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+금 <br>
+{% for classes in classes %}
+{% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == "금" or classes.date2 == "금" %}
+        {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
+    {% endif %}
+{% endif %}
+{% endfor %}
+<br>
+
+{% endblock %}

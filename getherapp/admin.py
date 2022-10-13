@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subject, Professor, Classroom, Class
+from .models import Subject, Professor, Classroom, Class, Feedback
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
@@ -20,3 +20,5 @@ class ClassroomAdmin(admin.ModelAdmin):
 class ClassAdmin(admin.ModelAdmin):
     list_display = ['id', 'div', 'date1', 'date2', 'time1', 'time2', 'room_id']
     ordering = ['date1', 'date2', 'time1', 'time2', 'room_id']
+
+admin.site.register(Feedback)

@@ -5,112 +5,118 @@
 {% block content %}
 <div class="build-container">
     <!-- 건물이름이랑 층 정보 나오는 곳 -->
-    <div class="build-informwrap">
-        <div class="build-title">
-            <h1> 정보과학관 </h1>
-        </div>
-        <nav>
-            <a href="#floor-first">1층</a>
-            <a href="#floor-second">2층</a>
-            <a href="#floor-third">3층</a>
-            <a href="#floor-fourth">4층</a>
-        </nav>
-    </div>
+  <div class="build-informwrap">
+      <div class="build-title">
+          <h1> 정보과학관 </h1>
+
+          정보과학관 <br>
+            {% for classrooms in classrooms %}
+            <a href="{% url 'classroom' classrooms.unit classrooms.id %}">{{ classrooms.unit }}</a> <br> 
+                {% for classes in classes %}
+                    {% if classes.room_id.unit == classrooms.unit %}
+                    {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+                        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                            <div style = "background-color: #EF9297;">
+                                {{ classes.sub_id.name }} <br>
+                                사용중입니다 <br>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+      </div>
+  </div>
+    
     <!-- 층별로 정보나오도록 -->
     <div class="build-lectureinfo-wrap">
-        <div class="floorinfo first" id="floor-first">
-            <h2>1층</h2>
-            <hr style="color: gray">
-        </div>
-        <div class="lectureinfo-container">
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6106.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6106</h2>
-                    <h2>사용 불가</h2>
-                </div>
+      {{ now_time }}
+      <div class="floorinfo" id="floor-first">
+          <h2>1층</h2>
+      </div>
+
+      <div class="lectureinfo-container">
+        
+        {% for classrooms in classrooms %}
+          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
+            <div class="lecture-img">
+              <img class="img-src" src = "{% static 'img/6106.png' %}">
             </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6110.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6110</h2>
-                    <h2>사용 불가</h2>
-                </div>
+            {% for classes in classes %}
+            
+            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
+            {% if classes.room_id.unit == classrooms.unit %} 
+            
+            <!-- 오늘 강의가 없으면 못통과 -->
+            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+              <div class="lectureinfo">
+                <!-- 오늘 강의의 시간 -->
+                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                  <div class="lecturecon imposs">
+                      <span>사용 불가</span>
+                  </div>
+                {% else %}
+                  <div class="lecturecon poss">
+                    <span>사용 가능</span>
+                  </div>
+                {% endif %}
+                
+              </div>
+            {% else %}
+            <div class="lectureinfo">
+              <div class="lecturecon poss">
+                <span>사용 가능</span>
+              </div>
             </div>
-        </div>
-        <div class="floorinfo second" id="floor-second">
-            <h2>2층</h2>
-            <hr style="color: gray">
-        </div>
-        <div class="lectureinfo-container">
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6201.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6201</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6202.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6202</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6206.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6206</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-        </div>
-        <div class="floorinfo third" id="floor-third">
-            <h2>3층</h2>
-            <hr style="color: gray">
-        </div>
-            <h1>이 층은 공학계열 교수님 연구실이 있는 층입니다. </h1>
-        <div class="floorinfo fourth" id="floor-fourth">
-            <h2>4층</h2>
-            <hr style="color: gray">
-        </div>
-        <div class="lectureinfo-container">
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6402.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6402</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6403.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6403</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6404.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6404</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6405.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6405</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-            <div class="lectureinfo-box">
-                <img class="img-src" src = "{% static 'img/6406.png' %}">
-                <div class="lectureinfo">
-                    <h2>F6406</h2>
-                    <h2>사용 불가</h2>
-                </div>
-            </div>
-        </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            <h1>{{ classrooms.unit }}</h1>
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="floorinfo" id="floor-second">
+          <h2>2층</h2>
+      </div>
+      <div class="floorinfo" id="floor-third">
+        <h2>3층</h2>
+      </div>
+
+          <h1 style="font-size: 1.3rem;">이 층은 공학계열 교수님 연구실이 있는 층입니다. </h1>
+
+      <div class="floorinfo fourth" id="floor-fourth">
+        <h2>4층</h2>
+      </div>
+    </div>
+    <div class="floor-anchor">
+      <ul>
+        <li class="floanchor"><button type="button" onclick="icontoggle()"><i id="icon" class="fa-solid fa-xmark"></i></button></li>
+        <li class="floor active fade-in-bottom"><a href="#floor-first">1</a></li>
+        <li class="floor active fade-in-bottom"><a href="#floor-second">2</a></li>
+        <li class="floor active fade-in-bottom"><a href="#floor-third">3</a></li>
+        <li class="floor active fade-in-bottom" ><a href="#floor-fourth">4</a></li>
+      </ul>
+
     </div>
 </div>
+
+<script>
+// 층 클릭하는 곳
+var stairs = document.getElementById("icon");
+var floor = document.getElementsByClassName("floor");
+var floanchor = document.getElementsByClassName("floanchor")[0];
+function icontoggle(){
+  stairs.classList.toggle("fa-xmark");
+  stairs.classList.toggle("fa-stairs");
+  for(i=floor.length-1;i >= 0; i--){
+    floor[i].classList.toggle("active");
+  }
+
+}
+</script>
+
+<script src="{% static 'js/modal.js' %}"></script>
+
 {% endblock %} 

@@ -1,1 +1,158 @@
 <!-- 페이지 소개 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 소개 {% endblock %}
+
+{% block content %}
+<div class="intro-container">
+  <div class="mainwrap">
+    <!-- 지도 아이콘과 문구 -->
+    <div class="main__img">
+      <img src="{% static 'img/mis_icon.png' %}">
+    </div>
+    <div class="main__head">
+      <h2>Find Your Space,</h2>
+      <h1>Map in Skhu.</h1>
+      <span class="letter-overlay"></span>
+    </div>
+  </div>
+
+  <div class="sub-con">
+    <div class="subwrap">
+      <div class="sub__img js-scroll fade-in-bottom">
+        <img src="{% static 'img/subintro1.png' %}">
+      </div>
+      <div class="sub__content js-scroll slide-right">
+        <h1>Why?</h1>
+        <p>빈 강의실에서 녹화강의를 듣거나 공부할 장소를 찾는 분들을 위해, <br> 
+        에브리타임에 올라온 강의실이 강의계획서와 다른 분들을 위해,<br>
+        아직도 강의실 번호를 읽을 줄 모르는 분들을 위해.</p>
+      </div>
+    </div>
+    <div class="subwrap">
+        <div class="sub__content js-scroll slide-left">
+            <h1>What/How ?</h1>
+            <p>강의실 시간표부터 각종 강의실 관련 정보 제공,<br>
+                강의실 사용 가능 여부 표시를 통한 빈 강의실 체크, <br>
+                깔끔하고 정돈된 3D맵으로 쉽게 위치 체크 가능. <br>
+            </p>
+          </div>
+        <div class="sub__img js-scroll fade-in-bottom">
+          <img src="{% static 'img/subintro1.png' %}">
+        </div>
+      </div>
+    <div class="subwrap">
+        <div class="sub__img js-scroll fade-in-bottom">
+          <img src="{% static 'img/subintro3.png' %}">
+        </div>
+        <div class="sub__content js-scroll slide-right">
+          <h1>Who?</h1>
+          <p style="font-size: 2rem;">오직 성공회대 학생들을 위한, <br>
+            성공회대 학생들에 의한, <br>
+            가장 빠르고 정확한 지도, <br>
+            Map in Skhu.
+          </p>
+        </div>
+    </div>
+  </div>
+
+  <div class="footer-con js-scroll fade-in-bottom">
+    <h1>Developer</h1>
+    <div class="footerwrap">
+      <div class="develop__wrap">
+
+        <!-- 개인 프로필 -->
+        <div class="develop__itemcon">
+          <div class="profile__img">
+            <img src="{% static 'img/gracekim.png' %}">
+          </div>
+          <div class="developer__profile">
+            <h1>김은혜 | Front-End</h1>
+            <h2>컴퓨터공학, 소프트웨어공학 복수전공</h2>
+            <div class="dev__social">
+              <a href="https://github.com/GraceKim527">
+                <i class="fa-brands fa-github"></i>
+                <span>gracekim527</span>
+              </a>
+            </div>
+            <div class="dev__social">
+              <a href="#" style="cursor:default;">
+                <i class="fa-regular fa-envelope"></i>
+                <span>lemonherb0323@naver.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="develop__itemcon">
+            <div class="profile__img">
+              <img src="{% static 'img/minjung.png' %}">
+            </div>
+            <div class="developer__profile">
+              <h1>강민정 | Front-End</h1>
+              <h2>컴퓨터공학, 소프트웨어공학 복수전공</h2>
+              <div class="dev__social">
+                <a href="https://github.com/staccato20">
+                  <i class="fa-brands fa-github"></i>
+                  <span>staccato20</span>
+                </a>
+              </div>
+              <div class="dev__social">
+                <a href="#" style="cursor:default;">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span>staccato189@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="develop__itemcon">
+            <div class="profile__img">
+              <img src="{% static 'img/sujin.png' %}">
+            </div>
+            <div class="developer__profile">
+              <h1>김수진 | Back-End</h1>
+              <h2>컴퓨터공학, 인공지능 복수전공</h2>
+              <div class="dev__social">
+                <a href="https://github.com/sujeengim">
+                  <i class="fa-brands fa-github"></i>
+                  <span>sujeengim</span>
+                </a>
+              </div>
+              <div class="dev__social">
+                <a href="#" style="cursor:default;">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span>ksj030120@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="develop__itemcon">
+            <div class="profile__img">
+              <img src="{% static 'img/youngbeen.png' %}">
+            </div>
+            <div class="developer__profile">
+              <h1>주영빈 | Back-End</h1>
+              <h2>컴퓨터공학, 소프트웨어공학 복수전공</h2>
+              <div class="dev__social">
+                <a href="https://github.com/Rommmu">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Rommmu</span>
+                </a>
+              </div>
+              <div class="dev__social">
+                <a href="#" style="cursor:default;">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span>tonty1222@naver.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/scroll.js' %}"></script>
+{% endblock %}

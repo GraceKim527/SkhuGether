@@ -1,0 +1,23 @@
+<!-- 피드백 페이지 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} FeedBack {% endblock %}
+
+{% block content %}
+
+<div class="feedback-container">
+  <div class="fb-wrap" style="margin-top: 15rem;">
+    <div class="fd-head">
+        <h1> 🌍 소중한 의견 감사합니다! 🌍 </h1>
+        <span style="color: gray;">피드백을 남겨주신 분들께 추첨을 통해 커피 기프티콘이 제공됩니다:)</span>
+      </div>
+    
+      <div class="smbutton">
+        <a href="{% url 'index' %}">홈으로</a>
+      </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
