@@ -50,6 +50,6 @@ class Feedback(models.Model):
     feedback_date = models.DateTimeField(auto_now_add=True)
     user_phonenum = models.CharField(max_length=100, null=True) #추가해봤어염
     feedback_content = models.TextField()
-
+ 
     def __str__(self):
         return self.user_id
