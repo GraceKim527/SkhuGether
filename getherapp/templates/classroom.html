@@ -15,34 +15,48 @@
       <h2>#{{ classroom.kwan_name }}</h2>
       <h1>{{ classroom.unit }}</h1>
     </div>
+    {% for classes in classes %}
+    {% if classroom.unit == classes.room_id.unit %}
+    {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+    {% if now_time >= classes.time1 and classes.time2 >= now_time %}
     <div class="detail-status">
         <p><i class="fa-solid fa-ban"></i></p>
-        {% for classes in classes %}
-        {% if classroom.unit == classes.room_id.unit %}
-        {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+
         <p></i>현재 <strong>{{ classes.sub_id.name }}</strong> 강의 중입니다.</p>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-    {% endfor %}
+
     </div>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+{% endfor %}
   </div>
   <div class="detail-radio-header">
     <div class="radio-container">
-      <input type="radio" name="button" value="월" onchange="timetabletoggle()"><label for="월">월</label>
-      <input type="radio" name="button" value="회" onchange="timetabletoggle()">
-      <label for="화">화</label>
-      <input type="radio" name="button" value="수" onchange="timetabletoggle()">
-      <label for="수">수</label>
-      <input type="radio" name="button" value="목" onchange="timetabletoggle()">
-      <label for="목">목</label>
-      <input type="radio" name="button" value="금" onchange="timetabletoggle()">
-      <label for="금">금</label>
+      <div class="radio-btn">
+        <!-- onchange="timetabletoggle()" -->
+        <input type="radio" name="button" value="월" id="rdo-mon" checked>
+        <label for="rdo-mon" >월</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" name="button" value="화" id="rdo-tue">
+        <label for="rdo-tue">화</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" name="button" value="수" id="rdo-wed">
+        <label for="rdo-wed">수</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" name="button" value="목" id="rdo-thu">
+        <label for="rdo-thu">목</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" name="button" value="금" id="rdo-fri">
+        <label for="rdo-fri">금</label>
+      </div>
     </div>
   </div>
   <div class="detail-radio-container">
-    <div class="test">
+    <div class="test" id="mon" style="display: block;">
         월 <br>
         {% for classes in classes %}
         {% if classroom.unit == classes.room_id.unit %}
@@ -54,7 +68,7 @@
         <br>
     </div>
     
-    <div class="test ">
+    <div class="test" id="tue" style="display: none;">
         화 <br>
         {% for classes in classes %}
         {% if classroom.unit == classes.room_id.unit %}
@@ -66,7 +80,7 @@
         <br>
     </div>
     
-    <div class="test ">
+    <div class="test" id="wed" style="display: none;">
         수 <br>
         {% for classes in classes %}
         {% if classroom.unit == classes.room_id.unit %}
@@ -78,7 +92,7 @@
         <br>
     </div>
     
-    <div class="test ">
+    <div class="test" id="thu" style="display: none;">
         목 <br>
     {% for classes in classes %}
     {% if classroom.unit == classes.room_id.unit %}
@@ -90,7 +104,7 @@
     <br>
     </div>
     
-    <div class="test ">
+    <div class="test" id="fri" style="display: none;">
         금 <br>
         {% for classes in classes %}
         {% if classroom.unit == classes.room_id.unit %}
@@ -103,5 +117,6 @@
         
     </div>
   </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="{% static 'js/timetabletoggle.js' %}"></script>
 {% endblock %}

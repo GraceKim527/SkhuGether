@@ -918,7 +918,7 @@ a {
     font-size: 9rem;
 }
 .detail-status p{
-    font-size: 3rem;
+    font-size: 2.1rem;
 }
 .detail-status strong {
     background-color: var(--new-sub-color);
@@ -950,27 +950,51 @@ a {
     font-size: 5rem;
     color: #ee3e54;
 }
-/* .detail-status .fa-circle-check {
-    font-size: 5rem;
-    color: var(--new-sub-color);
-} */
 
-
-/* input[type="radio"] {
-    display:none;
+/* radio */
+.radio-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
 }
-  
-label {
-    padding: 2em;
+.radio-btn {
     display: inline-block;
-    border: 1px solid grey;
     cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 2rem;
+    overflow: hidden;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+    15px 15px 15px rgba(0,0,0,0.1),
+    inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+    inset 50px 50px 50px rgba(0,0,0,0.1);
 }
 
-input[type="radio"]:checked + label {
-    background: grey;
+.radio-btn label {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-btn > input[type=radio] {
+    display: none;
+}
+
+.radio-btn > input[type=radio]:checked + label {
+    background: var(--new-sub-color);
     color: #fff;
-} */
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+    15px 15px 15px rgba(0,0,0,0.1),
+    inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+    inset 50px 50px 50px rgba(0,0,0,0.1);
+}
 
 /* 모바일 버전 */
 @media (max-width: 1919px){ 
@@ -1061,6 +1085,11 @@ input[type="radio"]:checked + label {
     .dtlecture-title h1 {
         font-size: 7rem;
     }
+    .radio-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 550px){
@@ -1068,6 +1097,11 @@ input[type="radio"]:checked + label {
         width: 80%;
     }
     .detail-status p {
+        font-size: 1.5rem;
+    }
+    .radio-btn {
+        width: 60px;
+        height: 60px;
         font-size: 1.5rem;
     }
 }
@@ -1103,5 +1137,10 @@ input[type="radio"]:checked + label {
     }
     .fd-head h1 {
         font-size: 2rem;
+    }
+    .radio-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
     }
 }
