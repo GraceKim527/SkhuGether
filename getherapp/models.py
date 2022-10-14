@@ -1,4 +1,6 @@
+from email.policy import default
 from django.db import models 
+from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Subject(models.Model):
@@ -31,8 +33,7 @@ class Classroom(models.Model):
 class Class(models.Model):
     div = models.SmallIntegerField(null=True,
         validators=[
-            MinValueValidator(1), MaxValueValidator(3)
-            ]
+            MinValueValidator(1), MaxValueValidator(3)]
     )    
     date1 = models.CharField(max_length=10)
     date2 = models.CharField(max_length=10, null=True)
@@ -49,7 +50,9 @@ class Feedback(models.Model):
     user_id = models.CharField(max_length=50)
     feedback_date = models.DateTimeField(auto_now_add=True)
     user_phonenum = models.CharField(max_length=100, null=True) #추가해봤어염
-    feedback_content = models.TextField()
+    feedback_content = models.TextField(default = "글을 작성해주세요.")
  
     def __str__(self):
         return self.user_id
+
+        # models 수정
