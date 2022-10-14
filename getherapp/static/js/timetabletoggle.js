@@ -1,6 +1,5 @@
 $('input[type=radio]').on('click', function(){
     var chkValue = $('input[type=radio]:checked').val();
-    console.log(chkValue);
 
     if (chkValue == '월') {
         $('#mon').css('display', 'block');

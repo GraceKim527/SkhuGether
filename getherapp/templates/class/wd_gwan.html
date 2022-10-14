@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} 새천년관 {% endblock %}
+{% block title %} 월당관 {% endblock %}
 
 {% block content %}
 <div class="build-container">
@@ -8,24 +8,6 @@
   <div class="build-informwrap">
       <div class="build-title">
           <h1> 월당관 </h1>
-
-          월당관 <br>
-            {% for classrooms in classrooms %}
-            <a href="{% url 'classroom' classrooms.unit classrooms.id %}">{{ classrooms.unit }}</a> <br> 
-                {% for classes in classes %}
-                    {% if classes.room_id.unit == classrooms.unit %}
-                    {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-                        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                            <div style = "background-color: #EF9297;">
-                                {{ classes.sub_id.name }} <br>
-                                사용중입니다 <br>
-                            </div>
-                        {% endif %}
-                    {% endif %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-
       </div>
   </div>
     
@@ -35,7 +17,7 @@
           <h2>1층</h2>
       </div>
 
-      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+      <h1 style="font-size: 1.7rem;">이번 학기 강의를 진행하지 않습니다. <br>
         수업지원팀 AS센터와 음악 실습실이 존재합니다.
       </h1>
 
@@ -44,7 +26,7 @@
       </div>
 
         
-        <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+        <h1 style="font-size: 1.7rem;">이번 학기 강의를 진행하지 않습니다. <br>
         </h1>
 
       <div class="floorinfo" id="floor-third">

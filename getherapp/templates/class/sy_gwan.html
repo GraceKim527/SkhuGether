@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} 새천년관 {% endblock %}
+{% block title %} 승연관 {% endblock %}
 
 {% block content %}
 <div class="build-container">
@@ -8,24 +8,6 @@
   <div class="build-informwrap">
       <div class="build-title">
           <h1> 승연관 </h1>
-
-          승연관 <br>
-            {% for classrooms in classrooms %}
-            <a href="{% url 'classroom' classrooms.unit classrooms.id %}">{{ classrooms.unit }}</a> <br> 
-                {% for classes in classes %}
-                    {% if classes.room_id.unit == classrooms.unit %}
-                    {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-                        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                            <div style = "background-color: #EF9297;">
-                                {{ classes.sub_id.name }} <br>
-                                사용중입니다 <br>
-                            </div>
-                        {% endif %}
-                    {% endif %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-
       </div>
   </div>
     
@@ -45,10 +27,8 @@
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
-            
-            <!-- 강의의 강의실의 번호와 강의실의 번호가 같으면 -->
+
             {% if classes.room_id.unit == classrooms.unit %} 
-            <!-- 오늘 강의가 없으면 못통과 -->
             {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
               <div class="lectureinfo">
                 
@@ -72,7 +52,7 @@
           <h2>2층</h2>
       </div>
 
-      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+      <h1 style="font-size: 1.7rem;">이번 학기 강의를 진행하지 않습니다. <br>
         교무처, 입학홍보처, 나눔융합전공대학, 더불어숲 교육혁신원, 학생상담센터가 존재합니다.
     </h1>
 
@@ -80,7 +60,7 @@
         <h2>3층</h2>
       </div>
 
-      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+      <h1 style="font-size: 1.7rem;">이번 학기 강의를 진행하지 않습니다. <br>
         총장님실, 부총장님실, 기획처, 대학혁신평가지원단, 대학발전실, 교수님 연구실이 존재합니다.
     </h1>
 
@@ -88,7 +68,7 @@
         <h2>4층</h2>
       </div>
 
-      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+      <h1 style="font-size: 1.7rem;">이번 학기 강의를 진행하지 않습니다. <br>
         강의실, 대학원 공동연구실이 존재합니다.
     </h1>
 
@@ -96,7 +76,7 @@
         <h2>5층</h2>
       </div>
 
-      <h1 style="font-size: 1.3rem;">이번 학기 강의를 진행하지 않습니다. <br>
+      <h1 style="font-size: 1.7rem;">이번 학기 강의를 진행하지 않습니다. <br>
         강의실이 존재합니다.
     </h1>
 

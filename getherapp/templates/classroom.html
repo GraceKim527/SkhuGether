@@ -78,42 +78,82 @@
   </div>
   <div class="detail-radio-container">
     {% if now_weekday == '월' %}
-    <div class="test" id="mon" style="display: block;">
+    <div class="radio-detail" id="mon" style="display: block;">
     {% else %}
-    <div class="test" id="mon" style="display: none;">
+    <div class="radio-detail" id="mon" style="display: none;">
     {% endif %}
-        월 <br>
         {% if mon_classes == '공강' %}
-            <p style="color:blue;">월요일은 수업이 없습니다.</p>
+        <div class="classes-item">
+            <div class="emptytime">
+              <i class="fa-solid fa-x" style="color: #ee3e54; font-size: 3rem;"></i>
+              <h1>월요일은 수업이 없습니다.</h1>
+            </div>
+          </div>
         {% else %}
             {% for classes in classes %}
                 {% if classroom.unit == classes.room_id.unit %}
     
                 {% if classes.date1 == "월" %}
-                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                    <div style="background-color:aliceblue;">공강</div>
+                <div class="classes-item">
+                    <div class="classes-time">
+                      <p>{{ classes.time1 }}</p>
+                      <p> ~ </p>
+                      <p>{{ classes.time2 }}</p>
+                    </div>
+                    <div class="classes-name">
+                      <h1>{{ classes.sub_id.name }}</h1>
+                      <h2>{{ classes.prof_id.name }}</h2>
+                      <div class="classes-inform">
+                          <div class="informblock">{{classes.sub_id.code}}</div>
+                          <div class="informblock">{{classes.sub_id.kind}}</div>
+                        </div>
+                    </div>
+  
+                  </div>
+                  <div class="empty-classes">
+                  </div>
                 {% endif %}
                 {% endif %}
             {% endfor %}    
         {% endif %}
-            <br>
     </div>
     
     {% if now_weekday == '화' %}
-    <div class="test" id="tue" style="display: block;">
+    <div class="radio-detail" id="tue" style="display: block;">
     {% else %}
-    <div class="test" id="tue" style="display: none;">
+    <div class="radio-detail" id="tue" style="display: none;">
     {% endif %}
-        화 <br>
+
         {% if tue_classes == '공강' %}
-            <p style="color:blue;">화요일은 수업이 없습니다.</p>
+            <div class="classes-item">
+              <div class="emptytime">
+                <i class="fa-solid fa-x" style="color: #ee3e54; font-size: 3rem;"></i>
+                <h1>화요일은 수업이 없습니다.</h1>
+              </div>
+            </div>
         {% else %}
             {% for classes in classes %}
                 {% if classroom.unit == classes.room_id.unit %}
     
                 {% if classes.date1 == "화" %}
-                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                    <div style="background-color:aliceblue;">공강</div>
+                <div class="classes-item">
+                    <div class="classes-time">
+                      <p>{{ classes.time1 }}</p>
+                      <p> ~ </p>
+                      <p>{{ classes.time2 }}</p>
+                    </div>
+                    <div class="classes-name">
+                      <h1>{{ classes.sub_id.name }}</h1>
+                      <h2>{{ classes.prof_id.name }}</h2>
+                      <div class="classes-inform">
+                          <div class="informblock">{{classes.sub_id.code}}</div>
+                          <div class="informblock">{{classes.sub_id.kind}}</div>
+                        </div>
+                    </div>
+  
+                  </div>
+                  <div class="empty-classes">
+                  </div>
                 {% endif %}
                 {% endif %}
             {% endfor %}    
@@ -122,20 +162,40 @@
     </div>
     
     {% if now_weekday == '수' %}
-    <div class="test" id="wed" style="display: block;">
+    <div class="radio-detail" id="wed" style="display: block;">
     {% else %}
-    <div class="test" id="wed" style="display: none;">
+    <div class="radio-detail" id="wed" style="display: none;">
     {% endif %}
-        수 <br>
         {% if wed_classes == '공강' %}
-            <p style="color:blue;">수요일은 수업이 없습니다.</p>
+        <div class="classes-item">
+            <div class="emptytime">
+              <i class="fa-solid fa-x" style="color: #ee3e54; font-size: 3rem;"></i>
+              <h1>수요일은 수업이 없습니다.</h1>
+            </div>
+          </div>
         {% else %}
             {% for classes in classes %}
                 {% if classroom.unit == classes.room_id.unit %}
     
                 {% if classes.date1 == "수" or classes.date2 == "수" %}
-                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                    <div style="background-color:aliceblue;">공강</div>
+                <div class="classes-item">
+                    <div class="classes-time">
+                      <p>{{ classes.time1 }}</p>
+                      <p> ~ </p>
+                      <p>{{ classes.time2 }}</p>
+                    </div>
+                    <div class="classes-name">
+                      <h1>{{ classes.sub_id.name }}</h1>
+                      <h2>{{ classes.prof_id.name }}</h2>
+                      <div class="classes-inform">
+                          <div class="informblock">{{classes.sub_id.code}}</div>
+                          <div class="informblock">{{classes.sub_id.kind}}</div>
+                        </div>
+                    </div>
+  
+                  </div>
+                  <div class="empty-classes">
+                  </div>
                 {% endif %}
                 {% endif %}
             {% endfor %}    
@@ -144,20 +204,40 @@
     </div>
     
     {% if now_weekday == '목' %}
-    <div class="test" id="thu" style="display: block;">
+    <div class="radio-detail" id="thu" style="display: block;">
     {% else %}
-    <div class="test" id="thu" style="display: none;">
+    <div class="radio-detail" id="thu" style="display: none;">
     {% endif %}
-        목 <br>
         {% if thu_classes == '공강' %}
-            <p style="color:blue;">목요일은 수업이 없습니다.</p>
+        <div class="classes-item">
+            <div class="emptytime">
+              <i class="fa-solid fa-x" style="color: #ee3e54; font-size: 3rem;"></i>
+              <h1>목요일은 수업이 없습니다.</h1>
+            </div>
+          </div>
         {% else %}
             {% for classes in classes %}
                 {% if classroom.unit == classes.room_id.unit %}
     
                 {% if classes.date1 == "목" or classes.date2 == "목" %}
-                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                    <div style="background-color:aliceblue;">공강</div>
+                <div class="classes-item">
+                    <div class="classes-time">
+                      <p>{{ classes.time1 }}</p>
+                      <p> ~ </p>
+                      <p>{{ classes.time2 }}</p>
+                    </div>
+                    <div class="classes-name">
+                      <h1>{{ classes.sub_id.name }}</h1>
+                      <h2>{{ classes.prof_id.name }}</h2>
+                      <div class="classes-inform">
+                          <div class="informblock">{{classes.sub_id.code}}</div>
+                          <div class="informblock">{{classes.sub_id.kind}}</div>
+                        </div>
+                    </div>
+  
+                  </div>
+                  <div class="empty-classes">
+                  </div>
                 {% endif %}
                 {% endif %}
             {% endfor %}    
@@ -166,25 +246,43 @@
     </div>
     
     {% if now_weekday == '금' %}
-    <div class="test" id="fri" style="display: block;">
+    <div class="radio-detail" id="fri" style="display: block;">
     {% else %}
-    <div class="test" id="fri" style="display: none;">
+    <div class="radio-detail" id="fri" style="display: none;">
     {% endif %}
-        금 <br>
         {% if fri_classes == '공강' %}
-            <p style="color:blue;">금요일은 수업이 없습니다.</p>
+        <div class="classes-item">
+            <div class="emptytime">
+              <i class="fa-solid fa-x" style="color: #ee3e54; font-size: 3rem;"></i>
+              <h1>금요일은 수업이 없습니다.</h1>
+            </div>
+          </div>
         {% else %}
             {% for classes in classes %}
                 {% if classroom.unit == classes.room_id.unit %}
-    
                 {% if classes.date1 == "금" or classes.date2 == "금" %}
-                    {{ classes.sub_id.name }} {{ classes.time1 }} {{ classes.time2 }}<br>
-                    <div style="background-color:aliceblue;">공강</div>
+                <div class="classes-item">
+                  <div class="classes-time">
+                    <p>{{ classes.time1 }}</p>
+                    <p> ~ </p>
+                    <p>{{ classes.time2 }}</p>
+                  </div>
+                  <div class="classes-name">
+                    <h1>{{ classes.sub_id.name }}</h1>
+                    <h2>{{ classes.prof_id.name }}</h2>
+                    <div class="classes-inform">
+                        <div class="informblock">{{classes.sub_id.code}}</div>
+                        <div class="informblock">{{classes.sub_id.kind}}</div>
+                      </div>
+                  </div>
+
+                </div>
+                <div class="empty-classes">
+                </div>
                 {% endif %}
                 {% endif %}
             {% endfor %}    
         {% endif %}
-            <br>
         
     </div>
   </div>

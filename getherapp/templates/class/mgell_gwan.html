@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} 새천년관 {% endblock %}
+{% block title %} 미가엘관 {% endblock %}
 
 {% block content %}
 <div class="build-container">
@@ -8,23 +8,6 @@
   <div class="build-informwrap">
       <div class="build-title">
           <h1> 미가엘관 </h1>
-
-          미가엘관 <br>
-            {% for classrooms in classrooms %}
-            <a href="{% url 'classroom' classrooms.unit classrooms.id %}">{{ classrooms.unit }}</a> <br> 
-                {% for classes in classes %}
-                    {% if classes.room_id.unit == classrooms.unit %}
-                    {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-                        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                            <div style = "background-color: #EF9297;">
-                                {{ classes.sub_id.name }} <br>
-                                사용중입니다 <br>
-                            </div>
-                        {% endif %}
-                    {% endif %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
 
       </div>
   </div>
@@ -35,7 +18,7 @@
           <h2>1층</h2>
       </div>
 
-      <h1 style="font-size: 1.3rem;">밥풀 한식당, 헬스장 멋짐이 존재합니다. </h1>
+      <h1 style="font-size: 1.7rem;">밥풀 한식당, 헬스장 멋짐이 존재합니다. </h1>
 
       <div class="floorinfo" id="floor-second">
           <h2>2층</h2>
