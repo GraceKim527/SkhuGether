@@ -26,7 +26,7 @@ class Classroom(models.Model):
     image = models.ImageField(upload_to='images/classroom', null=True, blank=True)
 
     def __str__(self):
-        return self.unit
+        return str(self.unit)
 
 class Class(models.Model):
     div = models.SmallIntegerField(null=True,

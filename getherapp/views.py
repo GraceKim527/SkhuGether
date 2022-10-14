@@ -127,11 +127,11 @@ def pb_hall(request):
 def gdin_gwan(request):
     return render(request, 'class/gdin_gwan.html')
 
-# 11관 성베드로학교
+# 12관 성베드로학교
 def sbdr_school(request):
     return render(request, 'class/sbdr_school.html')
 
-# 12관 미가엘관
+# 11관 미가엘관
 def mgell_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "미가엘관")

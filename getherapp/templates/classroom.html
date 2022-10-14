@@ -18,20 +18,21 @@
     <div class="detail-status">
         <p><i class="fa-solid fa-ban"></i></p>
         {% for classes in classes %}
-        {% if classroom.unit == classes.room_id.unit %}
-        {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-        {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-        <p></i>현재 <strong>{{ classes.sub_id.name }}</strong> 강의 중입니다.</p>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-    {% endfor %}
+            {% if classroom.unit == classes.room_id.unit %}
+                {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+                    {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                        <p></i>현재 <strong>{{ classes.sub_id.name }}</strong> 강의 중입니다.</p>
+                    {% endif %}
+                    
+                {% endif %}
+            {% endif %}
+        {% endfor %}
     </div>
   </div>
   <div class="detail-radio-header">
     <div class="radio-container">
       <input type="radio" name="button" value="월" onchange="timetabletoggle()"><label for="월">월</label>
-      <input type="radio" name="button" value="회" onchange="timetabletoggle()">
+      <input type="radio" name="button" value="화" onchange="timetabletoggle()">
       <label for="화">화</label>
       <input type="radio" name="button" value="수" onchange="timetabletoggle()">
       <label for="수">수</label>
