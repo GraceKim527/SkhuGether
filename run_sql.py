@@ -8,5 +8,7 @@ def my_custom_sql(sql_file_name):
         sql_file = open(sql_file_name, encoding='UTF-8')
         sql_as_string = sql_file.read()
         cursor.executescript(sql_as_string)
+        cursor.close()
+        connection.close()
 
 my_custom_sql("model.db.sql")
