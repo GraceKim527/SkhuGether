@@ -18,7 +18,7 @@
       </div>
 
       <div class="lectureinfo-container">
-        
+         
         {% for classrooms in classrooms %}
         {% if classrooms.unit == "B105" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
