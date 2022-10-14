@@ -1,1 +1,1 @@
-web: gunicorn getherprj.wsgi --log-file -
+web: gunicorn getherapp.wsgi --log-file -
