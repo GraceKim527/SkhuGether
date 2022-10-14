@@ -1,0 +1,1 @@
+web: gunicorn getherprj.wsgi --log-file -
