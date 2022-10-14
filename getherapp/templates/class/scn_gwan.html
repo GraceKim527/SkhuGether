@@ -23,7 +23,7 @@
         {% if classrooms.unit == "7104" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -60,7 +60,7 @@
         {% if classrooms.unit == "7202" or classrooms.unit == "7204" or classrooms.unit == "7205" or classrooms.unit == "7206" or classrooms.unit == "7207" or classrooms.unit == "7208" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -97,7 +97,7 @@
         {% if classrooms.unit == "7301" or classrooms.unit == "7302" or classrooms.unit == "7303" or classrooms.unit == "7304" or classrooms.unit == "7305" or classrooms.unit == "7306" or classrooms.unit == "7307" or classrooms.unit == "7308" or classrooms.unit == "7309" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -134,7 +134,7 @@
         {% if classrooms.unit == "7417" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}

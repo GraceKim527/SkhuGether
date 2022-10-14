@@ -113,7 +113,10 @@ def scn_gwan(request):
 
 # 8관 중앙도서관
 def library(request):
-    return render(request, 'class/library.html')
+    classrooms = Classroom.objects.order_by('id').filter(kwan_name = "중앙도서관")
+    classes = Class.objects.all()
+    return render(request, 'class/library.html',
+    {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
 # 9관 피츠버그홀
 def pb_hall(request):
@@ -125,11 +128,17 @@ def pb_hall(request):
 
 # 10관 구두인관
 def gdin_gwan(request):
-    return render(request, 'class/gdin_gwan.html')
+    classrooms = Classroom.objects.order_by('id').filter(kwan_name = "구두인관")
+    classes = Class.objects.all()
+    return render(request, 'class/gdin_gwan.html',
+    {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
 # 12관 성베드로학교
 def sbdr_school(request):
-    return render(request, 'class/sbdr_school.html')
+    classrooms = Classroom.objects.order_by('id').filter(kwan_name = "성베드로학교")
+    classes = Class.objects.all()
+    return render(request, 'class/sbdr_school.html',
+    {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
 # 11관 미가엘관
 def mgell_gwan(request):
@@ -141,7 +150,10 @@ def mgell_gwan(request):
 
 # 13관 행복기숙사
 def dormitory(request):
-    return render(request, 'class/dormitory.html')
+    # 이게 모델 내용 가져오는 것
+    classrooms = Classroom.objects.order_by('id').filter(kwan_name = "행복기숙사")
+    return render(request, 'class/dormitory.html',
+    {'classrooms':classrooms})
 
 def classroom(request, unit_id, id): #unit==unit_id==Class.room_id, id==classroom.id
     classroom = get_object_or_404(Classroom, unit = unit_id, id = id)

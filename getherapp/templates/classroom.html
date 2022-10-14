@@ -9,7 +9,7 @@
 <div class="detail-container">
   <div class="detail-header">
     <div class="dtlecture-img">
-      <img src="{% static 'img/6201.png' %}">
+      <img src="{{classroom.image.url}}">
     </div>
     <div class="dtlecture-title">
       <h2>#{{ classroom.kwan_name }}</h2>
@@ -25,11 +25,17 @@
         <p></i>현재 <strong>{{ classes.sub_id.name }}</strong> 강의 중입니다.</p>
 
     </div>
+
     {% endif %}
     {% endif %}
     {% endif %}
 {% endfor %}
+    
+    <!--강의실 예약 버튼-->
+    <button><a href="https://tis.skhu.ac.kr/app-nexa/index.html" target= "_blank">강의실 예약</a></button>
+    
   </div>
+  
   <div class="detail-radio-header">
     <div class="radio-container">
       <div class="radio-btn">

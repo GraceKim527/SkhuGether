@@ -39,7 +39,7 @@
         {% if classrooms.unit == "3301" or classrooms.unit == "3302" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -76,7 +76,7 @@
         {% if classrooms.unit == "3401" or classrooms.unit == "3402" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -113,7 +113,7 @@
         {% if classrooms.unit == "3501" or classrooms.unit == "3502" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}

@@ -30,7 +30,7 @@
         {% if classrooms.unit == "M201" or classrooms.unit == "M202" or classrooms.unit == "M203" or classrooms.unit == "M205" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -67,7 +67,7 @@
         {% if classrooms.unit == "M301" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -104,7 +104,7 @@
         {% if classrooms.unit == "M401" or classrooms.unit == "M402" or classrooms.unit == "M403" or classrooms.unit == "M404" or classrooms.unit == "M405" or classrooms.unit == "M406" or classrooms.unit == "M407" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}

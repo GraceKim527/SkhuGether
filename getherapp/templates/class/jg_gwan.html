@@ -21,31 +21,30 @@
       <div class="lectureinfo-container">
         
         {% for classrooms in classrooms %}
-        {% if classrooms.unit == "6109" or classrooms.unit == "6110" %}
-          <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
-            <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
-            </div>
-            <h1>{{ classrooms.unit }}</h1>
-            {% for classes in classes %}
-            
-            {% if classes.room_id.unit == classrooms.unit %} 
-            {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
-              <div class="lectureinfo">
-                
-                <!-- 오늘 강의의 시간 -->
-                {% if now_time >= classes.time1 and classes.time2 >= now_time %}
-                <div class="lecturecon imposs">
-                  <span>사용 불가</span>
-                </div>
-                {% endif %}
+          {% if classrooms.unit == "6109" or classrooms.unit == "6110" %}
+            <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
+              <div class="lecture-img">
+                <img class="img-src" src = "{{classrooms.image.url}}">
               </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-
-          </a>
-        {% endif %}
+              <h1>{{ classrooms.unit }}</h1>
+              {% for classes in classes %}
+              
+                {% if classes.room_id.unit == classrooms.unit %} 
+                  {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
+                    <div class="lectureinfo">
+                      
+                      <!-- 오늘 강의의 시간 -->
+                      {% if now_time >= classes.time1 and classes.time2 >= now_time %}
+                      <div class="lecturecon imposs">
+                        <span>사용 불가</span>
+                      </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </a>
+          {% endif %}
         {% endfor %}
       </div>
 
@@ -59,7 +58,7 @@
         {% if classrooms.unit == "6201" or classrooms.unit == "6202" or classrooms.unit == "6206" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}
@@ -102,7 +101,7 @@
         {% if classrooms.unit == "6402" or classrooms.unit == "6403" or classrooms.unit == "6403" or classrooms.unit == "6404" or classrooms.unit == "6405" or classrooms.unit == "6406" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}

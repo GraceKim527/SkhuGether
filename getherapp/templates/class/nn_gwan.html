@@ -29,7 +29,7 @@
         {% if classrooms.unit == "5C301" %}
           <a href="{% url 'classroom' classrooms.unit classrooms.id %}" class="lectureinfo-box">
             <div class="lecture-img">
-              <img class="img-src" src = "{% static 'img/6106.png' %}">
+              <img class="img-src" src = "{{classrooms.image.url}}">
             </div>
             <h1>{{ classrooms.unit }}</h1>
             {% for classes in classes %}

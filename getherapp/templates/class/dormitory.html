@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 행복기숙사 {% endblock %}
+
+{% block content %}
+<div class="build-container">
+    <!-- 건물이름이랑 층 정보 나오는 곳 -->
+  <div class="build-informwrap">
+      <div class="build-title">
+          <h1> {{classroom.unit}} </h1>
+      </div>
+  </div>
+    
+    <!-- 층별로 정보나오도록 -->
+    <div class="build-lectureinfo-wrap">
+      <div class="floorinfo" id="floor-first">
+          <h2>행복기숙사 모습입니다.</h2>
+      </div>
+
+      <div class="lectureinfo-container">
+        
+        {% for classrooms in classrooms %}
+            <div class="lecture-img">
+              <img class="img-src" src = "{{classrooms.image.url}}">
+            </div>
+        {% endfor %}
+      </div>
+
+    </div>
+</div>
+
+
+{% endblock %} 
