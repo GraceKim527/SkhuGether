@@ -1,0 +1,6 @@
+<h1>Write</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    {{write_form.as_p}}
+    <button type="submit">작성</button>
+</form>
