@@ -15,6 +15,7 @@
       <h2>#{{ classroom.kwan_name }}</h2>
       <h1>{{ classroom.unit }}</h1>
     </div>
+      <span class="closebtn" onclick="history.back();">&times;</span>
     {% for classes in classes %}
     {% if classroom.unit == classes.room_id.unit %}
     {% if classes.date1 == now_weekday or classes.date2 == now_weekday %}
@@ -30,10 +31,12 @@
     {% endif %}
     {% endif %}
 {% endfor %}
-    
-    <!--강의실 예약 버튼-->
-    <button><a href="https://tis.skhu.ac.kr/app-nexa/index.html" target= "_blank">강의실 예약</a></button>
-    
+  </div>
+
+  <div class="detail-sub-con">
+    <div class="reserve_btn">
+      <a href="https://tis.skhu.ac.kr/app-nexa/index.html" target= "_blank">강의실 예약</a>
+    </div>
   </div>
   
   <div class="detail-radio-header">
@@ -292,6 +295,6 @@
         
     </div>
   </div>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="{% static 'js/timetabletoggle.js' %}"></script>
 {% endblock %}
