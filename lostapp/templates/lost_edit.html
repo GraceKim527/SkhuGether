@@ -1,0 +1,7 @@
+<h1>Edit</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ edit_form.as_p }}
+    <img src="{{image_url}}">
+    <button type="submit">수정</button>
+</form>

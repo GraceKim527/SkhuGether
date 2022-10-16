@@ -1,0 +1,8 @@
+<h1>Main & Read</h1>
+<a href="{% url 'lost_write' %}">글 작성</a><hr>
+
+{% for read_form in read_forms %}
+    <a href="{% url 'lost_detail' read_form.id %}">{{read_form.title}}</a>
+    <p>{{read_form.classroom}} | {{read_form.created_at}} | {{read_form.updated_at}}</p>
+    <hr>
+{% endfor %}
