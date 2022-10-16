@@ -16,4 +16,12 @@ class Lost(models.Model):
     ) #4자리 비밀번호 작성
  
     def __str__(self):
-        return self.title
+        return '{}|{}'.format(self.title, str(self.classroom))
+
+class Comment(models.Model):
+    lost_id = models.ForeignKey(Lost, on_delete=models.CASCADE, related_name='comments')
+    content = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content

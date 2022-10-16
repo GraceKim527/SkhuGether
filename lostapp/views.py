@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Lost
-from .forms import LostForm, LostEditForm
-from django.utils import timezone
+from .models import Lost, Comment
+from .forms import LostForm, LostEditForm, CommentForm
 
 # Create your views here.
 def main(request):
@@ -25,7 +24,19 @@ def write(request):
         return render(request, 'lost_write.html', {'write_form':form})
 
 def detail(request, id):
-    form = get_object_or_404(Lost, id=id)
+    detail_form = get_object_or_404(Lost, id=id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.lost_id = detail_form
+            comment.content = form.cleaned_data['content']
+            comment.save()
+            return redirect('lost_detail', id)
+    else:
+        form = CommentForm()
+        return render(request, 'lost_detail.html', {'detail_form':detail_form, 'comment_form':form})
+
     return render(request, 'lost_detail.html', {'detail_form':form})
 
 # 글 수정/삭제시 비번 확인

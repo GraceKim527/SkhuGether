@@ -1,7 +1,7 @@
 <h1>Detail</h1>
 작성자 : 익명
 {{detail_form.title}}<br>
-{{detail.created_at}} | {{detail_form.updated_at}}<br>
+{{detail_form.created_at}} | {{detail_form.updated_at}}<br>
 {{detail_form.content}}<br>
 {% if detail_form.image %}
     <img src="{{detail_form.image.url}}">
@@ -9,3 +9,15 @@
 
 <a href="{% url 'check_password' detail_form.id 'edit' %}">수정</a>
 <a href="{% url 'check_password' detail_form.id 'delete' %}">삭제</a>
+
+<hr>
+Comments
+<form method="POST">
+    {% csrf_token %} 
+    {{comment_form}}
+    <button type="submit">작성</button>
+</form>
+<hr>
+{% for comment in detail_form.comments.all %}
+    {{comment.content}} | {{comment.created_at}} <br>
+{% endfor %} 
