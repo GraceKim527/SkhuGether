@@ -6,6 +6,11 @@ class LostForm(forms.ModelForm):
         model = Lost
         fields = ['title', 'content','classroom', 'image', 'password']
 
+class CheckPasswordForm(forms.ModelForm):
+    class Meta:
+        model = Lost
+        fields = ['password']
+
 class LostEditForm(forms.ModelForm):
     class Meta:
         model = Lost
