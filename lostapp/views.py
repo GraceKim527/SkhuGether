@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Lost, Comment
+from getherapp.models import Classroom
 from .forms import LostForm, LostEditForm, CommentForm, CheckPasswordForm
 
 # Create your views here.
@@ -58,19 +59,18 @@ def check_password(request, id, page):
         return render(request, 'check_password.html', {'password_form':password_form})
 
 def edit(request, id):
-    edit_form = get_object_or_404(Lost, id=id)
+    edit = get_object_or_404(Lost, id=id)
+    classroom = Classroom.objects.all()
     if request.method == "POST":
-        form = LostEditForm(request.POST, request.FILES, instance = edit_form)
+        form = LostEditForm(request.POST, request.FILES, instance = edit)
+        print(form)
         if form.is_valid():
-            form = form.save(commit = False)
-            form.save()
+            edit = form.save(commit = False)
+            edit.save()
             return redirect('lost_detail', id)
     else:
-        form = LostEditForm(instance = edit_form)
-        if edit_form.image:
-            url = edit_form.image.url
-            return render(request, 'lost_edit.html', {'edit_form': form, 'image_url': url})
-        return render(request, 'lost_edit.html', {'edit_form': form})
+        form = LostEditForm(instance = edit)
+    return render(request, 'lost_edit.html', {'edit_form': form, 'edit': edit, 'classroom':classroom})
 
 def delete(request, id):
     form = get_object_or_404(Lost, id=id)

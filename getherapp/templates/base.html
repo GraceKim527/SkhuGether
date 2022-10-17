@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/build.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'img/maplogo.png' %}">
@@ -32,18 +32,15 @@
                   <div class="menu_body">
                     <ul class="menu_list">
                       <li><a href="{% url 'introduce' %}"><span><i class="fa-solid fa-map"></i></span><span>소개</span></a></li>
+                      <li><a href="{% url 'lost_main' %}"><span><i class="fa-solid fa-location-dot"></i></span><span>분실물찾기</span></a></li>
                       <li><a href="{% url 'sy_gwan' %}"><span>1</span><span>승연관</span></a></li>
                       <li><a href="{% url 'im_gwan' %}"><span>2</span><span>일만관</span></a></li>
                       <li><a href="{% url 'wd_gwan' %}"><span>3</span><span>월당관</span></a></li>
                       <li><a href="{% url 'nn_gwan' %}"><span>5</span><span>나눔관</span></a></li>
                       <li><a href="{% url 'jg_gwan' %}"><span>6</span><span>정보과학관</span></a></li>
                       <li><a href="{% url 'scn_gwan' %}"><span>7</span><span>새천년관</span></a></li>
-                      <li><a href="{% url 'library' %}"><span>8</span><span>중앙도서관</span></a></li>
-                      <li><a href="{% url 'pb_hall' %}"><span>9</span><span>피츠버그홀</span></a></li>
-                      <li><a href="{% url 'gdin_gwan' %}"><span>10</span><span>구두인관</span></a></li>
+                      <li><a href="https://library.skhu.ac.kr/"><span>8</span><span>중앙도서관</span></a></li>
                       <li><a href="{% url 'mgell_gwan' %}"><span>11</span><span>미가엘관</span></a></li>
-                      <li><a href="{% url 'sbdr_school' %}"><span>12</span><span>성베드로학교</span></a></li>
-                      <li><a href="{% url 'dormitory' %}"><span>13</span><span>행복기숙사</span></a></li>
                     </ul>
                   </div>
                   <div class="menu_footer">
@@ -66,6 +63,7 @@
         
         {% endblock %}
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="{% static 'js/menutoggle.js' %}" type="text/javascript"></script>
 </body>
 </html>

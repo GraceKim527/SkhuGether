@@ -6,7 +6,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Lost(models.Model):
     #id
     title = models.CharField(max_length=100)
-    content = models.CharField(max_length=400)
+    content = models.TextField(max_length=400)
     classroom = models.ForeignKey(Classroom, null=True, on_delete=models.SET_NULL, related_name='lost_room')
     image = models.ImageField(upload_to='images/lost', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
