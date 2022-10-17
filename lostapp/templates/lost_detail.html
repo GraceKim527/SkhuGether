@@ -1,23 +1,61 @@
-<h1>Detail</h1>
-작성자 : 익명
-{{detail_form.title}}<br>
-{{detail_form.created_at}} | {{detail_form.updated_at}}<br>
-{{detail_form.content}}<br>
-{% if detail_form.image %}
-    <img src="{{detail_form.image.url}}">
-{% endif %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{detail_form.title}} {% endblock %}
 
-<a href="{% url 'check_password' detail_form.id 'edit' %}">수정</a>
-<a href="{% url 'check_password' detail_form.id 'delete' %}">삭제</a>
+{% block content %}
 
-<hr>
-Comments
-<form method="POST">
-    {% csrf_token %} 
-    {{comment_form}}
-    <button type="submit">작성</button>
-</form>
-<hr>
-{% for comment in detail_form.comments.all %}
-    {{comment.content}} | {{comment.created_at}} <br>
-{% endfor %} 
+
+<div class="feedback-container">
+  <div class="ld-wrap">
+    <div class="lost_detail_content_wrap">
+      <div class="ld_content">
+        <h1 style="font-size: 2.5rem;">{{detail_form.title}}</h1>
+        <span>작성일 : {{detail_form.created_at|date:'y.m.d.P'}}</span>
+        <span>수정일 : {{detail_form.updated_at|date:'y.m.d.P'}}</span>
+        <p>{{detail_form.content}}</p>
+      </div>
+      <div class="ld_cor_del">
+        <a href="{% url 'check_password' detail_form.id 'edit' %}">수정</a>
+        <a href="{% url 'check_password' detail_form.id 'delete' %}">삭제</a>
+      </div>
+      <div class="ld_comments">
+        <form method="POST">
+            {% csrf_token %} 
+            <div class="comment_input_wrap">
+              <div class="inputform commentform">
+                <input type="text" name="content" maxlength="200" required id="id_content">
+                <label for="id_content">댓글 작성</label>
+              </div>
+                <button type="submit">작성</button>
+            </div>
+        </form>
+        <div class="comment_list-con">
+          {% for comment in detail_form.comments.all %}
+          <div class="comment_list-wrap">
+            <div class="comment_user">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="comment_content">
+              <h3>{{ comment.content }}</h3>
+              <p>{{comment.created_at}}</p>
+            </div>
+          </div>
+          {% endfor %} 
+        </div>
+
+      </div>
+
+    </div>
+    <div class="lost_detail_img">
+        <a class="ld_list" href="{% url 'lost_main' %}"><i class="fa-solid fa-list"></i> &nbsp; 글 목록</a>
+      {% if detail_form.image %}
+      <img src="{{detail_form.image.url}}">
+      {% endif %}
+    </div>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

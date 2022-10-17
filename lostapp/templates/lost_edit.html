@@ -1,7 +1,52 @@
-<h1>Edit</h1>
-<form method="POST" enctype="multipart/form-data">
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 글 수정 {% endblock %}
+
+{% block content %}
+
+<form method = "POST" enctype="multipart/form-data" action = "{% url 'lost_edit' e_form.id %}">
     {% csrf_token %}
-    {{ edit_form.as_p }}
-    <img src="{{image_url}}">
-    <button type="submit">수정</button>
+    <div class="feedback-container">
+      <div claass="fb-wrap">
+        <div class="fd-head">
+          <h1 style="font-size: 3rem"> 분실물 글 수정 </h1>
+          <h2 style="font-size: 1.2rem"> 분실물을 잃어버렸거나, 발견했을 때 주인이 찾아갈 수 있도록 글을 작성해주세요!</h2>
+          <span style="color: gray;">예 ) 6202에 마우스 두고 가신 분! 그 자리에 그대로 있어요! or 학생복지처에 맡겨두었습니다!</span>
+        </div>
+        <div class="fdform-wrap">
+          <div class="inputform">
+            <input type="text" name="title" maxlength="100" required id="id_title" value="{{ e_form.title }}">
+            <label for="id_title ">제목</label>
+          </div>
+          <div class="inputform">
+            <select name="classroom" required id="id_classroom">
+              <option value="{{ e_form.classroom }}" selected>{{ e_form.classroom }}</option>
+            </select>
+          </div>
+          <div class="inputform">
+            <input type="file" name="image" accept="image/*" id="id_image">
+
+            {% if edit_form.image %}
+            <img src="{{edit_form.image.url}}">
+            {% endif %}
+          </div>
+          <div class="inputform">
+            <textarea name="content" cols="40" rows="10" maxlength="400" required id="id_content">{{ e_form.content }}</textarea>
+            <label for="id_content ">내용</label>
+          </div>
+
+        </div>
+
+        <div class="smbutton">
+            <a href="{% url 'index' %}">취소</a>
+            <button type="submit">수정</button>
+          </div>
+
+      </div>
+
+    </div>
+
 </form>
+
+
+{% endblock %}

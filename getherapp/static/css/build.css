@@ -350,6 +350,10 @@ a {
     margin: 5%;
     font-size: 3rem;
 }
+.lectureinfo-box h2 {
+    margin: 5%;
+    font-size: 1.7rem;
+}
 .lectureinfo-box:hover{
     transform: translateY(-10px);
     box-shadow: rgba(0, 0, 0, .4) 0px 4px 14px 0px;
@@ -371,9 +375,8 @@ a {
 .lectureinfo {
     margin-top: 5%;
     margin-bottom: 5%;
-    width: 100%;
     font-size: 1.4rem;
-    margin: 1.5rem;
+    margin: 5%;
 }
 .lecturecon {
     width: 60px;
@@ -388,6 +391,10 @@ a {
 }
 .imposs {
     background-color: #ee3e54;
+}
+.poss {
+    background-color: var(--new-sub-color);
+    color: #000;
 }
 
 /* 메뉴사이드바 */
@@ -558,6 +565,7 @@ a {
     box-shadow: rgba(0, 0, 0, .4) 0px 4px 10px 0px;
     padding: 30px;
     overflow: hidden;
+    margin-bottom: 5rem;
     transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 }
 .inputform{
@@ -619,6 +627,7 @@ a {
     margin: 0 auto;
     gap: 30px;
     justify-content: center;
+    margin-bottom: 5rem;
 }
 .smbutton button[type="submit"] {
     background-color: var(--new-sub-color);
@@ -1077,6 +1086,153 @@ a {
     width: 100%;
 }
 
+/* 분실물찾는 앱 */
+/* main부분 */
+.lf_write_btn {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.lf_write_btn a{
+    color: #fff;
+    background: var(--new-sub-color);
+    border-radius: 4px;
+    height: 50px;
+    width: 100px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ld-wrap {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 10px 0px;
+    padding: 30px;
+    overflow: hidden;
+    margin-bottom: 5rem;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+    justify-content: center;
+}
+.ld_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.lost_detail_content_wrap {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.lost_detail_img {
+    width: 45%;
+}
+.lost_detail_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ld_content p{
+    font-size: 1.5rem;
+}
+.ld_cor_del {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+.ld_cor_del a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 25px;
+    text-decoration: none;
+    color: #fff;
+    background: var(--new-sub-color);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.commentform {
+    width: 80%;
+}
+.comment_input_wrap {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+.comment_input_wrap button {
+    background: var(--new-sub-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 15%;
+    cursor: pointer;
+}
+.comment_list-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.comment_user {
+    font-size: 2.5rem;
+}
+.comment_content h3 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.comment_content p {
+    font-size: 1rem;
+    color: gray;
+}
+.pscheck-wrap {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.pscheck {
+    width: 50%;
+}
+.pscheck-wrap button {
+    background: var(--new-sub-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 5%;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+}
+.detailclaseBtn {
+    position:relative;
+    top: 10rem;
+    right: 10rem;
+
+}
+.ld_list {
+    text-decoration: none;
+    color: #fff;
+    background: var(--new-sub-color);
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-left: auto;
+}
 /* 모바일 버전 */
 @media (max-width: 1919px){ 
     .build-container {
@@ -1196,6 +1352,15 @@ a {
         width: 40%;
         padding-bottom: 1rem;
     }
+    .fd-head h1 {
+        font-size: 2rem;
+    }
+    .pscheck {
+        width: 80%;
+    }
+    .pscheck-wrap button {
+        width: 10%;
+    }
 }
 
 
@@ -1285,6 +1450,27 @@ a {
     .lectureinfo-box h1 {
         font-size: 2rem;
     }
+    .inputform label {
+        font-size: 1rem;
+    }
+    .ld-wrap {
+        flex-direction: column-reverse;
+    }
+    .lost_detail_img {
+        width: 100%;
+    }
+    .lost_detail_content_wrap {
+        width: 100%;
+    }
+    .fd-head h1 {
+        font-size: 1.3rem;
+    }
+    .pscheck {
+        width: 70%;
+    }
+    .pscheck-wrap button {
+        width: 20%;
+    }
 }
 
 
@@ -1371,4 +1557,5 @@ a {
     .menu_list {
         width: 80%;
     }
+    
 }

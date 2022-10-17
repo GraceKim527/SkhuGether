@@ -44,7 +44,6 @@ def check_password(request, id, page):
     form = get_object_or_404(Lost, id=id)
     if request.method == 'POST':
         ckeck_password = int(request.POST.get('check_password'))
-        print(check_password)
         if ckeck_password == form.password:
             if page == 'edit':
                 return redirect('lost_edit', form.id)
@@ -64,12 +63,14 @@ def edit(request, id):
             form = form.save(commit = False)
             form.save()
             return redirect('lost_detail', id)
+        else:
+            return redirect('lost_edit', id)
     else:
         form = LostEditForm(instance = edit_form)
         if edit_form.image:
             url = edit_form.image.url
-            return render(request, 'lost_edit.html', {'edit_form': form, 'image_url': url})
-        return render(request, 'lost_edit.html', {'edit_form': form})
+            return render(request, 'lost_edit.html', {'edit_form': form, 'image_url': url, 'e_form' : edit_form})
+        return render(request, 'lost_edit.html', {'edit_form': form, 'e_form': edit_form})
 
 def delete(request, id):
     form = get_object_or_404(Lost, id=id)

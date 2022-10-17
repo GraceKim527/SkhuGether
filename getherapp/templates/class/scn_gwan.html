@@ -7,7 +7,32 @@
     <!-- 건물이름이랑 층 정보 나오는 곳 -->
   <div class="build-informwrap">
       <div class="build-title">
+          <div></div>
           <h1> 새천년관 </h1>
+      </div>
+      <div class="build-qna">
+        <div class="build-qna-item">
+          <input type="radio" name="button" value="강의실 읽는 법" id="howto_read">
+          <label for="howto_read">강의실 읽는 법</label>
+        </div>
+        <div class="build-qna-item">
+          <input type="radio" name="button" value="사용불가란" id="howto_notav">
+          <label for="howto_notav">사용불가란</label>
+        </div>
+      </div>
+      <div class="detail-radio-container">
+        <div class="radio-detail build-detail" id="read">
+          <p><b>강의실 번호의 가장 앞자리는 강의실 건물, 두 번째 자리는 강의실 건물의 층을 의미합니다.</b> <br>
+            <span>ex ) 6202 -> 6(정보과학관), 2층, 02 강의실</span> <br>
+            간혹 건물 번호를 영어로 사용할 때가 있습니다. <br>
+            <strong>A = 승연관, B = 일만관, C = 월당관, EC or 5C = 나눔관, F = 정보과학관, G = 새천년관, 
+              I = 피츠버그홀, M = 미가엘관
+            </strong></p>
+        </div>
+        <div class="radio-detail build-detail" id="noav">
+          <p>현재 시각을 기준으로 강의가 진행 되는지에 대한 여부에 따라 '사용불가' 표시가 나타납니다.<br>
+            사용불가가 아닐 시에는 해당 강의실 페이지에서 예약이 가능합니다. </p>
+        </div>
       </div>
   </div>
     
@@ -189,6 +214,8 @@ function icontoggle(){
 }
 </script>
 
-<script src="{% static 'js/modal.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="{% static 'js/informtoggle.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
 
 {% endblock %} 
