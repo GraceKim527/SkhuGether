@@ -1,5 +1,37 @@
 //커서 가져다 대면 나머지 반투명해지는거
 
+// 승연관
+function over(leo_1) {
+    leo_1.style.opacity = "0.3"
+}
+function out(leo_1) {
+    leo_1.style.opacity = "1"
+}
+
+// 일만관
+function over(leo_2) {
+    leo_2.style.opacity = "0.3"
+}
+function out(leo_2) {
+    leo_2.style.opacity = "1"
+}
+
+// 월당관
+function over(leo_3) {
+    leo_3.style.opacity = "0.3"
+}
+function out(leo_3) {
+    leo_3.style.opacity = "1"
+}
+
+// 나눔관
+function over(leo_5) {
+    leo_5.style.opacity = "0.3"
+}
+function out(leo_5) {
+    leo_5.style.opacity = "1"
+}
+
 // 정보과학관
 function over(leo_6) {
     leo_6.style.opacity = "0.3"
@@ -16,62 +48,40 @@ function out(leo_7) {
     leo_7.style.opacity = "1"
 }
 
-// 나머지
-function over(leo_1) {
-    leo_1.style.opacity = "0.3"
-}
-function out(leo_1) {
-    leo_1.style.opacity = "1"
-}
-
-function over(leo_2) {
-    leo_2.style.opacity = "0.3"
-}
-function out(leo_2) {
-    leo_2.style.opacity = "1"
-}
-
-function over(leo_3) {
-    leo_3.style.opacity = "0.3"
-}
-function out(leo_3) {
-    leo_3.style.opacity = "1"
-}
-
-function over(leo_5) {
-    leo_5.style.opacity = "0.3"
-}
-function out(leo_5) {
-    leo_5.style.opacity = "1"
-}
-
-function over(leo_10) {
+// 중앙도서관
+function over(leo_8) {
     leo_10.style.opacity = "0.3"
 }
-function out(leo_10) {
+function out(leo_8) {
     leo_10.style.opacity = "1"
 }
 
-function over(leo_11) {
+
+// 성미가엘성당 / 피츠버그홀
+function over(leo_9) {
     leo_11.style.opacity = "0.3"
 }
-function out(leo_11) {
+function out(leo_9) {
     leo_11.style.opacity = "1"
 }
 
-function over(leo_12) {
+// 미가엘관
+function over(leo_11) {
     leo_12.style.opacity = "0.3"
 }
-function out(leo_12) {
+function out(leo_11) {
     leo_12.style.opacity = "1"
 }
 
-function over(leo_13) {
-    leo_13.style.opacity = "0.3"
-}
-function out(leo_13) {
-    leo_13.style.opacity = "1"
-}
+$('.o_1').click(function () {
+	$('.sy').addClass('modal-open');
+});
+
+$('.c_1').click(function () {
+	$('.sy').removeClass('modal-open');
+});
+
+
 
 // 말주머니
 function leo_scn_show() {
