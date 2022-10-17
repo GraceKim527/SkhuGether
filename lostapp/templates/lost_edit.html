@@ -23,23 +23,23 @@
             <label for="id_title ">제목</label>
           </div>
           <div class="inputform">
+            <textarea name="content" cols="40" rows="10" maxlength="400" required id="id_content">{{ edit.content }}</textarea>
+            <label for="id_content ">내용</label>
+          </div>
+          <div class="inputform">
             <select value="{{edit.classroom.id}}" name="classroom" required id="classroom">
                 {% for option in classroom %}
                     <option value="{{ option.id }}" selected>{{ option }}</option>
                 {% endfor %}
             </select>
           </div>
-          <div class="inputform">
             <input type="file" name="image" accept="image/*" id="id_image" placeholder="{{edit.image.url}}" value="{{edit.image}}">
-
             {% if edit.image %}
-            <img src="{{edit.image.url}}">
+            <div class="file-img">
+              <img src="{{edit.image.url}}">
+            </div>
             {% endif %}
-          </div>
-          <div class="inputform">
-            <textarea name="content" cols="40" rows="10" maxlength="400" required id="id_content">{{ edit.content }}</textarea>
-            <label for="id_content ">내용</label>
-          </div>
+
 
         </div>
 

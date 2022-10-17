@@ -20,6 +20,10 @@
             <label for="id_title ">제목</label>
           </div>
           <div class="inputform">
+            <textarea name="content" cols="40" rows="10" maxlength="400" required id="id_content"></textarea>
+            <label for="id_content ">내용</label>
+          </div>
+          <div class="inputform">
             <select name="classroom" required id="id_classroom">
                 <option value="" selected>강의실을 선택해주세요</option>
               
@@ -140,15 +144,8 @@
                 <option value="58">기타</option>
               
               </select>
+              <input type="file" name="image" accept="image/*" id="id_image">
           </div>
-          <div class="inputform">
-            <input type="file" name="image" accept="image/*" id="id_image">
-          </div>
-          <div class="inputform">
-            <textarea name="content" cols="40" rows="10" maxlength="400" required id="id_content"></textarea>
-            <label for="id_content ">내용</label>
-          </div>
-
         </div>
         <div class="fdform-wrap">
           <div class="inputform">
