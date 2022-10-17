@@ -19,5 +19,5 @@ Comments
 </form>
 <hr>
 {% for comment in detail_form.comments.all %}
-    {{comment.content}} | {{comment.created_at}} <br>
+    작성자 : 익명 {{comment.content}} | {{comment.created_at}} <br>
 {% endfor %} 
