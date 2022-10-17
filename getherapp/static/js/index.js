@@ -50,58 +50,39 @@ function out(leo_7) {
 
 // 중앙도서관
 function over(leo_8) {
-    leo_10.style.opacity = "0.3"
+    leo_8.style.opacity = "0.3"
 }
 function out(leo_8) {
-    leo_10.style.opacity = "1"
+    leo_8.style.opacity = "1"
 }
 
 
 // 성미가엘성당 / 피츠버그홀
 function over(leo_9) {
-    leo_11.style.opacity = "0.3"
+    leo_9.style.opacity = "0.3"
 }
 function out(leo_9) {
-    leo_11.style.opacity = "1"
+    leo_9.style.opacity = "1"
 }
 
 // 미가엘관
 function over(leo_11) {
-    leo_12.style.opacity = "0.3"
+	leo_11.style.opacity = "0.3"
 }
 function out(leo_11) {
-    leo_12.style.opacity = "1"
+    leo_11.style.opacity = "1"
 }
 
-$('.o_1').click(function () {
-	$('.sy').addClass('modal-open');
-});
 
-$('.c_1').click(function () {
-	$('.sy').removeClass('modal-open');
-});
+// PC 모달
 
-
-
-// 말주머니
-function leo_scn_show() {
-    const element = document.getElementById("leo_ala");
-    element.innerHTML = '<a href="scn_gwan"><img id="leo_scn" src="static/img/scn.png" alt="새천년관 세부사항" style="display:block;"></a>';
+function change() {
+	document.getElementById('modal').style.display = "flex";
+	document.getElementsByClassName('modal-overlay')[0].style.display = "flex";
 }
-
-function leo_jg_show() {
-    const element = document.getElementById("leo_molla");
-    element.innerHTML = '<a href="jg_gwan"><img id="leo_jg" src="static/img/jg.png" alt="정보과학관 세부사항" style="display:block;"></a>';
-}
-
-function leo_scn_hide() {
-    const element = document.getElementById("leo_ala");
-    element.innerHTML = '<a href="scn_gwan"><img id="leo_scn" src="static/img/scn.png" alt="새천년관 세부사항" style="display:none;"></a>';
-}
-
-function leo_jg_hide() {
-    const element = document.getElementById("leo_molla");
-    element.innerHTML = '<a href="jg_gwan"><img id="leo_jg" src="static/img/jg.png" alt="정보과학관 세부사항" style="display:none;"></a>';
+function change1() {
+	document.getElementById('modal').style.display = "none";
+	document.getElementsByClassName('modal-overlay')[0].style.display = "none";
 }
 
 
