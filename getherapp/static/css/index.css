@@ -1,111 +1,563 @@
-.leo_school {
-    top: -10%;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', serif;font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+body, h1, h2, h3, h4, h5, h6, input, textarea, select {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* css 기본 세팅 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/* font-size: 62.5%; */
+	/* font: inherit; */
+	vertical-align: baseline;
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+
+html {font-size: 62.5%;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 기본 색상 두기 */
+:root {
+    --nav-color: #006600; /* 네브바 컬러 */
+    --road-color: #408C40; /* 길 */
+    --build-color: #B9DC9D; /* 건물 */
+    --subnav-color: #EBECDC; /* 방위표 주변 네브 */
+    
+    /* 새로운 컬러 */
+    --new-sub-color: #bae688;
+    --new-main-color: #218b21;
+    /* 정의된 색상 사용하고 싶으면 var(변수명)으로 작성하기 */
+    /* ex ) background-color: var(--nav-color) */
+}
+
+/* ---------- 기본 상태 끝 ---------- */
+
+/* nav 수정하고 새로만든 것 */
+.nav {
+    top: 0;
+    display: flex;
+    padding-right: 1vw;
+    /* padding: 0 1vw 0 1vw; */
+    background-color: var(#eee);
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    z-index: 1;
+}
+.nav1 {
+    display: inline-flex;
+    align-items: center;
     position: relative;
-    height: 940px;
-    width: 1650px;
+}
+#checkbox {
+    display: none;
+    z-index: 5;
+  }
+.hbmenu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    float: left;
+  }
+.line {
+    position: absolute;
+    width: 20px;
+    z-index: 2;
+    left: 10px;
+    right: 0;
+    top: 20px;
+    bottom: 0;
+    z-index: 10;
+}
+.line-main::before,
+.line-main::after,
+.line-split::before,
+.line-split::after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.5s;
+}
+.line-main::before {
+  transform: translateY(-7px);
+}
+  .line-main::after {
+    transform: translateY(7px);
+  }
+  .line-split::before,
+  .line-split::after {
+    width: 10px;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  .line-split::after {
+    transform: translateX(10px);
+  }
+  #checkbox:checked ~ .line-main::before {
+    transform: rotate(45deg);
+    background-color: black;
+  }
+  #checkbox:checked ~ .line-main::after {
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+  #checkbox:checked~.line-split::before{
+    opacity: 0;
+    background-color: black;
+  }
+  #checkbox:checked~.line-split::after{
+    opacity: 0;
+    background-color: black;
+  }
+#menu__box {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+.menu{
+    left: 0 !important;
+    transition-duration: .25s;
+}
+.nmenu{
+    display: none; 
+    margin-left: 300px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+}
+
+.nav2 {
+    width: 100%;
+}
+.nav2 a{
+    display: block;
+    width: 220px;
+    height: 60px;
+}
+.nav-img {
+    position: absolute;
+    width: 220px;
+    top: 5%;
+}
+
+/* 메뉴사이드바 */
+.menu_img {
+    top: 1%;
+    left: 13%;
+    width: 180px; 
+}
+.menu_header {
+    height: 8%;
+    display: block;
+}
+.menu_body {
+    margin: 10%;
+    overflow: scroll;
+}
+.menu_body::-webkit-scrollbar-thumb {
+    background:var(--new-main-color);
+}
+.menu_body::-webkit-scrollbar{
+    width: 5px;
+}
+.menu_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 10px;
+}
+.menu_body li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    height: 40px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 4px 0px;
+    /* overflow: hidden; */
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+    color: #000;
+}
+.menu_body li:before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--new-main-color);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.menu_body li:hover span, .menu_body li:focus span,
+.menu_body li:active span{
+    color: #fff;
+}
+.menu_body li:hover:before, .menu_body li:focus:before,
+.menu_body li:active:before {
+    transform: scaleX(1);
+}
+.menu_body a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+}
+.menu_body span{
+    color: var(--new-main-color);
+    display: block;
+}
+.menu_body span:nth-child(1){
+    width: 30%;
+}
+.menu_footer{
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10%;
+}
+.menu_footer a{
+    color: black;
+    font-size: 1.3rem;
+}
+
+/* ----------------여기서부터는 index css ---------------- */
+
+body {
+	overflow-y: hidden;
+	background-color: #E6FDFF;
+}
+
+.nav3 {
+	position: absolute;
+	top: 5vh;
+	width: 30vw;
+	left: 35%;
+}
+
+.P_back {
+	height: 100vh;
+    width: 100%;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.M_back {
+	display: none;
+}
+
+.leo_class {
+	margin-top: 20px;
 }
 
 .leo_class img {
+	width: 3.5vw;
     height: auto;
+	filter: drop-shadow(0.5vw 0.5vw 0.5vw var(--new-main-color));
+
+	animation: motion 0.8s linear 0s infinite alternate; margin-top: 0;
 }
 
-#leo_road {
-    position: absolute;
-    top: 23.5%;
-    right: 1%;
-    width: 99%;
-    height: auto;
-}
-
-#leo_10 {
-    top: 49%;
-    left: 4%;
-    position: absolute;
-}
-
-#leo_7 {
-    top: 18%;
-    left: 16.5%;
-    cursor: pointer;
-    width: 28%;
-    position: absolute;
-}
-
-#leo_scn {
-    top: 17%;
-    left: 13%;
-    cursor: pointer;
-    width: 28%;
-    position: absolute;
-    width: 20%;
-    height: 25%;
-}
-
-#leo_2 {
-    top: 30%;
-    right: 35%;
-    position: absolute;
+@keyframes motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
 }
 
 #leo_1 {
-    top: 40.5%;
-    right: 38%;
+    top: 48%;
+    right: 40%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_2 {
+    top: 33%;
+    right: 37%;
+	cursor: pointer;
     position: absolute;
 }
 
 #leo_3 {
-    top: 28%;
-    right: 25%;
-    position: absolute;
-}
-
-#leo_12 {
-    top: 8%;
+    top: 50%;
     right: 23%;
-    height: 20%;
-    position: absolute;
-}
-
-#leo_6 {
-    top: 10%;
-    right: 13%;
-    cursor: pointer;
-    position: absolute;
-}
-
-#leo_jg {
-    top: 10%;
-    right: 8%;
-    cursor: pointer;
-    position: absolute;
-    width: 20%;
-    height: 25%;
-}
-
-#leo_13 {
-    top: 8%;
-    right: 3%;
-    height: 35%;
+	cursor: pointer;
     position: absolute;
 }
 
 #leo_5 {
-    bottom: 8%;
-    left: 28%;
+    top: 70%;
+    left: 25%;
+	cursor: pointer;
     position: absolute;
 }
 
-#leo_grounds {
+#leo_6 {
+    top: 40%;
+    right: 8%;
+    cursor: pointer;
     position: absolute;
-    bottom: 6%;
-    right: 18%;
-    height: auto;
-    width: 30%;
+}
+
+#leo_7 {
+    top: 22%;
+    left: 10%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#leo_8 {
+    top: 27%;
+    left: 25%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_9 {
+    top: 30%;
+    left: 35%;
+	cursor: pointer;
+    position: absolute;
 }
 
 #leo_11 {
-    bottom: 2%;
-    right: 2%;
-    width: 13%;
+    top: 27%;
+    right: 23%;
+	cursor: pointer;
     position: absolute;
+}
+
+
+/* 디바이스 크기별 버전 */
+
+@media (max-width: 1100px){
+
+	.leo_class img {
+		width: 4vw;
+	}
+	
+	#leo_1 {
+		top: 52%;
+		right: 39%;
+		position: absolute;
+	}
+	
+	#leo_2 {
+		top: 36%;
+		right: 37%;
+		position: absolute;
+	}
+	
+	#leo_3 {
+		top: 50%;
+		right: 23%;
+		position: absolute;
+	}
+	
+	#leo_5 {
+		top: 70%;
+		left: 25%;
+		position: absolute;
+	}
+	
+	#leo_6 {
+		top: 45%;
+		right: 8%;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	#leo_7 {
+		top: 26%;
+		left: 10%;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	#leo_8 {
+		top: 30%;
+		left: 23%;
+		position: absolute;
+	}
+	
+	#leo_9 {
+		top: 35%;
+		left: 35%;
+		position: absolute;
+	}
+	
+	#leo_11 {
+		top: 31%;
+		right: 23%;
+		position: absolute;
+	}
+}
+
+@media (max-width: 500px){
+
+	.P_back {
+		display: none;
+	}
+
+	.M_back {
+		height: 100vh;
+		width: 100%;
+		background-size: cover;
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.leo_class img {
+		width: 7vw;
+	}
+
+	#leo_1 {
+		top: 30%;
+		right: 39%;
+		position: absolute;
+	}
+
+	#leo_2 {
+		top: 30%;
+		left: 30%;
+		position: absolute;
+	}
+
+	#leo_3 {
+		top: 22%;
+		right: 42%;
+		position: absolute;
+	}
+
+	#leo_5 {
+		top: 55%;
+		left: 80%;
+		position: absolute;
+	}
+
+	#leo_6 {
+		top: 13%;
+		left: 37%;
+		cursor: pointer;
+		position: absolute;
+	}
+
+	#leo_7 {
+		top: 72%;
+		left: 13%;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	#leo_8 {
+		top: 60%;
+		left: 16%;
+		position: absolute;
+	}
+
+	#leo_9 {
+		top: 50%;
+		left: 23%;
+		position: absolute;
+	}	
+
+	#leo_11 {
+		top: 20%;
+		left: 20%;
+		position: absolute;
+	}
+	
 }
