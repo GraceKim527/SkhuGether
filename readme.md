@@ -9,7 +9,7 @@
 ---
 ## Links
 <div align='center'>
-<a href='https://mapinskhu.herokuapp.com/'>
+<a href='#'>
 <img src='https://img.shields.io/badge/-HomePage-lightgrey'></a>  
 <a href='https://github.com/GraceKim527/SkhuGether'>
 <img src='https://img.shields.io/badge/-github-lightgrey'>
@@ -27,15 +27,31 @@
 - 해당 강의동 페이지에 들어가면 유저의 현재 시간을 받아와 각 강의실 별로 사용이 가능한지 아닌지를 한 눈에 알 수 있다. 그 강의실에 강의가 있다면, 그 강의실은 사용이 불가하도록 설정하였다.
 - 각 강의실 페이지에 들어가면, 해당 강의실과 관련되어 **현재 강의 여부, 강의실별 시간표** 정보를 알 수 있다. 이를 통해 강의실별로 들어갈 수 있는 시간을 알게 된다.
 
+<div align='center'>
+<span>시연 영상</span>
+
+![project_ex](https://user-images.githubusercontent.com/80322308/196371301-2811228c-b28d-4ff3-ac9c-1c5245b42e38.gif)
+</div>
+
+
+
 ### 강의실별 분실물 게시판 개설
 - 강의실에서 잃어버린 물건을 찾거나 찾고 있다면, 게시판에 글을 올림으로 사용자들간의 간단한 소통이 가능하다. 
+
+
+<div align='center'>
+
+</div>
 
 ### 3D맵으로 지도 보기 가능
 - 단순히 단면적으로 된 지도가 아닌, 자체 제작을 한 3D 지도로, 각 강의동이 어디있는지 한 눈에 파악하기가 가능하다.
 
+<div align='center'>
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/80322308/196369603-e1acd281-8f24-43ba-a69b-5cf4158291e5.png">
+</div>
+
 ## 🔖 추후 업데이트 예정 내용
 - 강의실 검색기능(강의동, 강의실, 교수 등 모두 검색가능하도록)
-- 
 
 ---
 ## 👩🏻‍💻 Developer
@@ -45,7 +61,7 @@
 | <img src="https://github.com/gracekim527.png" width="150"> | <img src="https://github.com/staccato20.png" width="150"> | 
 
 ### Back-End
-| [김은혜](https://github.com/sujeengim) | [주영빈](https://github.com/Rommmu)
+| [김수진](https://github.com/sujeengim) | [주영빈](https://github.com/Rommmu)
 |:---:|:---:|
 |<img src="https://github.com/sujeengim.png" width="150"> | <img src="https://github.com/Rommmu.png" width="150"> |
 
