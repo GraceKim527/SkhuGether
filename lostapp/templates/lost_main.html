@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 분실물찾기 {% endblock %}
+
+{% block content %}
+
+<div class="build-container">
+
+  <div class="build-informwrap">
+    <div class="build-title">
+      <div></div>
+      <h1> 분실물 게시판 </h1>
+    </div>
+  </div>
+  <div class="lf_write_btn">
+    <a href="{% url 'lost_write' %}">글 작성</a>
+  </div>
+  <div class="build-lectureinfo-wrap">
+    <div class="lectureinfo-container">
+    {% for read_form in read_forms %}
+      <a href="{% url 'lost_detail' read_form.id %}" class="lectureinfo-box">
+        <div class="lecture-img">
+          {% if read_form.image %}
+          <img class="img-src" src="{{ read_form.image.url }}">
+          {% else %}
+          <img class="img-src" src="{% static 'img/imagewait.png' %}">
+          {% endif %}
+        </div>
+        <h2> {{ read_form.title }}</h2>
+        <p style="margin: 5%; font-size: 1.2rem;">{{ read_form.content|slice:":20" }}...</p>
+        <div class="lectureinfo">
+          <div class="lecturecon poss">
+            <span>{{read_form.classroom}}</span>
+          </div>
+          <span style="font-size: 0.9rem; color: gray;"> {{read_form.created_at|date:'y.m.d.P'}}</span>
+        </div>
+        
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

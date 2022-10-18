@@ -1,0 +1,169 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 글 작성 {% endblock %}
+
+{% block content %}
+
+<form method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="feedback-container">
+      <div claass="fb-wrap">
+        <div class="fd-head">
+          <h1 style="font-size: 3rem"> 분실물 글 작성 </h1>
+          <h2 style="font-size: 1.2rem"> 분실물을 잃어버렸거나, 발견했을 때 주인이 찾아갈 수 있도록 글을 작성해주세요!</h2>
+          <span style="color: gray;">예 ) 6202에 마우스 두고 가신 분! 그 자리에 그대로 있어요! or 학생복지처에 맡겨두었습니다!</span>
+        </div>
+        <div class="fdform-wrap">
+          <div class="inputform">
+            <input type="text" name="title" maxlength="100" required id="id_title">
+            <label for="id_title ">제목</label>
+          </div>
+          <div class="inputform">
+            <textarea name="content" cols="40" rows="10" maxlength="400" required id="id_content"></textarea>
+            <label for="id_content ">내용</label>
+          </div>
+          <div class="inputform">
+            <select name="classroom" required id="id_classroom">
+                <option value="" selected>강의실을 선택해주세요</option>
+              
+                <option value="1">1502</option>
+              
+                <option value="2">1503</option>
+              
+                <option value="3">1504</option>
+              
+                <option value="4">1505</option>
+              
+                <option value="5">1506</option>
+              
+                <option value="6">B105</option>
+              
+                <option value="7">3301</option>
+              
+                <option value="8">3302</option>
+              
+                <option value="9">3401</option>
+              
+                <option value="10">3402</option>
+              
+                <option value="11">3501</option>
+              
+                <option value="12">3502</option>
+              
+                <option value="13">5C301</option>
+              
+                <option value="14">6109</option>
+              
+                <option value="15">6110</option>
+              
+                <option value="16">6201</option>
+              
+                <option value="17">6202</option>
+              
+                <option value="18">6206</option>
+              
+                <option value="19">6402</option>
+              
+                <option value="20">6403</option>
+              
+                <option value="21">6404</option>
+              
+                <option value="22">6405</option>
+              
+                <option value="23">6406</option>
+              
+                <option value="24">7104</option>
+              
+                <option value="25">7202</option>
+              
+                <option value="26">7204</option>
+              
+                <option value="27">7205</option>
+              
+                <option value="28">7206</option>
+              
+                <option value="29">7207</option>
+              
+                <option value="30">7208</option>
+              
+                <option value="31">7301</option>
+              
+                <option value="32">7302</option>
+              
+                <option value="33">7303</option>
+              
+                <option value="34">7304</option>
+              
+                <option value="35">7305</option>
+              
+                <option value="36">7306</option>
+              
+                <option value="37">7307</option>
+              
+                <option value="38">7308</option>
+              
+                <option value="39">7309</option>
+              
+                <option value="40">7417</option>
+              
+                <option value="41">중앙도서관</option>
+              
+                <option value="42">9101</option>
+              
+                <option value="43">9301</option>
+              
+                <option value="44">M201</option>
+              
+                <option value="45">M202</option>
+              
+                <option value="46">M203</option>
+              
+                <option value="47">M205</option>
+              
+                <option value="48">M301</option>
+              
+                <option value="49">M401</option>
+              
+                <option value="50">M402</option>
+              
+                <option value="51">M403</option>
+              
+                <option value="52">M404</option>
+              
+                <option value="53">M406</option>
+              
+                <option value="54">M407</option>
+              
+                <option value="55">구두인관</option>
+              
+                <option value="56">행복기숙사</option>
+              
+                <option value="57">성베드로학교</option>
+              
+                <option value="58">기타</option>
+              
+              </select>
+              <input type="file" name="image" accept="image/*" id="id_image">
+          </div>
+        </div>
+        <div class="fdform-wrap">
+          <div class="inputform">
+            <input type="text" name="password" min="0" required id="id_password" maxlength="4">
+            <label for="id_password">수정, 삭제를 위한 비밀번호 설정입니다. 비밀번호는 4자리로 입력해주세요.</label>
+          </div>
+        </div>
+
+        <div class="smbutton">
+            <a href="{% url 'index' %}">취소</a>
+            <button type="submit">제출</button>
+          </div>
+
+      </div>
+
+    </div>
+
+</form>
+
+
+{% endblock %}

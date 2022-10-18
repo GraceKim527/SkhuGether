@@ -71,7 +71,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+a {
+    font-size: 2rem;
+}
 
 /* 기본 색상 두기 */
 :root {

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'getherapp.apps.GetherappConfig',
+    'lostapp.apps.LostappConfig',
 ]
 
 MIDDLEWARE = [
