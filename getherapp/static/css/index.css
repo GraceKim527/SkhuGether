@@ -139,7 +139,7 @@ a {
     position: absolute;
     width: inherit;
     height: 2px;
-    background-color: black;
+    background-color: var(--new-main-color);
     transition: transform 0.5s;
 }
 .line-main::before {
@@ -158,19 +158,19 @@ a {
   }
   #checkbox:checked ~ .line-main::before {
     transform: rotate(45deg);
-    background-color: black;
+    background-color: var(--new-main-color);
   }
   #checkbox:checked ~ .line-main::after {
     transform: rotate(-45deg);
-    background-color: black;
+    background-color: var(--new-main-color);
   }
   #checkbox:checked~.line-split::before{
     opacity: 0;
-    background-color: black;
+    background-color: var(--new-main-color);
   }
   #checkbox:checked~.line-split::after{
     opacity: 0;
-    background-color: black;
+    background-color: var(--new-main-color);
   }
 #menu__box {
     position: fixed;
@@ -1955,7 +1955,7 @@ body {
 		border-radius: 50vw;
 		width: 60vw;
 		height: 6vh;
-		font-size: 1.7rem;
+		font-size: 1.5rem;
 		font-weight: bold;
 		text-align: center;
 		animation: none;
