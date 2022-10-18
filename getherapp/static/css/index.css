@@ -316,6 +316,7 @@ table {
 
 body {
 	background-color: #E6FDFF;
+	position: fixed;
 }
 
 .nav3 {
@@ -327,7 +328,7 @@ body {
 
 .P_back {
 	height: 100vh;
-    width: 100%;
+    width: 103vw;
 	background-size: cover;
 	position: relative;
 	display: flex;
@@ -356,69 +357,70 @@ body {
 }
 
 #leo_1 {
-    top: 48%;
-    right: 40%;
+    top: 43%;
+    right: 36%;
 	cursor: pointer;
     position: absolute;
 }
 
 #leo_2 {
-    top: 33%;
-    right: 37%;
+    top: 31%;
+    right: 33%;
 	cursor: pointer;
     position: absolute;
 }
 
 #leo_3 {
-    top: 50%;
-    right: 23%;
+    top: 39%;
+    right: 18%;
 	cursor: pointer;
     position: absolute;
 }
 
 #leo_5 {
-    top: 70%;
+    top: 67%;
     left: 25%;
 	cursor: pointer;
     position: absolute;
 }
 
 #leo_6 {
-    top: 40%;
-    right: 8%;
+    top: 33%;
+    right: 4%;
     cursor: pointer;
     position: absolute;
 }
 
 #leo_7 {
-    top: 22%;
+    top: 25%;
     left: 10%;
     cursor: pointer;
     position: absolute;
 }
 
 #leo_8 {
-    top: 27%;
-    left: 25%;
+    top: 34%;
+    left: 26%;
 	cursor: pointer;
     position: absolute;
 }
 
 #leo_9 {
-    top: 30%;
-    left: 35%;
+    top: 36%;
+    left: 40%;
 	cursor: pointer;
     position: absolute;
 }
 
 #leo_11 {
     top: 27%;
-    right: 23%;
+    right: 18%;
 	cursor: pointer;
     position: absolute;
 }
 
-/* modal */
+/* ---------------- modal ---------------- */
+
 #modal .modal-overlay {
     width: 100%;
     height: 100%;
@@ -430,16 +432,44 @@ body {
     background: rgba(0, 0, 0, 0.432);
 }
 
+@keyframes smallerw {
+	from {
+		width: 37vw;
+		height: 50vh;
+		top: 34%;
+		left: 43%;
+	}
+	to {
+		width: 27vw;
+		height: 40vh;
+		top: 39%;
+		left: 48%;
+	}
+}
+
 .modal-overlay .modal-window {
     background: rgba(0, 0, 0, 0);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
     border-radius: 10px;
-    width: 23vw;
-    height: 30vh;
+    animation-name: smallerw;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
     position: absolute;
-	top: 45%;
-	left: 47%;
+	top: 39%;
+	left: 48%;
 	display: none;
+	width: 27vw;
+	height: 40vh;
+	justify-content: center;
+}
+
+@keyframes smallerc {
+	from {
+		margin-left: 32vw;
+	}
+	to {
+		margin-left: 22vw;
+	}
 }
 
 #modal .close-area {
@@ -452,14 +482,19 @@ body {
     border-radius: 5px;
 	cursor: pointer;
 	font-weight: bold;
-	margin-left: 19vw;
+	margin-left: 22vw;
 	margin-top: 1vh;
+	animation-name: smallerc;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
 }
 
 .modal_content {
     position: absolute;
-	right: 16%;
 	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .modal_img {
@@ -468,23 +503,114 @@ body {
 	height: 0;
 }
 
+@keyframes smallerb {
+	from {
+		width: 26vw;
+	}
+	to {
+		width: 16vw;
+	}
+}
+
 .qwan_button {
 	background-color: var(--new-sub-color);
 	box-shadow: 0 8px 32px 0 var(--new-main-color);
 	color : var(--new-main-color);
 	border-radius: 50vw;
 	width: 16vw;
-	height: 4vh;
+	height: 5vh;
 	font-size: 1.7rem;
 	font-weight: bold;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 20vw;
+	animation-name: smallerb;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
 }
 
 
-/* 디바이스 크기별 버전 */
+/* ---------------- 모바일 modal ---------------- */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay .modal-window {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+	}
+
+	#modal .close-area {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 100%;
+		height: 70%;
+	}
+
+	.qwan_button {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* ---------------- 디바이스 크기별 물방울 배치 ---------------- */
 
 @media (max-width: 1100px){
 
@@ -493,20 +619,20 @@ body {
 	}
 	
 	#leo_1 {
-		top: 52%;
-		right: 39%;
+		top: 45%;
+		right: 35%;
 		position: absolute;
 	}
 	
 	#leo_2 {
-		top: 36%;
-		right: 37%;
+		top: 32%;
+		right: 32%;
 		position: absolute;
 	}
 	
 	#leo_3 {
-		top: 50%;
-		right: 23%;
+		top: 42%;
+		right: 19%;
 		position: absolute;
 	}
 	
@@ -517,34 +643,34 @@ body {
 	}
 	
 	#leo_6 {
-		top: 45%;
-		right: 8%;
+		top: 37%;
+		right: 4%;
 		cursor: pointer;
 		position: absolute;
 	}
 	
 	#leo_7 {
-		top: 26%;
+		top: 27%;
 		left: 10%;
 		cursor: pointer;
 		position: absolute;
 	}
 	
 	#leo_8 {
-		top: 30%;
-		left: 23%;
+		top: 37%;
+		left: 26%;
 		position: absolute;
 	}
 	
 	#leo_9 {
-		top: 35%;
-		left: 35%;
+		top: 38%;
+		left: 38%;
 		position: absolute;
 	}
 	
 	#leo_11 {
-		top: 31%;
-		right: 23%;
+		top: 29%;
+		right: 20%;
 		position: absolute;
 	}
 }
@@ -557,7 +683,7 @@ body {
 
 	.M_back {
 		height: 100vh;
-		width: 100%;
+		width: 100vw;
 		background-size: cover;
 		position: relative;
 		display: flex;

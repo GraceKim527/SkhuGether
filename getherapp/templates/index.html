@@ -59,39 +59,39 @@
 			</div>
 		</div>
 
-		<img class="P_back" src="{% static 'img/main/P_back.png' %}" alt="P_back" onclick="change1(), out(leo_1), out(leo_2), out(leo_3), out(leo_5), out(leo_6), out(leo_7), out(leo_8), out(leo_9), out(leo_11)">
-		<img class="M_back" src="{% static 'img/main/M_back.png' %}" alt="M_back">
+		<img class="P_back" src="{% static 'img/main/P_back_dark.png' %}" alt="P_back" onclick="symodal1(), out(leo_1), out(leo_2), out(leo_3), out(leo_5), out(leo_6), out(leo_7), out(leo_8), out(leo_9), out(leo_11)">
+		<img class="M_back" src="{% static 'img/main/M_back.png' %}" alt="M_back" onclick="symodal1(), out(leo_1), out(leo_2), out(leo_3), out(leo_5), out(leo_6), out(leo_7), out(leo_8), out(leo_9), out(leo_11)">
 
 		<div class="leo_school">
 			<!--맨 위에 있는 요소가 가장 아래에 위치하게 됨-->
 			<div class="leo_class">
 				<img id="leo_1" src="static/img/main/1.png" alt="승연관"
-					onclick="change(), out(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal(), out(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_2" src="static/img/main/2.png" alt="일만관"
-					onclick="change1(), over(leo_1), out(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), out(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_3" src="static/img/main/3.png" alt="월당관"
-					onclick="change1(), over(leo_1), over(leo_2), out(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), out(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_5" src="static/img/main/5.png" alt="나눔관"
-					onclick="change1(), over(leo_1), over(leo_2), over(leo_3), out(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), out(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_6" src="static/img/main/6.png" alt="정보과학관"
-					onclick="change1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), out(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), out(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_7" src="static/img/main/7.png" alt="새천년관"
-					onclick="change1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), out(leo_7), over(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), out(leo_7), over(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_8" src="static/img/main/8.png" alt="중앙도서관"
-					onclick="change1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), out(leo_8), over(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), out(leo_8), over(leo_9), over(leo_11)">
 				<img id="leo_9" src="static/img/main/9.png" alt="성미가엘성당/피츠버그홀"
-					onclick="change1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), out(leo_9), over(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), out(leo_9), over(leo_11)">
 				<img id="leo_11" src="static/img/main/11.png" alt="미가엘관"
-					onclick="change1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), out(leo_11)">
+					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), out(leo_11)">
 			</div>
 
 			<div id="modal" class="modal-overlay" style="z-index: 999;">
 				<div class="modal-window">
-					<div onclick="change1()" class="close-area">×</div>
+					<div onclick="symodal1()" class="close-area">×</div>
 					<div class="modal_content">
-						<img class="modal_img" src="{% static 'img/main/P_back.png' %}" alt="일단대충">
-						<a class="qwan_button_a" href="{% url 'sy_gwan' %}" style="text-decoration: none;">
-							<div class="qwan_button">승연관 바로가기</div>
+						<img class="modal_img" src="{% static 'img/main/sy_gwan_alone.png' %}" alt="승연관"><br>
+						<a class="qwan_button" href="{% url 'sy_gwan' %}" style="text-decoration: none;">
+							승연관 바로가기
 						</a>
 					</div>
 					

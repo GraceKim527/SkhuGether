@@ -105,11 +105,11 @@ init()
 
 // PC 모달
 
-function change() {
+function symodal() {
 	document.getElementById('modal').style.display = "flex";
 	document.getElementsByClassName('modal-window')[0].style.display = "flex";
 }
-function change1() {
+function symodal1() {
 	document.getElementById('modal').style.display = "none";
 	document.getElementsByClassName('modal-window')[0].style.display = "none";
 }
