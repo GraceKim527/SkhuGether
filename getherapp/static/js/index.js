@@ -73,19 +73,6 @@ function out(leo_11) {
     leo_11.style.opacity = "1"
 }
 
-
-// PC 모달
-
-function change() {
-	document.getElementById('modal').style.display = "flex";
-	document.getElementsByClassName('modal-overlay')[0].style.display = "flex";
-}
-function change1() {
-	document.getElementById('modal').style.display = "none";
-	document.getElementsByClassName('modal-overlay')[0].style.display = "none";
-}
-
-
 // 토글
 
 const toggleBtn = document.querySelector(".toggle1")
@@ -113,3 +100,16 @@ function init() {
 }
 
 init()
+
+
+
+// PC 모달
+
+function change() {
+	document.getElementById('modal').style.display = "flex";
+	document.getElementsByClassName('modal-window')[0].style.display = "flex";
+}
+function change1() {
+	document.getElementById('modal').style.display = "none";
+	document.getElementsByClassName('modal-window')[0].style.display = "none";
+}
