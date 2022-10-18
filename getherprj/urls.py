@@ -21,9 +21,8 @@ import getherapp.views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('skhu21it4/', admin.site.urls),
     path('', getherapp.views.index, name='index'),
-    path('base/', getherapp.views.base, name='base'), #나중에 base는 지울것
     path('feedback/', getherapp.views.feedback, name='feedback'),
     path('feedback_cp/', getherapp.views.feedback_cp, name='feedback_cp'),
     path('introduce/', getherapp.views.introduce, name='introduce'),
