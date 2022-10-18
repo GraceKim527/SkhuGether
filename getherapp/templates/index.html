@@ -41,7 +41,8 @@
 								<li><a href="{% url 'nn_gwan' %}"><span>5</span><span>나눔관</span></a></li>
 								<li><a href="{% url 'jg_gwan' %}"><span>6</span><span>정보과학관</span></a></li>
 								<li><a href="{% url 'scn_gwan' %}"><span>7</span><span>새천년관</span></a></li>
-								<li><a href="{% url 'library' %}"><span>8</span><span>중앙도서관</span></a></li>
+								<li><a href="https://library.skhu.ac.kr/"><span>8</span><span>중앙도서관</span></a></li>
+								<li><a href="{% url 'pb_hall' %}"><span>9</span><span>피츠버그홀</span></a></li>
 								<li><a href="{% url 'mgell_gwan' %}"><span>11</span><span>미가엘관</span></a></li>
 							</ul>
 						</div>
@@ -58,39 +59,144 @@
 			</div>
 		</div>
 
-		<img class="P_back" src="{% static 'img/main/P_back_dark.png' %}" alt="P_back" onclick="symodal1(), out(leo_1), out(leo_2), out(leo_3), out(leo_5), out(leo_6), out(leo_7), out(leo_8), out(leo_9), out(leo_11)">
-		<img class="M_back" src="{% static 'img/main/M_back.png' %}" alt="M_back" onclick="symodal1(), out(leo_1), out(leo_2), out(leo_3), out(leo_5), out(leo_6), out(leo_7), out(leo_8), out(leo_9), out(leo_11)">
+		<img class="P_back" src="{% static 'img/main/P_back_dark.png' %}" alt="P_back">
+		<img class="M_back" src="{% static 'img/main/M_back.png' %}" alt="M_back">
 
 		<div class="leo_school">
 			<!--맨 위에 있는 요소가 가장 아래에 위치하게 됨-->
 			<div class="leo_class">
-				<img id="leo_1" src="{% static 'img/main/1.png' %}" alt="승연관"
-					onclick="symodal(), out(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_2" src="{% static 'img/main/2.png' %}" alt="일만관"
-					onclick="symodal1(), over(leo_1), out(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_3" src="{% static 'img/main/3.png' %}" alt="월당관"
-					onclick="symodal1(), over(leo_1), over(leo_2), out(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_5" src="{% static 'img/main/5.png' %}" alt="나눔관"
-					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), out(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_6" src="{% static 'img/main/6.png' %}" alt="정보과학관"
-					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), out(leo_6), over(leo_7), over(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_7" src="{% static 'img/main/7.png' %}" alt="새천년관"
-					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), out(leo_7), over(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_8" src="{% static 'img/main/8.png' %}" alt="중앙도서관"
-					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), out(leo_8), over(leo_9), over(leo_11)">
-				<img id="leo_9" src="{% static 'img/main/9.png' %}" alt="성미가엘성당/피츠버그홀"
-					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), out(leo_9), over(leo_11)">
-				<img id="leo_11" src="{% static 'img/main/11.png' %}" alt="미가엘관"
-					onclick="symodal1(), over(leo_1), over(leo_2), over(leo_3), over(leo_5), over(leo_6), over(leo_7), over(leo_8), over(leo_9), out(leo_11)">
+				<img id="leo_1" src="{% static 'img/main/1.png' %}" alt="승연관" onclick="main_1()">
+				<img id="leo_2" src="{% static 'img/main/2.png' %}" alt="일만관" onclick="main_2()">
+				<img id="leo_3" src="{% static 'img/main/3.png' %}" alt="월당관" onclick="main_3()">
+				<img id="leo_5" src="{% static 'img/main/5.png' %}" alt="나눔관" onclick="main_5()">
+				<img id="leo_6" src="{% static 'img/main/6.png' %}" alt="정보과학관" onclick="main_6()">
+				<img id="leo_7" src="{% static 'img/main/7.png' %}" alt="새천년관" onclick="main_7()">
+				<img id="leo_8" src="{% static 'img/main/8.png' %}" alt="중앙도서관" onclick="main_8()">
+				<img id="leo_9" src="{% static 'img/main/9.png' %}" alt="성미가엘성당/피츠버그홀" onclick="main_9()">
+				<img id="leo_11" src="{% static 'img/main/11.png' %}" alt="미가엘관" onclick="main_11()">
 			</div>
 
-			<div id="modal" class="modal-overlay" style="z-index: 999;">
-				<div class="modal-window">
-					<div onclick="symodal1()" class="close-area">×</div>
-					<div class="modal_content">
-						<img class="modal_img" src="{% static 'img/main/sy_gwan_alone.png' %}" alt="승연관"><br>
-						<a class="qwan_button" href="{% url 'sy_gwan' %}" style="text-decoration: none;">
+			<!--승연관 모달-->
+			<div id="modal_1" class="modal-overlay_1" style="z-index: 999;">
+				<div class="modal-window_1" data-backdrop="static">
+					<div onclick="main_modal_1()" class="close-area_1">×</div>
+					<div class="modal_content_1">
+						<img class="modal_img_1" src="{% static 'img/main/sy_gwan_alone.png' %}" alt="승연관"><br>
+						<a class="qwan_button_1" href="{% url 'sy_gwan' %}" style="text-decoration: none;">
 							승연관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--일만관 모달-->
+			<div id="modal_2" class="modal-overlay_2" style="z-index: 999;">
+				<div class="modal-window_2">
+					<div onclick="main_modal_2()" 
+					class="close-area_2">×</div>
+					<div class="modal_content_2">
+						<img class="modal_img_2" src="{% static 'img/main/im_gwan_alone.png' %}" alt="일만관"><br>
+						<a class="qwan_button_2" href="{% url 'im_gwan' %}" style="text-decoration: none;">
+							일만관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!--월당관 모달-->
+			<div id="modal_3" class="modal-overlay_3" style="z-index: 999;">
+				<div class="modal-window_3">
+					<div onclick="main_modal_3()" 
+					class="close-area_3">×</div>
+					<div class="modal_content_3">
+						<img class="modal_img_3" src="{% static 'img/main/wd_gwan_alone.png' %}" alt="월당관"><br>
+						<a class="qwan_button_3" href="{% url 'wd_gwan' %}" style="text-decoration: none;">
+							월당관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--나눔관 모달-->
+			<div id="modal_5" class="modal-overlay_5" style="z-index: 999;">
+				<div class="modal-window_5">
+					<div onclick="main_modal_5()" 
+					class="close-area_5">×</div>
+					<div class="modal_content_5">
+						<img class="modal_img_5" src="{% static 'img/main/nn_gwan_alone.png' %}" alt="나눔관"><br>
+						<a class="qwan_button_5" href="{% url 'nn_gwan' %}" style="text-decoration: none;">
+							나눔관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--정보과학관 모달-->
+			<div id="modal_6" class="modal-overlay_6" style="z-index: 999;">
+				<div class="modal-window_6">
+					<div onclick="main_modal_6()" 
+					class="close-area_6">×</div>
+					<div class="modal_content_6">
+						<img class="modal_img_6" src="{% static 'img/main/jg_gwan_alone.png' %}" alt="정보과학관"><br>
+						<a class="qwan_button_6" href="{% url 'jg_gwan' %}" style="text-decoration: none;">
+							정보과학관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--새천년관 모달-->
+			<div id="modal_7" class="modal-overlay_7" style="z-index: 999;">
+				<div class="modal-window_7">
+					<div onclick="main_modal_7()" 
+					class="close-area_7">×</div>
+					<div class="modal_content_7">
+						<img class="modal_img_7" src="{% static 'img/main/scn_gwan_alone.png' %}" alt="새천년관"><br>
+						<a class="qwan_button_7" href="{% url 'scn_gwan' %}" style="text-decoration: none;">
+							새천년관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--중앙도서관 모달-->
+			<div id="modal_8" class="modal-overlay_8" style="z-index: 999;">
+				<div class="modal-window_8">
+					<div onclick="main_modal_8()" 
+					class="close-area_8">×</div>
+					<div class="modal_content_8">
+						<img class="modal_img_8" src="{% static 'img/main/library_alone.png' %}" alt="중앙도서관"><br>
+						<a class="qwan_button_8" href="https://library.skhu.ac.kr/" style="text-decoration: none;">
+							중앙도서관 바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--성미가엘성당/피츠버그홀 모달-->
+			<div id="modal_9" class="modal-overlay_9" style="z-index: 999;">
+				<div class="modal-window_9">
+					<div onclick="main_modal_9()" 
+					class="close-area_9">×</div>
+					<div class="modal_content_9">
+						<img class="modal_img_9" src="{% static 'img/main/pb_hall_alone.png' %}" alt="성미가엘성당/피츠버그홀"><br>
+						<a class="qwan_button_9" href="{% url 'pb_hall' %}" style="text-decoration: none;">
+							성미가엘성당 & 피츠버그홀<br>
+							바로가기
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--미가엘관 모달-->
+			<div id="modal_11" class="modal-overlay_11" style="z-index: 999;">
+				<div class="modal-window_11">
+					<div onclick="main_modal_11()" 
+					class="close-area_11">×</div>
+					<div class="modal_content_11">
+						<img class="modal_img_11" src="{% static 'img/main/mgell_gwan_alone.png' %}" alt="미가엘관"><br>
+						<a class="qwan_button_11" href="{% url 'mgell_gwan' %}" style="text-decoration: none;">
+							미가엘관 바로가기
 						</a>
 					</div>
 				</div>
