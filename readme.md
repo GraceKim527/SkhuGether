@@ -9,11 +9,12 @@
 ---
 ## Links
 <div align='center'>
-<a href='#'>
-<img src='https://img.shields.io/badge/-HomePage-lightgrey'></a>  
+<a href='https://mapinskhu.herokuapp.com/'>
+<img src='https://img.shields.io/badge/-HomePage-brightgreen'></a>  
 <a href='https://github.com/GraceKim527/SkhuGether'>
-<img src='https://img.shields.io/badge/-github-lightgrey'>
-</a>
+<img src='https://img.shields.io/badge/-github-lightgrey'></a>
+<a href='https://www.youtube.com/watch?v=ZJNcamRVLr0'>
+<img src='https://img.shields.io/badge/-youtube-red'></a>
 </div>
 
 --- 
