@@ -1139,6 +1139,7 @@ a {
 }
 .ld_content p{
     font-size: 1.5rem;
+    line-height: 150%;
 }
 .ld_cor_del {
     width: 100%;
