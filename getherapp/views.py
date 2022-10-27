@@ -100,6 +100,14 @@ def jg_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "정보과학관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+    
     return render(request, 'class/jg_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
