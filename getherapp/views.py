@@ -8,12 +8,6 @@ from django.db.models import Q
 # Create your views here.
 # 이게 현재 시간과 요일 가져오는 것
 # 트랜스외국인이 돼야 한다면 순서 바꿔주면 됨
-days = ['월', '화', '수', '목', '금', '토', '일']
-now = timezone.now()
-now_date = now.date()
-now_time = now.time()
-weekday = now.weekday()
-now_weekday = days[weekday]
 
 am9 = time(9, 00, 00, 000000)
 am9_30 = time(9, 30, 00, 000000)
@@ -68,6 +62,14 @@ def sy_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "승연관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/sy_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -76,6 +78,14 @@ def im_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "일만관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/im_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -84,6 +94,14 @@ def wd_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id',).filter(kwan_name = "월당관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/wd_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -92,6 +110,14 @@ def nn_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "나눔관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/nn_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -107,7 +133,7 @@ def jg_gwan(request):
     now_time = now.time()
     weekday = now.weekday()
     now_weekday = days[weekday]
-    
+
     return render(request, 'class/jg_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -116,6 +142,14 @@ def scn_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "새천년관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/scn_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -123,6 +157,14 @@ def scn_gwan(request):
 def library(request):
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "중앙도서관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/library.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -131,6 +173,14 @@ def pb_hall(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "피츠버그홀")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/pb_hall.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -138,6 +188,14 @@ def pb_hall(request):
 def gdin_gwan(request):
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "구두인관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/gdin_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -153,6 +211,14 @@ def mgell_gwan(request):
     # 이게 모델 내용 가져오는 것
     classrooms = Classroom.objects.order_by('id').filter(kwan_name = "미가엘관")
     classes = Class.objects.all()
+
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
+
     return render(request, 'class/mgell_gwan.html',
     {'now_date':now_date, 'now_time':now_time, 'now_weekday':now_weekday, 'classrooms':classrooms, 'classes': classes})
 
@@ -166,6 +232,13 @@ def mgell_gwan(request):
 def classroom(request, unit_id, id): #unit==unit_id==Class.room_id, id==classroom.id
     classroom = get_object_or_404(Classroom, unit = unit_id, id = id)
     classes = Class.objects.all().order_by('time2')
+    
+    days = ['월', '화', '수', '목', '금', '토', '일']
+    now = timezone.now()
+    now_date = now.date()
+    now_time = now.time()
+    weekday = now.weekday()
+    now_weekday = days[weekday]
 
     '''월요일'''
     mon_classes = classes.filter(room_id=id)
