@@ -28,7 +28,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-ppy^!&4@!ouwt$
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
-    "ec2-3-38-152-78.ap-northeast-2.compute.amazonaws.com"
+    ".ec2-3-38-152-78.ap-northeast-2.compute.amazonaws.com",
+    ".mapinskhu.com",
 ]
 
 
