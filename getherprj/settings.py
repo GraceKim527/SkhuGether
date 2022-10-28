@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-ppy^!&4@!ouwt$*79^j^sl+x6ct%k1#gw!^h0a4=ut_1ajj6vw')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = False
 
 ALLOWED_HOSTS = [
     ".ec2-3-38-152-78.ap-northeast-2.compute.amazonaws.com",
