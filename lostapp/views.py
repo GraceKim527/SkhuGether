@@ -34,7 +34,7 @@ def detail(request, id):
             comment.content = form.cleaned_data['content']
             comment.save()
             return redirect('lost_detail', id)
-    else:
+    else: 
         form = CommentForm()
         return render(request, 'lost_detail.html', {'detail_form':detail_form, 'comment_form':form})
 
