@@ -1,0 +1,2300 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', sans-serif;font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR', serif;font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+body, h1, h2, h3, h4, h5, h6, input, textarea, select {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* css 기본 세팅 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/* font-size: 62.5%; */
+	/* font: inherit; */
+	vertical-align: baseline;
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+
+html {font-size: 62.5%;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    font-size: 2rem;
+}
+
+/* 기본 색상 두기 */
+:root {
+    --nav-color: #006600; /* 네브바 컬러 */
+    --road-color: #408C40; /* 길 */
+    --build-color: #B9DC9D; /* 건물 */
+    --subnav-color: #EBECDC; /* 방위표 주변 네브 */
+    
+    /* 새로운 컬러 */
+    --new-sub-color: #bae688;
+    --new-main-color: #218b21;
+    /* 정의된 색상 사용하고 싶으면 var(변수명)으로 작성하기 */
+    /* ex ) background-color: var(--nav-color) */
+}
+
+/* ---------- 기본 상태 끝 ---------- */
+
+/* nav 수정하고 새로만든 것 */
+.nav {
+    top: 0;
+    display: flex;
+    padding-right: 1vw;
+    /* padding: 0 1vw 0 1vw; */
+    background-color: var(#eee);
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    z-index: 1;
+}
+.nav1 {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+#checkbox {
+    display: none;
+    z-index: 5;
+  }
+.hbmenu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    float: left;
+  }
+.line {
+    position: absolute;
+    width: 20px;
+    z-index: 2;
+    left: 10px;
+    right: 0;
+    top: 20px;
+    bottom: 0;
+    z-index: 10;
+}
+.line-main::before,
+.line-main::after,
+.line-split::before,
+.line-split::after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: 2px;
+    background-color: var(--new-main-color);
+    transition: transform 0.5s;
+}
+.line-main::before {
+  transform: translateY(-7px);
+}
+  .line-main::after {
+    transform: translateY(7px);
+  }
+  .line-split::before,
+  .line-split::after {
+    width: 10px;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  .line-split::after {
+    transform: translateX(10px);
+  }
+  #checkbox:checked ~ .line-main::before {
+    transform: rotate(45deg);
+    background-color: var(--new-main-color);
+  }
+  #checkbox:checked ~ .line-main::after {
+    transform: rotate(-45deg);
+    background-color: var(--new-main-color);
+  }
+  #checkbox:checked~.line-split::before{
+    opacity: 0;
+    background-color: var(--new-main-color);
+  }
+  #checkbox:checked~.line-split::after{
+    opacity: 0;
+    background-color: var(--new-main-color);
+  }
+#menu__box {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+.menu{
+    left: 0 !important;
+    transition-duration: .25s;
+}
+.nmenu{
+    display: none; 
+    margin-left: 300px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+}
+
+.nav2 {
+    width: 100%;
+}
+.nav2 a{
+    display: block;
+    width: 220px;
+    height: 60px;
+}
+.nav-img {
+    position: absolute;
+    width: 220px;
+    top: 5%;
+}
+
+/* 메뉴사이드바 */
+.menu_img {
+    top: 1%;
+    left: 13%;
+    width: 180px; 
+}
+.menu_header {
+    height: 8%;
+    display: block;
+}
+.menu_body {
+    margin: 10%;
+    overflow: scroll;
+}
+.menu_body::-webkit-scrollbar-thumb {
+    background:var(--new-main-color);
+}
+.menu_body::-webkit-scrollbar{
+    width: 5px;
+}
+.menu_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 10px;
+}
+.menu_body li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    height: 40px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .4) 0px 4px 4px 0px;
+    /* overflow: hidden; */
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+    color: #000;
+}
+.menu_body li:before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--new-main-color);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.menu_body li:hover span, .menu_body li:focus span,
+.menu_body li:active span{
+    color: #fff;
+}
+.menu_body li:hover:before, .menu_body li:focus:before,
+.menu_body li:active:before {
+    transform: scaleX(1);
+}
+.menu_body a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+}
+.menu_body span{
+    color: var(--new-main-color);
+    display: block;
+}
+.menu_body span:nth-child(1){
+    width: 30%;
+}
+.menu_footer{
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10%;
+}
+.menu_footer a{
+    color: black;
+    font-size: 1.3rem;
+}
+
+/* ----------------여기서부터는 index css ---------------- */
+
+body {
+	background-color: #E6FDFF;
+	position: fixed;
+}
+
+.nav3 {
+	position: absolute;
+	top: 5vh;
+	width: 30vw;
+	left: 35%;
+}
+
+.P_back {
+	height: 100vh;
+    width: 103vw;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.M_back {
+	display: none;
+}
+
+.leo_class {
+	margin-top: 20px;
+}
+
+.leo_class img {
+	width: 3.5vw;
+    height: auto;
+	filter: drop-shadow(0.5vw 0.5vw 0.5vw var(--new-main-color));
+
+	animation: motion 0.8s linear 0s infinite alternate; margin-top: 0;
+}
+
+@keyframes motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
+}
+
+#leo_1 {
+    top: 43%;
+    right: 36%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_2 {
+    top: 31%;
+    right: 33%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_3 {
+    top: 39%;
+    right: 18%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_5 {
+    top: 67%;
+    left: 25%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_6 {
+    top: 33%;
+    right: 4%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#leo_7 {
+    top: 25%;
+    left: 10%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#leo_8 {
+    top: 34%;
+    left: 26%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_9 {
+    top: 36%;
+    left: 40%;
+	cursor: pointer;
+    position: absolute;
+}
+
+#leo_11 {
+    top: 27%;
+    right: 18%;
+	cursor: pointer;
+    position: absolute;
+}
+
+/* ---------------- modal ---------------- */
+
+/* 승연관 PC 모달 */
+
+#modal_1 .modal-overlay_1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_1 {
+	from {
+		width: 37vw;
+		height: 50vh;
+		top: 34%;
+		left: 42%;
+	}
+	to {
+		width: 27vw;
+		height: 40vh;
+		top: 39%;
+		left: 47%;
+	}
+}
+
+.modal-overlay_1 .modal-window_1 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_1;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 39%;
+	left: 47%;
+	display: none;
+	width: 27vw;
+	height: 40vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_1 {
+	from {
+		margin-left: 32vw;
+	}
+	to {
+		margin-left: 22vw;
+	}
+}
+
+#modal_1 .close-area_1 {
+    width : 3vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 22vw;
+	margin-top: 1vh;
+	animation-name: smallerc_1;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_1 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_1 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_1 {
+	from {
+		width: 26vw;
+	}
+	to {
+		width: 16vw;
+	}
+}
+
+.qwan_button_1 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 16vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_1;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 승연관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_1 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_1 .modal-window_1 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_1;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+	}
+
+	#modal_1 .close-area_1 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_1 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_1 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 100%;
+		height: 70%;
+	}
+
+	.qwan_button_1 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+
+/* 일만관 PC 모달 */
+
+#modal_2 .modal-overlay_2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_2 {
+	from {
+		width: 37vw;
+		height: 48vh;
+		top: 24%;
+		left: 45%;
+	}
+	to {
+		width: 27vw;
+		height: 38vh;
+		top: 29%;
+		left: 50%;
+	}
+}
+
+.modal-overlay_2 .modal-window_2 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_2;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 29%;
+	left: 50%;
+	display: none;
+	width: 27vw;
+	height: 38vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_2 {
+	from {
+		margin-left: 32vw;
+	}
+	to {
+		margin-left: 22vw;
+	}
+}
+
+#modal_2 .close-area_2 {
+    width : 3vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 22vw;
+	margin-top: 1vh;
+	animation-name: smallerc_2;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_2 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_2 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_2 {
+	from {
+		width: 26vw;
+	}
+	to {
+		width: 16vw;
+	}
+}
+
+.qwan_button_2 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 16vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_2;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 일만관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_2 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_2 .modal-window_2 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_2;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+	}
+
+	#modal_2 .close-area_2 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_2 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_2 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 110%;
+		height: 80%;
+	}
+
+	.qwan_button_2 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 월당관 PC 모달 */
+
+#modal_3 .modal-overlay_3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_3 {
+	from {
+		width: 37vw;
+		height: 55vh;
+		top: 33%;
+		right: 5%;
+	}
+	to {
+		width: 27vw;
+		height: 45vh;
+		top: 38%;
+		right: 10%;
+	}
+}
+
+.modal-overlay_3 .modal-window_3 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_3;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 38%;
+	right: 10%;
+	display: none;
+	width: 27vw;
+	height: 45vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_3 {
+	from {
+		margin-left: 30vw;
+	}
+	to {
+		margin-left: 20vw;
+	}
+}
+
+#modal_3 .close-area_3 {
+    width : 3vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 20vw;
+	margin-top: 1vh;
+	animation-name: smallerc_3;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_3 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_3 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_3 {
+	from {
+		width: 26vw;
+	}
+	to {
+		width: 16vw;
+	}
+}
+
+.qwan_button_3 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 16vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_3;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 월당관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_3 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_3 .modal-window_3 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_3;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+	}
+
+	#modal_3 .close-area_3 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_3 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_3 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 75%;
+		height: 60%;
+	}
+
+	.qwan_button_3 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 나눔관 PC 모달 */
+
+#modal_5 .modal-overlay_5 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_5 {
+	from {
+		width: 50vw;
+		height: 47vh;
+		top: 53%;
+		left: -4%;
+	}
+	to {
+		width: 40vw;
+		height: 37vh;
+		top: 58%;
+		left: 1%;
+	}
+}
+
+.modal-overlay_5 .modal-window_5 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_5;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 58%;
+	left: 1%;
+	display: none;
+	width: 40vw;
+	height: 37vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_5 {
+	from {
+		margin-left: 46vw;
+	}
+	to {
+		margin-left: 36vw;
+	}
+}
+
+#modal_5 .close-area_5 {
+    width : 5vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-sub-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 36vw;
+	margin-top: 1vh;
+	animation-name: smallerc_5;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_5 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_5 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_5 {
+	from {
+		width: 26vw;
+	}
+	to {
+		width: 16vw;
+	}
+}
+
+.qwan_button_5 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 16vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_5;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 나눔관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_5 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_5 .modal-window_5 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_5;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+		padding-right: 5vw;
+	}
+
+	#modal_5 .close-area_5 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_5 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_5 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 75%;
+		height: 80%;
+	}
+
+	.qwan_button_5 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 정보과학관 PC 모달 */
+
+#modal_6 .modal-overlay_6 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_6 {
+	from {
+		width: 40vw;
+		height: 60vh;
+		top: 25%;
+		right: -10%;
+	}
+	to {
+		width: 30vw;
+		height: 50vh;
+		top: 30%;
+		right: -5%;
+	}
+}
+
+.modal-overlay_6 .modal-window_6 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_6;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 30%;
+	right: -5%;
+	display: none;
+	width: 30vw;
+	height: 50vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_6 {
+	from {
+		margin-right: 35vw;
+	}
+	to {
+		margin-right: 25vw;
+	}
+}
+
+#modal_6 .close-area_6 {
+    width : 5vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-right: 25vw;
+	margin-top: 1vh;
+	animation-name: smallerc_6;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_6 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_6 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_6 {
+	from {
+		width: 36vw;
+	}
+	to {
+		width: 26vw;
+	}
+}
+
+.qwan_button_6 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 26vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_6;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	margin-right: 15%;
+}
+
+
+/* 정보과학관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_6 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_6 .modal-window_6 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_6;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+		padding-left: 8%;
+	}
+
+	#modal_6 .close-area_6 {
+		width : 7vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 90%;
+	}
+	
+	.modal_content_6 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_6 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 110%;
+		height: 100%;
+		margin-right: 40vw;
+	}
+
+	.qwan_button_6 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 새천년관 PC 모달 */
+
+#modal_7 .modal-overlay_7 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_7 {
+	from {
+		width: 37vw;
+		height: 55vh;
+		top: 15%;
+		left: -4%;
+	}
+	to {
+		width: 27vw;
+		height: 45vh;
+		top: 20%;
+		left: 1%;
+	}
+}
+
+.modal-overlay_7 .modal-window_7 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_7;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 20%;
+	left: 1%;
+	display: none;
+	width: 27vw;
+	height: 45vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_7 {
+	from {
+		margin-left: 32vw;
+	}
+	to {
+		margin-left: 22vw;
+	}
+}
+
+#modal_7 .close-area_7 {
+    width : 5vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 22vw;
+	margin-top: 1vh;
+	animation-name: smallerc_7;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_7 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_7 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_7 {
+	from {
+		width: 31vw;
+	}
+	to {
+		width: 21vw;
+	}
+}
+
+.qwan_button_7 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 21vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_7;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 새천년관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_7 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_7 .modal-window_7 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_7;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+		padding-right: 5vw;
+	}
+
+	#modal_7 .close-area_7 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_7 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_7 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 120%;
+		height: 100%;
+		margin-bottom: 6vh;
+	}
+
+	.qwan_button_7 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 중앙도서관 PC 모달 */
+
+#modal_8 .modal-overlay_8 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_8 {
+	from {
+		width: 37vw;
+		height: 42vh;
+		top: 25%;
+		left: 10%;
+	}
+	to {
+		width: 27vw;
+		height: 32vh;
+		top: 30%;
+		left: 15%;
+	}
+}
+
+.modal-overlay_8 .modal-window_8 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_8;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 30%;
+	left: 15%;
+	display: none;
+	width: 27vw;
+	height: 32vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_8 {
+	from {
+		margin-left: 32vw;
+	}
+	to {
+		margin-left: 22vw;
+	}
+}
+
+#modal_8 .close-area_8 {
+    width : 5vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 22vw;
+	margin-top: 1vh;
+	animation-name: smallerc_8;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_8 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_8 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_8 {
+	from {
+		width: 35vw;
+	}
+	to {
+		width: 25vw;
+	}
+}
+
+.qwan_button_8 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 25vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_8;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 중앙도서관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_8 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_8 .modal-window_8 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_8;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+		padding-right: 5vw;
+	}
+
+	#modal_8 .close-area_8 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_8 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_8 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 120%;
+		height: 100%;
+		margin-bottom: 6vh;
+		margin-right: 10%;
+	}
+
+	.qwan_button_8 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 성미가엘성당/피츠버그홀 PC 모달 */
+
+#modal_9 .modal-overlay_9 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_9 {
+	from {
+		width: 37vw;
+		height: 44vh;
+		top: 28%;
+		left: 21%;
+	}
+	to {
+		width: 27vw;
+		height: 34vh;
+		top: 33%;
+		left: 26%;
+	}
+}
+
+.modal-overlay_9 .modal-window_9 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_9;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 33%;
+	left: 26%;
+	display: none;
+	width: 27vw;
+	height: 34vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_9 {
+	from {
+		margin-left: 32vw;
+	}
+	to {
+		margin-left: 22vw;
+	}
+}
+
+#modal_9 .close-area_9 {
+    width : 5vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 22vw;
+	margin-top: 1vh;
+	animation-name: smallerc_9;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_9 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_9 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_9 {
+	from {
+		width: 35vw;
+	}
+	to {
+		width: 25vw;
+	}
+}
+
+.qwan_button_9 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 25vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_9;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	text-align: center;
+}
+
+
+/* 성미가엘성당/피츠버그홀 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_9 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_9 .modal-window_9 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_9;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+		padding-right: 5vw;
+	}
+
+	#modal_9 .close-area_9 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_9 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_9 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 120%;
+		height: 100%;
+		margin-bottom: 6vh;
+		margin-right: 10%;
+	}
+
+	.qwan_button_9 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* 미가엘관 PC 모달 */
+
+#modal_11 .modal-overlay_11 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.432);
+}
+
+@keyframes smallerw_11 {
+	from {
+		width: 40vw;
+		height: 48vh;
+		top: 20%;
+		left: 57%;
+	}
+	to {
+		width: 30vw;
+		height: 38vh;
+		top: 25%;
+		left: 62%;
+	}
+}
+
+.modal-overlay_11 .modal-window_11 {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
+    animation-name: smallerw_11;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+    position: absolute;
+	top: 25%;
+	left: 62%;
+	display: none;
+	width: 30vw;
+	height: 38vh;
+	justify-content: center;
+}
+
+@keyframes smallerc_11 {
+	from {
+		margin-left: 35vw;
+	}
+	to {
+		margin-left: 25vw;
+	}
+}
+
+#modal_11 .close-area_11 {
+    width : 3vw;
+    height: 4.5vh;
+    text-align: center;
+    color : var(--new-main-color);
+    float : right;
+    font-size: 3vw;
+    border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 25vw;
+	margin-top: 1vh;
+	animation-name: smallerc_11;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.modal_content_11 {
+    position: absolute;
+	top: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal_img_11 {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+@keyframes smallerb_11 {
+	from {
+		width: 30vw;
+	}
+	to {
+		width: 20vw;
+	}
+}
+
+.qwan_button_11 {
+	background-color: var(--new-sub-color);
+	box-shadow: 0 8px 32px 0 var(--new-main-color);
+	color : var(--new-main-color);
+	border-radius: 50vw;
+	width: 20vw;
+	height: 5vh;
+	font-size: 1.7rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: smallerb_11;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+
+/* 미가엘관 모바일 + 작은 PC창 모달 */
+
+@media (max-width: 700px){
+
+	@keyframes gohigh_11 {
+		from {
+			top: 90%;
+		}
+		to {
+			top: 30%;
+		}
+	}
+	
+	.modal-overlay_11 .modal-window_11 {
+		background: rgba(0, 0, 0, 0.55);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.664);
+		border-radius: 0px;
+		animation-name: gohigh_11;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0%;
+		top: 30%;
+		height: 90vh;
+		justify-content: center;
+	}
+
+	#modal_11 .close-area_11 {
+		width : 6vw;
+		height: 6vh;
+		text-align: center;
+		color : var(--new-sub-color);
+		float : right;
+		font-size: 10vw;
+		cursor: pointer;
+		font-weight: bold;
+		animation: none;
+		display: flex;
+		justify-content: center;
+		margin-left: 85%;
+	}
+	
+	.modal_content_11 {
+		top: 13%;
+		position: absolute;
+		display: grid;
+		grid-template-columns: 10.7fr;
+		grid-template-rows: 1.5fr 1fr;
+		place-items: center;
+	}
+	
+	.modal_img_11 {
+		grid-column: 1;
+		grid-row: 1;
+		display: block;
+		width: 80vw;
+		height: 40vh;
+		margin-bottom: 5%;
+	}
+
+	.qwan_button_11 {
+		grid-column: 1;
+		grid-row: 2;
+		background-color: var(--new-sub-color);
+		box-shadow: 0.5vw 0.5vh 0 0 var(--new-main-color);
+		color : var(--new-main-color);
+		border-radius: 50vw;
+		width: 60vw;
+		height: 6vh;
+		font-size: 1.7rem;
+		font-weight: bold;
+		text-align: center;
+		animation: none;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20vh;
+	}
+}
+
+/* ---------------- 디바이스 크기별 물방울 배치 ---------------- */
+
+@media (max-width: 1100px){
+
+	.leo_class img {
+		width: 4vw;
+	}
+	
+	#leo_1 {
+		top: 45%;
+		right: 35%;
+		position: absolute;
+	}
+	
+	#leo_2 {
+		top: 32%;
+		right: 32%;
+		position: absolute;
+	}
+	
+	#leo_3 {
+		top: 41%;
+		right: 20%;
+		position: absolute;
+	}
+	
+	#leo_5 {
+		top: 70%;
+		left: 25%;
+		position: absolute;
+	}
+	
+	#leo_6 {
+		top: 37%;
+		right: 4%;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	#leo_7 {
+		top: 27%;
+		left: 10%;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	#leo_8 {
+		top: 37%;
+		left: 26%;
+		position: absolute;
+	}
+	
+	#leo_9 {
+		top: 38%;
+		left: 38%;
+		position: absolute;
+	}
+	
+	#leo_11 {
+		top: 29%;
+		right: 20%;
+		position: absolute;
+	}
+}
+
+@media (max-width: 500px){
+
+	.P_back {
+		display: none;
+	}
+
+	.M_back {
+		height: 100vh;
+		width: 100vw;
+		background-size: cover;
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.leo_class img {
+		width: 7vw;
+	}
+
+	#leo_1 {
+		top: 30%;
+		right: 39%;
+		position: absolute;
+	}
+
+	#leo_2 {
+		top: 30%;
+		left: 30%;
+		position: absolute;
+	}
+
+	#leo_3 {
+		top: 20%;
+		right: 42%;
+		position: absolute;
+	}
+
+	#leo_5 {
+		top: 55%;
+		left: 80%;
+		position: absolute;
+	}
+
+	#leo_6 {
+		top: 13%;
+		left: 37%;
+		cursor: pointer;
+		position: absolute;
+	}
+
+	#leo_7 {
+		top: 72%;
+		left: 13%;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	#leo_8 {
+		top: 60%;
+		left: 16%;
+		position: absolute;
+	}
+
+	#leo_9 {
+		top: 50%;
+		left: 23%;
+		position: absolute;
+	}	
+
+	#leo_11 {
+		top: 20%;
+		left: 20%;
+		position: absolute;
+	}
+	
+}
