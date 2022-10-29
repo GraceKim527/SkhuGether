@@ -36,7 +36,7 @@ class Class(models.Model):
             MinValueValidator(1), MaxValueValidator(3)]
     )    
     date1 = models.CharField(max_length=10)
-    date2 = models.CharField(max_length=10, null=True)
+    date2 = models.CharField(max_length=10, null=True, blank=True)
     time1 = models.TimeField()
     time2 = models.TimeField()
     prof_id = models.ForeignKey(Professor, null=True, on_delete=models.SET_NULL, related_name='class_profid')
@@ -44,7 +44,7 @@ class Class(models.Model):
     sub_id = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='class_subid')
 
     def __str__(self):
-        return self.room_id
+        return str(self.room_id)
 
 class Feedback(models.Model):
     user_id = models.CharField(max_length=50)
