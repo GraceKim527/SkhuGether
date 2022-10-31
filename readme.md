@@ -1,4 +1,8 @@
-![mapinskhu](getherapp/static/img/biglogo.png)
+<div align='center'>
+<img width="800" src="https://user-images.githubusercontent.com/80322308/198942935-68a95466-24a6-4f58-82af-1d3f79fe01b7.png">
+<br/>
+</div>
+
 <div align='center'>
 <img src="https://img.shields.io/badge/version-1.0.0-green">
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGraceKim527%2FSkhuGether&count_bg=%23BAE688&title_bg=%23767676&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=true"/></a>
@@ -9,7 +13,7 @@
 ---
 ## Links
 <div align='center'>
-<a href='https://mapinskhu.herokuapp.com/'>
+<a href='https://mapinskhu.com/'>
 <img src='https://img.shields.io/badge/-HomePage-brightgreen'></a>  
 <a href='https://github.com/GraceKim527/SkhuGether'>
 <img src='https://img.shields.io/badge/-github-lightgrey'></a>
@@ -47,8 +51,15 @@
 ### 3D맵으로 지도 보기 가능
 - 단순히 단면적으로 된 지도가 아닌, 자체 제작을 한 3D 지도로, 각 강의동이 어디있는지 한 눈에 파악하기가 가능하다.
 
+### 🖥️ PC Ver.
 <div align='center'>
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/80322308/196369603-e1acd281-8f24-43ba-a69b-5cf4158291e5.png">
+<img width="800" alt="3dimg-web" src="https://user-images.githubusercontent.com/80322308/198942378-ca223876-c4ea-4a43-832c-ccdbfeb648e6.gif">
+</div>
+
+
+### 📱 Mobile Ver.
+<div align='center'>
+<img height="600" alt="3dimg-mobile" src="https://user-images.githubusercontent.com/80322308/198943246-dc3b8ec8-1b9e-479c-bd13-5dc87526a272.gif">
 </div>
 
 ## 🔖 추후 업데이트 예정 내용
@@ -75,6 +86,8 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
+## ☁️ Cloud 
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 --- 
 © 2022. MapinSkhu All rights reserved.  
 #### Contact
