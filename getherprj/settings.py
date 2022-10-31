@@ -29,6 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     ".ec2-3-38-152-78.ap-northeast-2.compute.amazonaws.com",
+    "ec2-15-165-14-30.ap-northeast-2.compute.amazonaws.com",
     ".mapinskhu.com",
     "localhost", "192.168.0.121", "127.0.0.1"
 ]
